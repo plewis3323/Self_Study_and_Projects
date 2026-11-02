@@ -1,0 +1,266 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb,graphicx,xcolor,booktabs,tabularx,enumitem,titlesec,fancyhdr,array,longtable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}
+\titleformat{\section}{\Large\bfseries\color{blue!50!black}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}\lhead{sPHENIX Self-Paced Course}\rhead{Syllabus}\cfoot{\thepage}
+\newcommand{\infobox}[2]{\par\noindent\fcolorbox{blue!50!black}{blue!4}{\begin{minipage}{0.95\linewidth}\textbf{#1}\par\smallskip #2\end{minipage}}\par\medskip}
+\setlist{itemsep=1pt,topsep=3pt}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\begin{center}{\LARGE\bfseries sPHENIX Self-Paced Course}\\[4pt]{\Large Syllabus and Study Plan}\\[8pt]
+Prepared for P.\,D.\ Lewis (Ohio University) \quad November 2026\\[2pt]
+\small Built on the Summer-2026 sPHENIX School and Workfest (BNL, 27 July -- 14 August 2026), public sPHENIX papers and your own notes\end{center}
+\section{Purpose}
+This course sharpens your working knowledge of the whole sPHENIX experiment: the physics programme, the accelerator, every detector
+subsystem, the trigger and data acquisition, the Fun4All software and simulation, reconstruction and calibration, and the analysis
+workflow from good-run list to publication. You already know the EMCal $\pi^0$/$\eta$ corner of the experiment well; the goal is to
+understand the parts around it well enough to read any sPHENIX analysis note, ask good questions in meetings, and make better decisions in
+your own Run-24 $p$+$p$ $\pi^0$/$\eta$ cross-section analysis.
+\infobox{How the course is built}{Ten module PDFs, each 14--25 pages. Every module follows the same pattern: learning objectives and
+prerequisites; numbered steps, each with \emph{goal}, \emph{physics}, \emph{how it is done in sPHENIX}, \emph{checks} and \emph{pitfalls};
+``Connect to your analysis'' boxes; suggested hands-on exercises on SDCC; self-test questions with answers; a glossary and references.
+The school talks behind each module are cited as [S\#\#] (list in Section~\ref{sec:talks}).}
+\section{How to use this course}
+\begin{enumerate}
+\item Work through one module per week (two weeks for Modules 6 and 10). Budget the hours in Table~\ref{tab:plan}.
+\item Each module is self-contained: it builds the material from first principles up to current sPHENIX practice, so you do not need the slides. The school talks it cites as [S\#\#] are optional further reading (Indico event 32182, collaboration login).
+\item Read the module once straight through, then a second time working the checks. The SDCC exercises are optional.
+\item Answer the self-test questions \emph{before} reading the answers. If you miss more than three, reread that step.
+\item Keep a running log (one page per module) of what you learned and what you want to ask; bring it to group meetings.
+\item After Module 10, write the capstone proposal and discuss it with your advisor.
+\end{enumerate}
+\section{Schedule}
+\begin{table}[h]\centering\small
+\begin{tabularx}{\linewidth}{@{}llXr@{}}\toprule
+Week & Module & Title & Hours\\\midrule
+1 & 1 & The sPHENIX physics program: QGP, jets, heavy flavour, cold QCD and spin & 8\\
+2 & 2 & RHIC and the sPHENIX detector: layout, global detectors, runs and centrality & 8\\
+3 & 3 & Calorimetry in sPHENIX: EMCal and HCal hardware & 8\\
+4 & 4 & Tracking detectors: MVTX, INTT, TPC and TPOT & 8\\
+5 & 5 & Trigger, DAQ and streaming readout & 7\\
+6--7 & 6 & Fun4All framework, software stack and simulation & 14\\
+8 & 7 & Calorimeter reconstruction and calibration: towers, clusters, photons, jets & 10\\
+9 & 8 & Tracking reconstruction: seeding, fitting, alignment and TPC calibration & 9\\
+10 & 9 & From data to a result: the sPHENIX analysis workflow & 10\\
+11--12 & 10 & Case studies from the 2026 school and machine learning in sPHENIX & 14\\
+\midrule
+ & & Total & 96\\\bottomrule\end{tabularx}
+\caption{Suggested 12-week plan (about 8--10 hours per week). The order follows the school: physics, detectors, software, reconstruction, analysis.}\label{tab:plan}\end{table}
+\infobox{Dependencies}{Modules 1--2 are prerequisites for everything. Modules 3--5 can be read in any order. Module 6 is needed before
+7 and 8. Module 9 uses 2, 5, 6 and 7. Module 10 uses all modules.}
+\section{Modules}
+\subsection*{Module 1: The sPHENIX physics program: QGP, jets, heavy flavour, cold QCD and spin}
+\addcontentsline{toc}{subsection}{Module 1}
+\textbf{File:} \texttt{Module01\_Physics\_Program.pdf} \quad \textbf{Week:} 1 \quad \textbf{Time:} 8 h\\
+\textbf{Scope.} Why sPHENIX exists; QGP and jet quenching theory basics; history from PHENIX to sPHENIX; the four topical groups (Bulk, Jet Structure, Heavy Flavor, Cold QCD) and their flagship measurements; spin physics with polarized protons; where neutral mesons fit.\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Explain what the QGP is and why jets, heavy flavour and quarkonia probe it
+\item Describe the four topical groups and their flagship measurements
+\item Explain the cold-QCD and spin programme with polarized protons
+\item Place neutral-meson measurements ($\pi^0$, $\eta$, $R_{AA}$, cross sections) in the programme
+\end{itemize}
+\textbf{School talks:} [S01], [S02], [S03], [S04], [S05], [S06], [S07], [S44], [S50].\\
+\textbf{Checkpoint exercise:} Read the two first Au+Au papers; write a one-page map of which sPHENIX measurement constrains which QGP property.
+\medskip
+\subsection*{Module 2: RHIC and the sPHENIX detector: layout, global detectors, runs and centrality}
+\addcontentsline{toc}{subsection}{Module 2}
+\textbf{File:} \texttt{Module02\_RHIC\_and\_Detector\_Overview.pdf} \quad \textbf{Week:} 2 \quad \textbf{Time:} 8 h\\
+\textbf{Scope.} RHIC accelerator and beam basics (bunches, crossing angle, luminosity, polarization); detector layout and coordinates; solenoid; global detectors MBD, ZDC, sEPD; vertexing; centrality and Glauber; event plane; collision systems and runs 2023-2025.\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Describe RHIC beams: bunches, crossing angle, luminosity, polarization
+\item Draw the sPHENIX layout and coordinate system
+\item Explain MBD, ZDC and sEPD and how vertex, centrality and event plane are obtained
+\item Summarise the runs 2023--2025 and collision systems
+\end{itemize}
+\textbf{School talks:} [S01], [S08], [S48], [S49], [S05].\\
+\textbf{Checkpoint exercise:} On SDCC, query the spin DB and DAQ DB for a run of your choice (crossing angle, scaledowns); plot the MBD vertex distribution for that run.
+\medskip
+\subsection*{Module 3: Calorimetry in sPHENIX: EMCal and HCal hardware}
+\addcontentsline{toc}{subsection}{Module 3}
+\textbf{File:} \texttt{Module03\_Calorimeters.pdf} \quad \textbf{Week:} 3 \quad \textbf{Time:} 8 h\\
+\textbf{Scope.} Electromagnetic and hadronic showers; sampling calorimetry; EMCal tungsten-powder, scintillating-fiber blocks and SiPM readout; inner/outer HCal; towers, light guides, digitizers; energy resolution; test beams; calibration strategy overview (MIP, $\pi^0$, tower slope, cosmics).\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Explain electromagnetic and hadronic shower development
+\item Describe the EMCal and HCal construction and SiPM readout
+\item Relate sampling fraction and stochastic/constant terms to resolution
+\item Outline the calibration chain from test beam to in-situ
+\end{itemize}
+\textbf{School talks:} [S09], [S08], [S47], [S42].\\
+\textbf{Checkpoint exercise:} Draw the EMCal tower grid; estimate the shower containment for a 2 GeV photon; look up one tower's calibration in the CDB.
+\medskip
+\subsection*{Module 4: Tracking detectors: MVTX, INTT, TPC and TPOT}
+\addcontentsline{toc}{subsection}{Module 4}
+\textbf{File:} \texttt{Module04\_Tracking\_Detectors.pdf} \quad \textbf{Week:} 4 \quad \textbf{Time:} 8 h\\
+\textbf{Scope.} Charged-particle detection in silicon and gas; MVTX MAPS pixels; INTT strips and timing; TPC drift, gain (GEM), space charge; TPOT micromegas; integration times and pile-up; role of each in vertexing, momentum, timing.\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Explain charge collection in silicon and gas detectors
+\item Describe MVTX, INTT, TPC and TPOT geometry and roles
+\item Explain integration time, timing and pile-up for each detector
+\item Relate detector design to momentum and DCA resolution
+\end{itemize}
+\textbf{School talks:} [S10], [S11], [S12], [S28].\\
+\textbf{Checkpoint exercise:} Sketch the hits of a 1 GeV pion through MVTX, INTT and TPC; estimate the TPC drift time and what it implies for pile-up.
+\medskip
+\subsection*{Module 5: Trigger, DAQ and streaming readout}
+\addcontentsline{toc}{subsection}{Module 5}
+\textbf{File:} \texttt{Module05\_Trigger\_DAQ\_Streaming.pdf} \quad \textbf{Week:} 5 \quad \textbf{Time:} 7 h\\
+\textbf{Scope.} GL1 and trigger bits, MBD and calorimeter (photon/jet) triggers, scaledowns/prescales and live time; DAQ architecture and event building; triggered vs streaming readout; from raw data (PRDF) to DSTs; production, tags and the FileCatalog; SDCC computing access (ssh, web).\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Explain GL1 trigger bits, scaledowns and live time
+\item Describe MBD and calorimeter-based triggers
+\item Contrast triggered and streaming readout
+\item Follow data from PRDF to DSTs and find files in the FileCatalog
+\end{itemize}
+\textbf{School talks:} [S13], [S21].\\
+\textbf{Checkpoint exercise:} Use the FileCatalog to list the DST segments of one run; read the GL1 scalers for that run.
+\medskip
+\subsection*{Module 6: Fun4All framework, software stack and simulation}
+\addcontentsline{toc}{subsection}{Module 6}
+\textbf{File:} \texttt{Module06\_Fun4All\_and\_Simulation.pdf} \quad \textbf{Week:} 6--7 \quad \textbf{Time:} 14 h\\
+\textbf{Scope.} Fun4AllServer, SubsysReco lifecycle, node tree, input/output managers, macros, CDB and global tags, builds and installs (MYINSTALL), coresoftware/macros/analysis repos; Geant4 detector simulation (PHG4Reco), event generators (PYTHIA8, HIJING), single-particle guns and embedding, simulation productions; hands-on exercises.\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Write and run a Fun4All macro with a custom SubsysReco
+\item Navigate the node tree and the CDB/global tags
+\item Build and install a module into a private area
+\item Run Geant4 simulation with generators, particle guns and embedding
+\end{itemize}
+\textbf{School talks:} [S14], [S13], [S47].\\
+\textbf{Checkpoint exercise:} Write a minimal SubsysReco that prints cluster counts; run a single-$\pi^0$ gun through Geant4 and reconstruct it.
+\medskip
+\subsection*{Module 7: Calorimeter reconstruction and calibration: towers, clusters, photons, jets}
+\addcontentsline{toc}{subsection}{Module 7}
+\textbf{File:} \texttt{Module07\_Calorimeter\_Reconstruction.pdf} \quad \textbf{Week:} 8 \quad \textbf{Time:} 10 h\\
+\textbf{Scope.} Waveform fitting and TowerInfo; status and hot-tower maps; EMCal $\pi^0$ and HCal calibrations; clustering (template clustering, chi2/probability), topo clustering; photon identification and isolation; jet reconstruction (anti-kt, constituents, background subtraction, JES/JER).\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Explain waveform fitting, TowerInfo and status maps
+\item Describe EMCal and HCal calibration methods
+\item Compare clustering algorithms and topo clusters
+\item Explain photon ID/isolation and jet reconstruction with background subtraction
+\end{itemize}
+\textbf{School talks:} [S15], [S16], [S24], [S17], [S18], [S42].\\
+\textbf{Checkpoint exercise:} Run clustering on one DST segment with two cluster settings and compare cluster counts and energies (no physics claims).
+\medskip
+\subsection*{Module 8: Tracking reconstruction: seeding, fitting, alignment and TPC calibration}
+\addcontentsline{toc}{subsection}{Module 8}
+\textbf{File:} \texttt{Module08\_Tracking\_Reconstruction.pdf} \quad \textbf{Week:} 9 \quad \textbf{Time:} 9 h\\
+\textbf{Scope.} Clustering in silicon and TPC; seeding; ACTS Kalman fitting; vertexing; alignment (millepede-style); TPC distortions and calibration (lasers, space charge); track-calorimeter matching; performance evaluation (efficiency, momentum resolution, DCA).\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Explain seeding and Kalman-filter fitting in ACTS
+\item Explain detector alignment
+\item Describe TPC distortions and their calibration
+\item Explain track--calorimeter matching and performance metrics
+\end{itemize}
+\textbf{School talks:} [S19], [S20], [S22], [S23], [S36], [S27].\\
+\textbf{Checkpoint exercise:} Run the tracking QA macros on a small sample and identify each stage's output nodes.
+\medskip
+\subsection*{Module 9: From data to a result: the sPHENIX analysis workflow}
+\addcontentsline{toc}{subsection}{Module 9}
+\textbf{File:} \texttt{Module09\_Analysis\_Workflow.pdf} \quad \textbf{Week:} 10 \quad \textbf{Time:} 10 h\\
+\textbf{Scope.} Run QA and good-run lists; trigger selection and efficiency; luminosity and Vernier scans; centrality in practice; efficiency, acceptance and embedding; unfolding basics; systematic uncertainties (Barlow test); blinding/approval process (analysis notes, preliminaries, papers).\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Build good-run lists and run QA
+\item Compute luminosity and understand Vernier scans
+\item Design efficiency/acceptance corrections and unfolding
+\item Estimate systematic uncertainties and navigate the approval process
+\end{itemize}
+\textbf{School talks:} [S43], [S33], [S41], [S26], [S25], [S05], [S34].\\
+\textbf{Checkpoint exercise:} Write the full error-budget table for your $\pi^0$/$\eta$ cross section and the run-selection flow chart.
+\medskip
+\subsection*{Module 10: Case studies from the 2026 school and machine learning in sPHENIX}
+\addcontentsline{toc}{subsection}{Module 10}
+\textbf{File:} \texttt{Module10\_Case\_Studies\_and\_ML.pdf} \quad \textbf{Week:} 11--12 \quad \textbf{Time:} 14 h\\
+\textbf{Scope.} Worked mini-case-studies from student flash talks (multiplicity, flow $v_2$, jets, isolated photons and spin asymmetries, quarkonia energy correlators, phi-hadron correlations, CME, UPC rho, Vernier scans, INTT efficiency, HCal calibration); ML in physics (classification, regression for momentum scale, NN photon ID); capstone project plan tied to his $\pi^0$/eta analysis.\\
+\textbf{You will be able to:}
+\begin{itemize}
+\item Analyse the structure of real student analyses from the school
+\item Use ML for classification and regression in physics
+\item Plan a capstone project tied to your $\pi^0$/$\eta$ analysis
+\end{itemize}
+\textbf{School talks:} [S30], [S31], [S32], [S34], [S35], [S40], [S37], [S38], [S39], [S29], [S27], [S25], [S26], [S41].\\
+\textbf{Checkpoint exercise:} Write a two-page capstone proposal and present it to your advisor.
+\medskip
+\section{Capstone}
+Write a two-page proposal for one improvement to your $\pi^0$/$\eta$ cross-section analysis that uses what you learned outside the EMCal
+(for example: a track-based isolation or conversion veto, an MBD-trigger bias study with the global detectors, a streaming-readout
+cross-check of luminosity, or an ML photon/$\pi^0$ discriminator for merged clusters). State the physics motivation, the data and
+simulation needed, the method, the expected gain, and how you would validate it.
+\section{Public readings}
+\begin{itemize}
+\item sPHENIX Public Results: \url{https://www.sphenix.bnl.gov/PublicResults}
+\item sPHENIX Collab., charged hadron multiplicity in Au+Au, arXiv:2504.02240, JHEP 08 (2025) 075.
+\item sPHENIX Collab., transverse energy density in Au+Au, arXiv:2504.02242, PRC 112 (2025) 024908.
+\item sPHENIX Collab., dijet imbalance and acoplanarity in $p$+$p$, arXiv:2606.17184.
+\item sPHENIX Collab., isolated prompt photons in $p$+$p$, arXiv:2607.03892.
+\item INTT ladder and readout, NIM-A 1082 (2026) 171020, arXiv:2503.09105; INTT test beam, NIM-A 1086 (2026) 171312, arXiv:2509.00908.
+\item Aidala et al., sPHENIX EMCal and HCal prototypes, IEEE Trans.\ Nucl.\ Sci.\ (2018) 2901--2919, arXiv:1704.01461.
+\item PHENIX Collab., An Upgrade Proposal from the PHENIX Collaboration, arXiv:1501.06197.
+\end{itemize}
+\section{School talks cited in this course}\label{sec:talks}
+All talks are from the Summer-2026 sPHENIX School and Workfest, BNL (Indico event 32182; collaboration access). The modules summarise
+them in their own words; slides, plots and internal numbers are not reproduced.
+\begin{longtable}{@{}lp{9.3cm}p{4.2cm}@{}}\toprule Key & Title & Speaker(s)\\\midrule\endhead
+{[S01]} & Welcome to sPHENIX school and sPHENIX Overview & J. Huang, M. Connors\\
+{[S02]} & sPHENIX History & D. Morrison\\
+{[S03]} & sPHENIX Theory Overview: exploring QGP dynamics with jets & Y. Mehtar-Tani\\
+{[S04]} & Cold QCD TG Analysis Opportunities & G. Nukazuka, M. Sarsour\\
+{[S05]} & Bulk TG Analysis Opportunities & M. Mitrankova, R. Belmont\\
+{[S06]} & Heavy Flavor TG Analysis Opportunities & A. Frawley, C. Dean, G. Ottino, M. Rosati\\
+{[S07]} & Jet Structure TG Analysis Opportunities & J. Putschke, Y. Go\\
+{[S08]} & HCal and Global Detector Overview & J. Haggerty\\
+{[S09]} & EMCal Overview & C. Woody\\
+{[S10]} & MVTX Overview & C. Dean\\
+{[S11]} & INTT Overview & A. Enokizono\\
+{[S12]} & TPC and TPOT Overview & T. Hemmick\\
+{[S13]} & DAQ Overview (with web-browser and ssh tutorials) & S. Liechty\\
+{[S14]} & Fun4All Overview / sPHENIX computing tutorial & C. Pinkenburg\\
+{[S15]} & EMCal Reco and Calibrations & B. Seidlitz\\
+{[S16]} & HCal Reco and Calibrations & A. Menon\\
+{[S17]} & Photon Reconstruction & Y. Go\\
+{[S18]} & Jet Reconstruction & V. Bailey\\
+{[S19]} & Tracking Reconstruction & J. Osborn\\
+{[S20]} & Tracking Alignment & G. Ottino\\
+{[S21]} & Streaming Analysis & M. Peters\\
+{[S22]} & TPC Calibration & M. Mitrankova\\
+{[S23]} & Track-Calo Matching & X. Yu\\
+{[S24]} & Topo Clustering & A. C. Oliveira da Silva\\
+{[S25]} & Charged hadron multiplicity in O+O using silicon seeds (flash) & H.-R. Jheng\\
+{[S26]} & Charged-hadron multiplicity in O+O collisions (flash) & C.-W. Shih\\
+{[S27]} & Machine Learning Momentum Scale Correction (flash) & A. Patton\\
+{[S28]} & INTT hit detection efficiency study (flash) & T. Kikuchi\\
+{[S29]} & $J/\psi$ energy correlators in $p$+$p$ (flash) & B. Sayki\\
+{[S30]} & Transverse single-spin asymmetries of isolated prompt photons (flash) & J. Hwang\\
+{[S31]} & Neural network discrimination of isolated photons (flash) & R. Koike\\
+{[S32]} & What I have done and what I plan to do next (flash) & S.-Y. Chen\\
+{[S33]} & Run QA for Silicon-Calo Tracking Analysis (flash) & M. Shigihara\\
+{[S34]} & Measurement of $v_2$ in Au+Au (flash) & I. Omae\\
+{[S35]} & First Step in Jet Analysis (flash) & R. Takaaze\\
+{[S36]} & Tracking Performance Evaluation in sPHENIX (flash) & A. P. Dash\\
+{[S37]} & Constraining the CME using SDM (flash) & J. Singh\\
+{[S38]} & Angular correlations of $\phi$ mesons and high-pT hadrons (flash) & K. Gable\\
+{[S39]} & UPC $\rho^0$ production in O+O and Au+Au, simulation (flash) & L. Mwibanda\\
+{[S40]} & Joint jet mass and charge for quark/gluon jet separation (flash) & M. I. Abdulhamid\\
+{[S41]} & Vernier Scan analysis of $p$+$p$ and O+O in Run 25 (flash) & T. Harada\\
+{[S42]} & HCal Calibration studies (flash) & A. M. Khan\\
+{[S43]} & Jet Analysis & J. Park\\
+{[S44]} & Cold QCD Lecture Series announcement & G. Nukazuka\\
+{[S45]} & Closing & B. Sayki, J. Huang, M. Connors\\
+{[S46]} & Workfest kickoff & S. Bathe, Y. Go\\
+{[S47]} & Calorimeter test-beam simulation (workfest) & B. Seidlitz, J. Nagle, S. Bathe\\
+{[S48]} & Spin dynamics at the RHIC accelerator complex (workfest lecture) & K. Hock\\
+{[S49]} & Polarimetry at RHIC (workfest lecture) & X. Chu\\
+{[S50]} & Cold-QCD lecture (workfest) & M. Cerutti\\
+\bottomrule\end{longtable}
+\end{document}
