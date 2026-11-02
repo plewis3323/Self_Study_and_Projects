@@ -187,13 +187,14 @@
   - Pathria Ch. 12 (Criticality, Universality, Scaling)
   - Callen Ch. 9 (First-Order Phase Transitions)
   - Callen Ch. 10 (Critical Phenomena)
-  - Chandler Ch. 5 (Statistical Theory of Phase Transitions)
+  - L&B Ch. 25 (Statistical field theory)
 - **Cross-ref:**
+  - Chandler Ch. 5
   - IGC Ch. 8–10
   - Callen Ch. 20
   - Schroeder Ch. 5.3, 8.2
 - **Field-theory link (optional):**
-  - L&B Ch. 21 (Statistical physics crash course), Ch. 25 (Statistical field theory), Ch. 26 (Broken symmetry)
+  - L&B Ch. 21 (Statistical physics crash course), Ch. 26 (Broken symmetry)
   - P&S Ch. 8 (Ultraviolet cutoffs and critical fluctuations)
 - **Goals:**
   - The Clausius–Clapeyron relation.
@@ -205,13 +206,12 @@
   - Pathria Ch. 13 (Exact Results for Various Models)
   - Pathria Ch. 14 (Renormalization Group Approach)
   - IGC Ch. 17 (Ising Model: Exact Solutions)
-  - IGC Ch. 19 (Real-Space Renormalization Group)
+  - L&B Ch. 34–35 (The renormalization group; Ferromagnetism RG tutorial)
 - **Cross-ref:**
-  - IGC Ch. 20–21
+  - IGC Ch. 19–21
   - L&L 5
 - **Field-theory link (optional):**
   - P&S Ch. 12–13 (Renormalization group; Critical exponents and scalar field theory)
-  - L&B Ch. 34–35 (RG; ferromagnetism RG tutorial)
   - Schwartz Ch. 23
 - **Goals:**
   - 1D and 2D Ising models; transfer matrices.

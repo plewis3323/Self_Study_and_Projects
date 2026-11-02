@@ -2,13 +2,13 @@
 
 **Scope:** a combined review of graduate Nuclear Physics I (nuclear structure, decay, reactions) and Nuclear Physics II (particle physics and the Standard Model). It covers both the **theory** and the **experimental** side: detectors, accelerators, statistics and heavy-ion physics.
 **Length:** 13 weeks (about 3 months).
-**Pace:** 3–4 core chapters per week.
+**Pace:** 3–4 core chapters per week. From Week 8 on, each week also has a short L&B block (chapters are ~10 pages; the block counts as about one chapter).
 **Weekly rhythm:**
 1. Read the core chapters.
 2. Write notes in `../Notes/Week_XX.md`.
 3. Work the AI-generated practice set in `../Exercises/Week_XX/`.
 4. Use the cross-references when a topic needs a second explanation.
-5. **QFT track (optional):** the field-theory treatment of each week's topic. It runs alongside the 3–4 core chapters and doesn't count toward them; L&B is the easiest entry, Schwartz/P&S go deeper.
+5. **QFT track (optional):** deeper field-theory reading (Schwartz, P&S, extra L&B chapters). It doesn't count toward the weekly core.
 
 ---
 
@@ -165,17 +165,17 @@
 ### Week 8 — Symmetries, conservation laws & the quark model
 - **Core:**
   - Griffiths Ch. 4 (Symmetries)
-  - Mann Ch. 4 (Conservation Laws)
   - Mann Ch. 5 (Particle Classification)
   - Mann Ch. 6 (Discrete Symmetries)
+  - L&B Ch. 6–7 (First stab at relativistic QM; Examples of Lagrangians — assigned in Nuc II), Ch. 10 (Symmetry)
 - **Cross-ref:**
-  - Mann Ch. 3
+  - Mann Ch. 3–4
   - Thomson Ch. 9
   - H&M Ch. 2
   - Griffiths Ch. 5
   - Povh Ch. 15–16
 - **QFT track (optional):**
-  - L&B Ch. 10 (Symmetry), Ch. 15 (Discrete transformations)
+  - L&B Ch. 15 (Discrete transformations)
   - Schwartz Ch. 3 (Classical field theory: Noether), Ch. 11 (Spinor solutions and CPT)
 - **Goals:**
   - SU(2) isospin and SU(3) flavor.
@@ -184,12 +184,12 @@
 
 ### Week 9 — Dirac equation, Feynman calculus & QED
 - **Core:**
-  - Thomson Ch. 3 (Decay Rates and Cross Sections)
   - Thomson Ch. 4 (The Dirac Equation)
   - Griffiths Ch. 6 (Feynman Calculus)
   - Griffiths Ch. 7 (QED)
+  - L&B Ch. 11–12 (Canonical quantization of fields; Examples — assigned in Nuc II)
 - **Cross-ref:**
-  - Thomson Ch. 5
+  - Thomson Ch. 3, 5
   - Mann Ch. 10–14
   - H&M Ch. 3–7
 - **QFT track (optional):**
@@ -207,9 +207,9 @@
   - Thomson Ch. 6 (e⁺e⁻ Annihilation)
   - Thomson Ch. 7 (Electron–Proton Elastic Scattering)
   - Thomson Ch. 8 (Deep Inelastic Scattering)
-  - Povh Ch. 7 (Deep-Inelastic Scattering)
+  - L&B Ch. 16–19 (Propagators and Green's functions → S-matrix → Feynman diagrams)
 - **Cross-ref:**
-  - Povh Ch. 6, 9
+  - Povh Ch. 6, 7, 9
   - H&M Ch. 8–9
   - Mann Ch. 15, 17
 - **QFT track (optional):**
@@ -225,15 +225,14 @@
   - Thomson Ch. 10 (QCD)
   - Griffiths Ch. 8 (Electrodynamics and Chromodynamics of Quarks)
   - Mann Ch. 18 (Heavy Quarks and QCD)
-  - Povh Ch. 14 (Quarkonia)
+  - L&B Ch. 46 (Non-abelian gauge theory)
 - **Cross-ref:**
-  - Povh Ch. 8
+  - Povh Ch. 8, 14 (Quarkonia)
   - H&M Ch. 10–11
   - PRL-Th Ch. 4–5 (QCD and lattice QCD)
 - **QFT track (optional):**
   - P&S Ch. 15–17 (non-Abelian gauge theory → QCD)
   - Schwartz Ch. 25–26 (Yang–Mills), Ch. 36 (jets)
-  - L&B Ch. 46
   - Running α_s: P&S Ch. 12, Schwartz Ch. 23 (renormalization group)
 - **Goals:**
   - Color and asymptotic freedom.
@@ -268,6 +267,7 @@
   - Thomson Ch. 17 (The Higgs Boson)
   - Bartke Ch. 2 (QCD and the Phase Transition)
   - Bartke Ch. 15–20, selected: flow, charmonium suppression, direct photons, high-p_T, jets
+  - L&B Ch. 47 (Weinberg–Salam model)
 - **Cross-ref:**
   - Thomson Ch. 16, 18
   - Griffiths Ch. 10
@@ -278,7 +278,7 @@
 - **QFT track (optional):**
   - P&S Ch. 20–21 (spontaneously broken gauge theories)
   - Schwartz Ch. 28 (SSB), Ch. 31 (Precision tests of the SM)
-  - L&B Ch. 26 (Broken symmetry), Ch. 47 (Weinberg–Salam model)
+  - L&B Ch. 26 (Broken symmetry)
 - **Goals:**
   - SU(2)×U(1) and the Higgs mechanism; W/Z masses.
   - Higgs discovery.
