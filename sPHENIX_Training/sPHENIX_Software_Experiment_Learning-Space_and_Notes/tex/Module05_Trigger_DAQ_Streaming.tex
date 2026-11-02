@@ -96,7 +96,7 @@ Two complementary strategies exist:
 \item \textbf{Front-end digitisers} sample the calorimeter and MBD signals continuously (Module 3).
 \item \textbf{LL1 (Local Level 1)} receives digitised calorimeter (and MBD) data, forms trigger primitives (sums over groups of towers) and decides which trigger conditions are satisfied for each crossing [S13].
 \item \textbf{GL1 (Global Level 1)} collects the LL1 decisions and other inputs as trigger \emph{bits}, applies the scaledowns, checks that the system is not busy, and issues the accept [S13].
-\item \textbf{GTM (Granule Timing Module)} distributes the beam clock and the accept to the readout granules, and collects their busy signals [S13].
+\item \textbf{GTM (Granular Timing Module, also called Granule Timing Module)} distributes the beam clock and the accept to the readout granules, and collects their busy signals [S13].
 \item \textbf{DCM2 (Data Collection Module, version 2)} packages the calorimeter/MBD data for accepted crossings and reports its busy state [S13].
 \end{itemize}
 
@@ -600,7 +600,7 @@ Pick the tag used in your analysis, list the DST types with \code{--printdsttype
 \item[BCO] Beam-clock counter; crossing number.
 \item[LL1] Local Level 1: calorimeter trigger primitives and decisions.
 \item[GL1] Global Level 1: trigger bits, scaledowns, accepts, scalers.
-\item[GTM] Granule Timing Module: clock and accept distribution, busy collection.
+\item[GTM] Granular (Granule) Timing Module: clock and accept distribution, busy collection.
 \item[XMIT, DCM2] Calorimeter transmitter module and data collection module.
 \item[SEB, EBDC] Sub-event buffer servers (calorimeters, global); event-buffering data-collector servers (TPC, TPOT).
 \item[FELIX] Readout board/server used by the trackers.
