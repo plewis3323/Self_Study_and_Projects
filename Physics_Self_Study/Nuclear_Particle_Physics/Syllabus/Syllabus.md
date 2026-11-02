@@ -8,6 +8,7 @@
 2. Write notes in `../Notes/Week_XX.md`.
 3. Work the AI-generated practice set in `../Exercises/Week_XX/`.
 4. Use the cross-references when a topic needs a second explanation.
+5. **QFT track (optional):** the field-theory treatment of each week's topic. It runs alongside the 3–4 core chapters and doesn't count toward them; L&B is the easiest entry, Schwartz/P&S go deeper.
 
 ---
 
@@ -32,6 +33,10 @@
 | **James** | James, *Statistical Methods in Experimental Physics* | Cross-reference: statistics and fitting |
 | **Loveland** | Loveland, Morrissey & Seaborg, *Modern Nuclear Chemistry*, 2nd ed. | Cross-reference: decay and reactions |
 | **R&S** | Ring & Schuck, *The Nuclear Many-Body Problem* (`NuclearTextBook.pdf`) | Optional deep dive: nuclear theory |
+| **P&S** | Peskin & Schroeder, *An Introduction to Quantum Field Theory* (`Quantum_Textbooks/`; also a copy in `Nuc_2/`) | QFT track: standard graduate QFT |
+| **Schwartz** | Schwartz, *Quantum Field Theory and the Standard Model* | QFT track: modern, Standard-Model-focused QFT |
+| **L&B** | Lancaster & Blundell, *Quantum Field Theory for the Gifted Amateur* (`Nuc_2/QFT_Intro_GAmature.pdf`) | QFT track: gentle entry point; links to stat mech |
+| **L&L 4** | Berestetskii, Lifshitz & Pitaevskii, *Quantum Electrodynamics* (Landau Vol. 4) (`Quantum_Textbooks/Textbooks/`) | Optional deep dive: QED |
 
 > Note: the Krane PDF in the library is missing Ch. 6–7 and 15–18. The chapters listed below are all ones that are present.
 
@@ -50,6 +55,9 @@
   - Mann Ch. 1–2
   - Martin Ch. 1
   - Povh Ch. 1
+- **QFT track (optional):**
+  - L&B Ch. 0–2 (Overture, Lagrangians, harmonic oscillators)
+  - Schwartz Ch. 2 (Lorentz invariance and second quantization)
 - **Goals:**
   - Units and natural units.
   - Four-vectors, invariant mass, thresholds, rapidity.
@@ -166,6 +174,9 @@
   - H&M Ch. 2
   - Griffiths Ch. 5
   - Povh Ch. 15–16
+- **QFT track (optional):**
+  - L&B Ch. 10 (Symmetry), Ch. 15 (Discrete transformations)
+  - Schwartz Ch. 3 (Classical field theory: Noether), Ch. 11 (Spinor solutions and CPT)
 - **Goals:**
   - SU(2) isospin and SU(3) flavor.
   - Meson and baryon multiplets.
@@ -181,6 +192,11 @@
   - Thomson Ch. 5
   - Mann Ch. 10–14
   - H&M Ch. 3–7
+- **QFT track (optional):**
+  - P&S Ch. 2–5 (Klein–Gordon field → elementary QED processes)
+  - Schwartz Ch. 5–7, 10, 13
+  - L&B Ch. 36–41 (Dirac field → renormalization of QED)
+  - Running α: Schwartz Ch. 16–17 (vacuum polarization, g−2)
 - **Goals:**
   - Fermi's golden rule and phase space.
   - Spinors and γ-matrices; Feynman rules and trace techniques.
@@ -196,6 +212,9 @@
   - Povh Ch. 6, 9
   - H&M Ch. 8–9
   - Mann Ch. 15, 17
+- **QFT track (optional):**
+  - P&S Ch. 5.1 (e⁺e⁻ → μ⁺μ⁻), Ch. 14 (Invitation: parton model)
+  - Schwartz Ch. 32 (QCD and the parton model)
 - **Goals:**
   - Helicity structure and form factors (Rosenbluth).
   - Bjorken scaling and parton distribution functions.
@@ -211,6 +230,11 @@
   - Povh Ch. 8
   - H&M Ch. 10–11
   - PRL-Th Ch. 4–5 (QCD and lattice QCD)
+- **QFT track (optional):**
+  - P&S Ch. 15–17 (non-Abelian gauge theory → QCD)
+  - Schwartz Ch. 25–26 (Yang–Mills), Ch. 36 (jets)
+  - L&B Ch. 46
+  - Running α_s: P&S Ch. 12, Schwartz Ch. 23 (renormalization group)
 - **Goals:**
   - Color and asymptotic freedom.
   - Running α_s.
@@ -228,6 +252,9 @@
   - Povh Ch. 10–11
   - Mann Ch. 19–21
   - H&M Ch. 12
+- **QFT track (optional):**
+  - Schwartz Ch. 29 (Weak interactions), Ch. 30 (Anomalies, optional)
+  - P&S Ch. 19 (anomalies, optional)
 - **Goals:**
   - V–A structure.
   - Muon and pion decay.
@@ -248,6 +275,10 @@
   - H&M Ch. 13–15
   - PRL-Th Ch. 6–7
   - Povh Ch. 20–21
+- **QFT track (optional):**
+  - P&S Ch. 20–21 (spontaneously broken gauge theories)
+  - Schwartz Ch. 28 (SSB), Ch. 31 (Precision tests of the SM)
+  - L&B Ch. 26 (Broken symmetry), Ch. 47 (Weinberg–Salam model)
 - **Goals:**
   - SU(2)×U(1) and the Higgs mechanism; W/Z masses.
   - Higgs discovery.

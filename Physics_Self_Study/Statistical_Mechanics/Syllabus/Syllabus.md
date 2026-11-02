@@ -26,6 +26,9 @@
 | **L&L 5** | Landau & Lifshitz, *Statistical Physics* (Part 1) (`Textbooks/`) | Optional deep dive |
 | **L&L 9 / 10** | Landau & Lifshitz, *Statistical Physics Part 2* and *Physical Kinetics* | Optional deep dive |
 | **Engineers** | *Statistical Mechanics for Engineers* (Springer, 2015) (`Textbooks/2015_Book_…`) | Cross-reference: applied examples |
+| **L&B** | Lancaster & Blundell, *QFT for the Gifted Amateur* (`Nuclear_and_Particle_Physics_Books/Nuc_2/`) | Field-theory link: statistical field theory, RG |
+| **P&S** | Peskin & Schroeder, *An Introduction to Quantum Field Theory* (`Quantum_Textbooks/`) | Field-theory link: critical exponents, RG |
+| **Schwartz** | Schwartz, *QFT and the Standard Model* (`Nuclear_and_Particle_Physics_Books/`) | Field-theory link: RG |
 
 > Note: the solutions manuals in `Textbooks/` (Schroeder, Chandler, Reichl, Pathria) are there to check your own work after an attempt. Don't treat them as reading.
 
@@ -172,6 +175,8 @@
 - **Cross-ref:**
   - Schroeder Ch. 8
   - Reichl Ch. 9
+- **Field-theory link (optional):**
+  - L&B Ch. 3–4 (Occupation numbers and second quantization), Ch. 43 (The many-body problem and the metal)
 - **Goals:**
   - Virial expansion and the van der Waals gas.
   - Pair correlation g(r).
@@ -187,6 +192,9 @@
   - IGC Ch. 8–10
   - Callen Ch. 20
   - Schroeder Ch. 5.3, 8.2
+- **Field-theory link (optional):**
+  - L&B Ch. 21 (Statistical physics crash course), Ch. 25 (Statistical field theory), Ch. 26 (Broken symmetry)
+  - P&S Ch. 8 (Ultraviolet cutoffs and critical fluctuations)
 - **Goals:**
   - The Clausius–Clapeyron relation.
   - Order parameters and Landau theory.
@@ -201,6 +209,10 @@
 - **Cross-ref:**
   - IGC Ch. 20–21
   - L&L 5
+- **Field-theory link (optional):**
+  - P&S Ch. 12–13 (Renormalization group; Critical exponents and scalar field theory)
+  - L&B Ch. 34–35 (RG; ferromagnetism RG tutorial)
+  - Schwartz Ch. 23
 - **Goals:**
   - 1D and 2D Ising models; transfer matrices.
   - Block-spin RG; fixed points.
@@ -219,6 +231,9 @@
   - Reichl Ch. 11 (Transport Theory)
   - Callen Ch. 14
   - L&L 10
+- **Field-theory link (optional):**
+  - L&B Ch. 22–24 (Generating functional and path/field integrals: partition function ↔ path integral)
+  - L&B Ch. 42, 44 (Superfluids, superconductors)
 - **Goals:**
   - Brownian motion; Langevin and Fokker–Planck equations.
   - The fluctuation–dissipation theorem.
