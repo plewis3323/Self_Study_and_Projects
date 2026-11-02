@@ -1,0 +1,20 @@
+block_id: block_011
+section: rutherford_cross_section
+reading_order: 11
+content_type: remark
+source_ref:
+  page: page_03.jpg
+  region: typed "Remarks" list (1)–(4)
+ai_summary: >
+  Four remarks on the Rutherford cross section: (1) identical for repulsive and
+  attractive cases since it ∝ (ZZ')^2; (2) diverges like E^{-2} at low energy;
+  (3) diverges like θ^{-4} (very strong) at small angles; (4) the classical result
+  coincides exactly with the quantum-mechanical result.
+handwriting_preserved: true
+equations_detected:
+  - "sigma proportional to (Z Z')^2"
+  - "sigma diverges like E^{-2}"
+  - "sigma diverges like theta^{-4}"
+depends_on:
+  - block_010
+confidence: high

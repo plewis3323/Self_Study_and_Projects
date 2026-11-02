@@ -1,0 +1,19 @@
+block_id: block_006
+section: coulomb_scattering
+reading_order: 6
+content_type: definition
+source_ref:
+  page: page_02.jpg
+  region: top-left — Coulomb force/potential and orbit-type classification
+ai_summary: >
+  Coulomb scattering setup. Force f = ZZ'e^2/r^2, potential V(r) = −k/r with
+  k = −ZZ'e^2. Boxed classification for V = −k/r only: E > 0 hyperbolic, E = 0
+  parabolic, E < 0 elliptic. Scattering corresponds to E > 0.
+handwriting_preserved: true
+equations_detected:
+  - "f = Z Z' e^2 / r^2"
+  - "V(r) = -k/r, k = -Z Z' e^2"
+  - "E>0 hyperbolic; E=0 parabolic; E<0 elliptic (only for V=-k/r)"
+depends_on:
+  - block_005
+confidence: high

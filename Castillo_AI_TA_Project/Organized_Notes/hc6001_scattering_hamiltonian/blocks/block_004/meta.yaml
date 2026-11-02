@@ -1,0 +1,21 @@
+block_id: block_004
+section: universal_scattering_angle
+reading_order: 4
+content_type: derivation
+source_ref:
+  page: page_01.jpg
+  region: lower middle — Computing S(θ,E) through change of variables u = 1/r
+ai_summary: >
+  Universal derivation of scattering angle for any central potential V(r). Starts from
+  energy conservation, obtains dr/dt and dθ in terms of dr, integrates to ψ, and
+  substitutes u = 1/r with du = −r⁻² dr.
+handwriting_preserved: true
+equations_detected:
+  - "E = (1/2) m dot(r)^2 + V(r) + l^2/(2 m r^2)"
+  - "d theta = (s r^{-2} dr) / sqrt(1 - V(r)/E - s^2/r^2)"
+  - "psi = integral from r_m to infinity ..."
+  - "u = 1/r, du = -r^{-2} dr"
+depends_on:
+  - block_001
+  - block_003
+confidence: high

@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+** Project Plan: 
+
+So Basically an AI agent(s) need to create a system that with the eventual goal 
+that turns handwritten or whiteboard/chalkboard written Notes into legible, well segmented latex-pdf outputs.  
+
+
+
+** Project Steps: 
+
+0.) Zeroth Step is to feed the handwritten or board written pdf files to this lets call it software framework.
+1.) First step is to create skill extension that segments legibly and readibility of the Notes into png files also allow overlapness of certain pictures for readability.  
+2.) Then The work from the main agent needs to be scrutinized by 3-physics phD level experts (agents) that will look at the png files and give feedback and process 1-2 will keep looping untill the prime 
+    agent gets the approval to next stage 
+3.) Then the compiled and accepted pictures Needs to be pasted onto a final pdf file 
+4.) From here the final pictures and pdf file you just created will be then sent to directory you will make which will be called mathpix ready (actually make certain product up to this point is mathpix ready) (** This is the other approach that these files will be sent to mathpix to create tex document and another AI will fix it then compile.**) 
+5.) Instead of the Math pix approach take the final pdf or pictures and make a latex-pdf output compilation and put it inside folder Final_Product_Ready (make it if you need to) 
+
+(** I want you to make this in a markdown file that can edited for anyone that can reuse this rough draft and or skill extension or mult agents they need to make so this process can used universally **) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+block_id: block_009
+section: coulomb_attractive
+reading_order: 9
+content_type: derivation
+source_ref:
+  page: page_02.jpg
+  region: lower portion — Case ii attractive (ZZ' < 0, k > 0)
+ai_summary: >
+  Attractive Coulomb case (ZZ' < 0, also gravity k = Gm₁m₂): k > 0, C > 0. Takes θ' = 0,
+  finds r_m at θ = 0. As r → ∞, cos ψ = −1/ε; using ψ = (π + θ)/2 obtains the same
+  1/ε = sin(θ/2) as the repulsive case.
+handwriting_preserved: true
+equations_detected:
+  - "1/r = C [1 + epsilon cos theta]"
+  - "cos psi = -1/epsilon"
+  - "1/epsilon = sin(theta/2)"
+depends_on:
+  - block_007
+confidence: high

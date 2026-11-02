@@ -1,0 +1,323 @@
+SCREEN-READER WALK
+Heading navigation first, then a linear read of an equation-dense
+section, as a reader using assistive technology receives it.
+==========================================================================
+
+--- 1. HEADING NAVIGATION (the outline) ---
+Scattering by a central potential   [page 1]
+  Incident intensity and differential cross section   [page 2]
+  The deflection angle and the apsidal angle   [page 3]
+  Computing s(theta,E): the universal method   [page 4]
+Coulomb scattering   [page 5]
+  Repulsive case   [page 6]
+  Attractive case   [page 7]
+The Rutherford cross section   [page 7]
+  Remarks on Eq. (37)   [page 8]
+  Total scattering cross section   [page 8]
+  Notation   [page 9]
+Chapter 8. The Hamiltonian and Hamilton's equations of motion   [page 10]
+  The Legendre transformation   [page 10]
+    The thermodynamic case   [page 10]
+    The general case   [page 11]
+  The Hamiltonian   [page 11]
+
+--- 2. LINEAR READ: the Rutherford section (equation-dense) ---
+
+===== page 7 =====
+and therefore
+1
+𝑟= (−𝑚𝑘
+ℓ2 ) [−1 −𝜀cos( ̃𝜃−̃𝜃′)] = 𝑚𝑍𝑍′𝑒2
+ℓ2
+[𝜀cos ̃𝜃−1] .
+(28)
+This is a maximum at ̃𝜃= 0, so the minimum radius is
+1
+𝑟𝑚
+= 𝑚𝑍𝑍′𝑒2
+ℓ2
+[𝜀−1] ,
+(29)
+and the angle at the apsidal point is ̃𝜃= 0. From here on the origin of ̃𝜃 is the apsis, not the 
+incoming asymptote used in Eq. (18).
+What is needed now is 𝜓=
+̃𝜃(𝑟→∞) =
+̃𝜃(1/𝑟→0). In the repulsive case 𝜃= 𝜋−2𝜓, so 
+𝜓= (𝜋−𝜃)/2 and
+0 = 𝜀cos 𝜓−1 ⟺1
+𝜀= cos 𝜓= cos(𝜋−𝜃
+2
+) = cos 𝜋
+2
+⏟
+0
+cos 𝜃
+2 + sin 𝜋
+2
+⏟
+1
+sin 𝜃
+2 = sin 𝜃
+2.
+(30)
+2.2 Attractive case
+Here 𝑘> 0 and 𝐶= 𝑘𝑚/ℓ2 > 0. Take ̃𝜃′ = 0; then ̃𝜃=
+̃𝜃′ = 0 gives
+1
+𝑟= 𝐶[1 + 𝜀cos(0)] = 𝐶[1 + 𝜀] ,
+(31)
+a maximum at ̃𝜃= 0, so the minimum radius is 1/𝑟𝑚= 𝐶[1 + 𝜀] and the apsidal point is also at 
+̃𝜃= 0.
+Again what is needed is 𝜓=
+̃𝜃(𝑟→∞) =
+̃𝜃(1/𝑟→0). In the attractive case 𝜃= 2𝜓−𝜋, so 
+𝜓= (𝜋+ 𝜃)/2 and
+0 = 1 + 𝜀cos 𝜓⟺−1
+𝜀= cos 𝜓= cos(𝜋+ 𝜃
+2
+) = cos 𝜋
+2
+⏟
+0
+cos 𝜃
+2 −sin 𝜋
+2
+⏟
+1
+sin 𝜃
+2 = −sin 𝜃
+2.
+(32)
+3 The Rutherford cross section
+Cancelling the overall minus sign in Eq. (32) gives 1/𝜀= sin(𝜃/2), exactly as Eq. (30) does, so both 
+cases can be carried forward together:
+Supplied. The step joining the two cases is supplied. Each case is carried to its own result and the 
+two are then used together without it.
+cot2 𝜃
+2 =
+1
+tan2 𝜃
+2
+= cos2 𝜃
+2
+sin2 𝜃
+2
+= 1 −sin2 𝜃
+2
+sin2 𝜃
+2
+=
+1
+sin2 𝜃
+2
+−1 = 𝜀2 −1 = ( 2𝑠𝐸
+𝑍𝑍′𝑒2 )
+2
+,
+(33)
+so that
+s  equa ls  the ab
+so
+l ute  
+value of Z Z prime e squared over 2 E, times cotangent of theta over 2s equals the absolute value of Z Z prime e squared over 2 E, times cotangent of theta over 2
+s equals the absolute value of Z Z prime e squared over 2 E, times cotangent of theta over 2s equals the absolute value of Z Z prime e squared over 2 E, times cotangent of theta over 2
+7
+
+
+===== page 8 =====
+Differentiating,
+d𝑠
+d𝜃= ∣𝑍𝑍′𝑒2
+2𝐸
+∣d
+d𝜃(cos 𝜃
+2
+sin 𝜃
+2
+) = ∣𝑍𝑍′𝑒2
+2𝐸
+∣(1
+2
+−sin 𝜃
+2
+sin 𝜃
+2
+−1
+2
+cos2 𝜃
+2
+sin−2 𝜃
+2
+)
+= −∣𝑍𝑍′𝑒2
+4𝐸
+∣
+1
+sin2 𝜃
+2
+,
+(35)
+Erratum. The second term inside the bracket of Eq. (35) is written over sin−2(𝜃/2) where sin2(𝜃/2)
+is meant; the quotient rule gives −1
+2 cot2(𝜃/2) for it, which with the first term makes −1
+2 csc2(𝜃/2), 
+and that is what the second line uses.  Reproduced above as written.
+and substituting into Eq. (9),
+𝜎(𝜃) =
+𝑠
+sin 𝜃∣d𝑠
+d𝜃∣= 1
+2 (𝑍𝑍′𝑒2
+2𝐸
+)
+2
+⋅
+1
+2 sin 𝜃
+2 cos
+ine  
+of theta over two cancels
+⋅cos
+ine  
+of theta over two cancels
+sin 𝜃
+2
+⋅
+1
+sin2 𝜃
+2
+,
+(36)
+which is the Rutherford scattering cross section for Coulomb forces:
+sigm a  
+o f thet
+a 
+e
+q
+uals o
+ne quarter times, Z Z prime e squared over 2 E, all squared, times cosecant to the fourth power of theta over 2sigma of theta equals one quarter times, Z Z prime e squared over 2 E, all squared, times cosecant to the fourth power of theta over 2
+sigma of theta equals one quarter times, Z Z prime e squared over 2 E, all squared, times cosecant to the fourth power of theta over 2sigma of theta equals one quarter times, Z Z prime e squared over 2 E, all squared, times cosecant to the fourth power of theta over 2
+3.1 Remarks on Eq. (37)
+1. The cross section is the same for the repulsive and attractive cases, since it is proportional to 
+(𝑍𝑍′)2.
+2. It diverges like 𝐸−2 at low energies.
+3. It diverges like 𝜃−4 (very strongly) for small angles 𝜃.
+4. This classical result is exactly the same as the result obtained in quantum mechanics.
+Erratum. These four remarks are set in a typeface different from the rest and carry their mathematics 
+as unrendered markup — (𝑧𝑧′)2 in lower case, and 𝐸−2 and 𝜃−4 written out as source — with the 
+third reading “VERY STRONG!!!”. The mathematics is set here as mathematics and the casing 
+brought into line with the 𝑍𝑍′ used throughout.  Reproduced above as written.
+3.2 Total scattering cross section
+The total cross section of Eq. (10) may now be evaluated:
+𝜎𝑇= ∫𝜎(Ω) dΩ.
+(38)
+In this case 𝜎(𝜃) = const ⋅1/ sin4(𝜃/2), and with
+dΩ = 2𝜋sin 𝜃d𝜃= 4𝜋sin 𝜃
+2 cos 𝜃
+2 d𝜃,
+(39)
+𝜎𝑇= 4𝜋
+4 (𝑍𝑍′𝑒2
+2𝐸
+)
+2
+∫
+𝜋
+0
+sin 𝜃
+2 cos 𝜃
+2
+sin4 𝜃
+2
+d𝜃,
+(40)
+8
+
+
+--- 3. LINEAR READ: the retraction and the canonical equations ---
+4.1.2 The general case
+The same transformation in the abstract, with 𝑢 here the variable conjugate to 𝑥 rather than the 
+1/𝑟 of Eq. (19), reads
+𝑓(𝑥, 𝑦) = 𝑢d𝑥+ 𝑣d𝑦,
+𝑢= 𝜕𝑓
+𝜕𝑥,
+𝑣= 𝜕𝑓
+𝜕𝑦,
+(𝑥, 𝑦) ⟶(𝑢, 𝑦).
+(49)
+Erratum. The left-hand side of Eq. (49) is written 𝑓(𝑥, 𝑦) where the differential d𝑓 is meant, as 
+Eq. (46) has it and as Eq. (50) then consumes it.  Reproduced above as written.
+𝑔= 𝑓−𝑢𝑥⟹d𝑔= d𝑓−d(𝑢𝑥) = u d
+ x cancels+𝑣d𝑦−u d
+ x cancels−𝑥d𝑢= −𝑥d𝑢+𝑣d𝑦,
+𝑔= 𝑔(𝑢, 𝑦). (50)
+4.2 The Hamiltonian
+Applying this to 𝐿(𝑞1, … , 𝑞𝑛, ̇𝑞1, … , ̇𝑞𝑛) with
+p
+ 
+s
+u
+b i  e
+q ual
+s
+ th e partial derivative of L with respect to q dot sub i, at fixed q j and q dot jp sub i equals the partial derivative of L with respect to q dot sub i, at fixed q j and q dot j
+p sub i equals the partial derivative of L with respect to q dot sub i, at fixed q j and q dot jp sub i equals the partial derivative of L with respect to q dot sub i, at fixed q j and q dot j
+gives
+𝐻= −(𝐿−∑
+𝑖
+𝑝𝑖̇𝑞𝑖) ,
+(52)
+written this way to mirror 𝑔= 𝑓−𝑢𝑥 of Eq. (50), with 𝐻= −𝑔; it is the usual ∑𝑖𝑝𝑖̇𝑞𝑖−𝐿. Then
+d𝐻= −d𝐿+ ∑
+𝑖
+d(𝑝𝑖̇𝑞𝑖) = −𝜕𝐿
+𝜕𝑡−∑
+𝑖
+( 𝜕𝐿
+𝜕𝑞𝑖
+d𝑞𝑖+
+the 
+pa
+r tia
+l  L by partial q dot i term cancels) + ∑
+𝑖
+(the
+ p  i d q dot i term cancels +
+̇𝑞𝑖d𝑝𝑖) ,
+(53)
+so that
+d𝐻= −𝜕𝐿
+𝜕𝑡+ ∑
+𝑖
+( ̇𝑞𝑖d𝑝𝑖−𝜕𝐿
+𝜕𝑞𝑖
+d𝑞𝑖) ⟹𝐻= 𝐻(𝑝1, … , 𝑝𝑛, 𝑞1, … , 𝑞𝑛, 𝑡).
+(54)
+Erratum. The first term of Eqs. (53) and (54) carries no differential: with every other term a 
+differential, it is −𝜕𝐿
+𝜕𝑡d𝑡.  Reproduced above as written.
+Reading off the coefficients gives the canonical equations of motion, the middle one using the 
+Lagrange equation (44):
+pa
+rti
+a
+l H 
+by
+ pa
+r t ia
+l p
+ i  equ
+al
+s q  do
+t i; partial H by partial q i equals minus partial L by partial q i equals minus p dot i; partial H by partial t equals minus partial L by partial tpartial H by partial p i equals q dot i; partial H by partial q i equals minus partial L by partial q i equals minus p dot i; partial H by partial t equals minus partial L by partial t
+partial H by partial p i equals q dot i; partial H by partial q i equals minus partial L by partial q i equals minus p dot i; partial H by partial t equals minus partial L by partial tpartial H by partial p i equals q dot i; partial H by partial q i equals minus partial L by partial q i equals minus p dot i; partial H by partial t equals minus partial L by partial t
+11
+
+--- 3. RETRACTION PASSAGE (page 10) ---
+Remark 1 (Midterm remark) is followed by the sentence that the Lagrange-equation
+substitution is struck out. The structure-tree /ActualText on that Formula is
+"retracted: L equals L of r, r-dot, p-theta". Content-stream extraction of the
+same span is fragmented (letters spaced). A reader walking the tag tree hears
+the spoken fallback; a tool using page get_text() does not get a continuous
+sentence. Disclosed, not claimed as continuous prose.
+

@@ -1,0 +1,19 @@
+
+Original Prompts: 
+https://chatgpt.com/share/6a3ac760-5638-83ea-ac99-b69cb634e526
+
+Full end-to-end workflow (Step 1 → Step 3b):
+- full_pipeline_prompt.md
+
+Step 1 — Physics Notes Organizer (this repo):
+- System prompt: organize_notes_system_prompt.md
+- User template: organize_notes_user_template.md
+- Cursor skill: ../.cursor/skills/physics-notes-organizer/SKILL.md
+- Schema: ../Main_Project/schemas/organized_notes_schema.yaml
+
+Step 3b — Direct LaTeX from OrganizedNotes:
+- System prompt: latex_direct_system_prompt.md
+- User template: latex_direct_user_template.md
+- Trial output: ../Main_Project/examples/sample_lecture/output/
+
+

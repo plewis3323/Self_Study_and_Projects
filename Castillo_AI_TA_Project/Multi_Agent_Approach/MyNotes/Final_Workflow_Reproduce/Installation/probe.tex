@@ -1,0 +1,44 @@
+% Toolchain probe for the multi-agent notes pipeline.
+% Compile THREE times with LuaLaTeX, then inspect the PDF (not this log)
+% for /Formula, /L, /Table, /TH and /Alt. If any is absent, stop.
+\DocumentMetadata{lang=en-US, pdfstandard=ua-2, pdfversion=2.0,
+  testphase={latest,math,table,sec,title,float,graphic}}
+\documentclass{article}
+\usepackage{unicode-math}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\begin{document}
+\title{Probe}
+\author{toolchain}
+\maketitle
+
+\section{Equation}
+\begin{equation}
+  E = \frac{1}{2} m v^{2}
+\end{equation}
+
+\section{List}
+\begin{itemize}
+  \item one
+  \item two
+\end{itemize}
+
+\section{Table}
+\begin{table}[H]
+\caption{A probe table.}
+\begin{tabular}{ll}
+\toprule
+Header A & Header B \\
+\midrule
+cell & cell \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Figure}
+\begin{figure}[H]
+\includegraphics[alt={A one-pixel placeholder used only to test the Alt key.},width=1cm]{example-image}
+\caption{Placeholder.}
+\end{figure}
+\end{document}

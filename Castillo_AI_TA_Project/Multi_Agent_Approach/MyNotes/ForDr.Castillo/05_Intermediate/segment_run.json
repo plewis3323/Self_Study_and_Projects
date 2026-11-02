@@ -1,0 +1,11 @@
+{
+ "invocation": {
+  "target": 780,
+  "overlap": 250,
+  "min_h": 300,
+  "protect": "1:90-950,1:1495-2040,3:2015-2390,4:385-760",
+  "pad_top": 40
+ },
+ "ink_row_threshold": 2,
+ "segments": 15
+}

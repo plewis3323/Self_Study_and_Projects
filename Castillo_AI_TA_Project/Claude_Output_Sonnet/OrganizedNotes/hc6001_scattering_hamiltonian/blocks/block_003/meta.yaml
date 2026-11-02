@@ -1,0 +1,19 @@
+block_id: block_003
+section: scattering_geometry
+reading_order: 3
+content_type: diagram
+source_ref:
+  page: page_01.jpg
+  region: repulsive (left) and attractive (right) trajectory sketches
+ai_summary: >
+  Two trajectory sketches relating the deflection angle θ to the apsidal angle ψ.
+  Repulsive case: θ = π − 2ψ, ψ = (π − θ)/2. Attractive case: θ = 2ψ − π,
+  ψ = (π + θ)/2. In all cases θ = |π − 2ψ|.
+handwriting_preserved: true
+equations_detected:
+  - "repulsive: theta = pi - 2 psi, psi = (pi - theta)/2"
+  - "attractive: theta = 2 psi - pi, psi = (pi + theta)/2"
+  - "all cases: theta = |pi - 2 psi|"
+depends_on:
+  - block_001
+confidence: high

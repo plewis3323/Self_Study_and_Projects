@@ -1,0 +1,24 @@
+block_id: block_004
+section: universal_scattering_angle
+reading_order: 4
+content_type: derivation
+source_ref:
+  page: page_01.jpg
+  region: "COMPUTING S(θ,E) (UNIVERSAL METHOD)" block
+ai_summary: >
+  Universal computation of the apsidal angle ψ for any central potential. Starts from
+  energy conservation E = (1/2) m ṙ^2 + V(r) + l^2/(2 m r^2), solves for ṙ, uses
+  l = m r^2 θ̇ to get dθ, and substitutes l = s sqrt(2mE). Yields
+  ψ = ∫_{r_m}^{∞} s r^{-2} dr / sqrt(1 − V(r)/E − s^2/r^2); the substitution u = 1/r
+  gives ψ = ∫_0^{u_m} s du / sqrt(1 − V(u)/E − s^2 u^2).
+handwriting_preserved: true
+equations_detected:
+  - "E = (1/2) m rdot^2 + V(r) + l^2/(2 m r^2)"
+  - "rdot = sqrt((2/m)(E - V(r) - l^2/(2 m r^2)))"
+  - "d theta = (l/(m r^2)) dt = s r^-2 dr / sqrt(1 - V/E - s^2/r^2)"
+  - "psi = integral_{r_m}^{inf} s r^-2 dr / sqrt(1 - V/E - s^2/r^2)"
+  - "u = 1/r, du = -r^-2 dr, u_m = 1/r_m"
+depends_on:
+  - block_001
+  - block_003
+confidence: high

@@ -1,0 +1,22 @@
+block_id: block_015
+section: legendre_transformation
+reading_order: 15
+content_type: derivation
+source_ref:
+  page: page_04.jpg
+  region: Legendre transformation, thermodynamics example, general transform
+ai_summary: >
+  Legendre transformation to change variables from (q, q̇) to (q, p). For f(x,y),
+  df = (∂f/∂x)dx + (∂f/∂y)dy. Thermodynamics example (fluid at fixed N): first law
+  dU = δQ + δW = T dS − p dV with U = U(S,V); defining Helmholtz free energy A = U − TS
+  gives dA = −S dT − p dV, so A = A(T,V). General transform (x,y) → (u,y): with
+  u = ∂f/∂x, v = ∂f/∂y and g = f − ux, dg = −x du + v dy, so g = g(u,y).
+handwriting_preserved: true
+equations_detected:
+  - "df = (partial f/partial x)dx + (partial f/partial y)dy"
+  - "dU = T dS - p dV, U = U(S,V)"
+  - "A = U - TS => dA = -S dT - p dV, A = A(T,V)"
+  - "g = f - u x => dg = -x du + v dy, g = g(u,y)"
+depends_on:
+  - block_014
+confidence: high

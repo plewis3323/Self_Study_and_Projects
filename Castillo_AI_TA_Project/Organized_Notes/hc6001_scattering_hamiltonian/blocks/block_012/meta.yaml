@@ -1,0 +1,18 @@
+block_id: block_012
+section: rutherford_cross_section
+reading_order: 12
+content_type: derivation
+source_ref:
+  page: page_03.jpg
+  region: middle — total cross section integral and divergence
+ai_summary: >
+  Attempts total cross section σ_T = ∫ σ(Ω) dΩ using the Rutherford formula. Substitutes
+  dΩ and shows the integral behaves like ∫ dθ/θ³ for small θ, concluding σ_T is strongly
+  divergent.
+handwriting_preserved: true
+equations_detected:
+  - "sigma_T = integral sigma(Omega) dOmega"
+  - "integral behaves like integral_0^delta d theta / theta^3 -> +infinity"
+depends_on:
+  - block_010
+confidence: high

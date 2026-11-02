@@ -1,0 +1,20 @@
+block_id: block_015
+section: legendre_transformation
+reading_order: 15
+content_type: derivation
+source_ref:
+  page: page_04.jpg
+  region: middle — Legendre transformation math and thermodynamics example
+ai_summary: >
+  Explains Legendre transformation as coordinate change from (q, q̇) to (q, p). Gives
+  thermodynamics example: first law dU = T dS − p dV, Helmholtz free energy A = U − TS
+  with dA = −S dT − p dV. General formalism: g = f − ux transforms f(x,y) to g(u,y).
+handwriting_preserved: true
+equations_detected:
+  - "df = u dx + v dy"
+  - "dU = T dS - p dV"
+  - "A = U - TS, dA = -S dT - p dV"
+  - "g = f - u x, dg = -x du + v dy"
+depends_on:
+  - block_014
+confidence: high

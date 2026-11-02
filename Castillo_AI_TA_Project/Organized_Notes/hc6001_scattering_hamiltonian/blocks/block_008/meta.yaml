@@ -1,0 +1,19 @@
+block_id: block_008
+section: coulomb_repulsive
+reading_order: 8
+content_type: derivation
+source_ref:
+  page: page_02.jpg
+  region: middle — Case i repulsive (ZZ' > 0, k < 0)
+ai_summary: >
+  Repulsive Coulomb case (ZZ' > 0): k < 0, C < 0. Chooses periapsis at θ' = π, simplifies
+  orbit equation, finds r_m at θ = 0. As r → ∞, cos ψ = 1/ε; using ψ = (π − θ)/2 obtains
+  1/ε = sin(θ/2).
+handwriting_preserved: true
+equations_detected:
+  - "1/r = (m ZZ'e^2 / l^2) [epsilon cos theta - 1]"
+  - "cos psi = 1/epsilon"
+  - "1/epsilon = sin(theta/2)"
+depends_on:
+  - block_007
+confidence: high

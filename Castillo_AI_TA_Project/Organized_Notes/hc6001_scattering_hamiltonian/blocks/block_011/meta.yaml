@@ -1,0 +1,15 @@
+block_id: block_011
+section: rutherford_cross_section
+reading_order: 11
+content_type: remark
+source_ref:
+  page: page_03.jpg
+  region: upper middle — typed Remarks list (items 1–4)
+ai_summary: >
+  Four remarks on the Rutherford cross section: identical for repulsive/attractive (proportional
+  to (zz')²); diverges as E⁻² at low energy; diverges as θ⁻⁴ for small angles; classical
+  result matches quantum mechanics.
+handwriting_preserved: true
+depends_on:
+  - block_010
+confidence: high

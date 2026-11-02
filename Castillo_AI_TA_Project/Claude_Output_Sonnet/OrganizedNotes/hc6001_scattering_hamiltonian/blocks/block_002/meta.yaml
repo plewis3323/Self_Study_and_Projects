@@ -1,0 +1,21 @@
+block_id: block_002
+section: differential_cross_section
+reading_order: 2
+content_type: derivation
+source_ref:
+  page: page_01.jpg
+  region: middle band — incident intensity and differential cross section
+ai_summary: >
+  Defines incident intensity I (particles per unit time per unit beam area) and the
+  differential cross section via σ(Ω) dΩ = (# scattered into dΩ per time)/I. Flux
+  conservation on a ring of impact parameters, I(2πs)|ds| = I σ(θ) 2π sin θ |dθ|,
+  gives σ(θ) = (s/sin θ)|ds/dθ|. Also defines the total cross section σ_T = ∫ dΩ σ(Ω).
+handwriting_preserved: true
+equations_detected:
+  - "sigma(Omega) dOmega = (# scattered into dOmega per time)/I"
+  - "I(2 pi s)|ds| = I sigma(theta) 2 pi sin theta |d theta|"
+  - "sigma(theta) = (s/sin theta)|ds/d theta|"
+  - "sigma_T = integral dOmega sigma(Omega)"
+depends_on:
+  - block_001
+confidence: high

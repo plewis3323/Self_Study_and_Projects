@@ -1,0 +1,17 @@
+block_id: block_005
+section: universal_scattering_angle
+reading_order: 5
+content_type: equation
+source_ref:
+  page: page_01.jpg
+  region: bottom — boxed master integral and universality note
+ai_summary: >
+  Master formula for scattering angle θ(s) as an integral over u = 1/r, valid for any
+  central potential V(r). Notes that from θ(s) one obtains |ds/dθ| and thus σ(θ).
+  Emphasizes results hold for any central potential up to this point.
+handwriting_preserved: true
+equations_detected:
+  - "theta(s) = |pi - 2 integral_0^{u_m} (s du) / sqrt(1 - V(u)/E - s^2 u^2)|"
+depends_on:
+  - block_004
+confidence: high

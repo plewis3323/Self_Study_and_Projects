@@ -1,0 +1,947 @@
+{
+ "pdf": "Final_Product_Ready/hc6001_2024-10-22_scattering_hamiltonian.pdf",
+ "pages": 11,
+ "structure_elements": 1337,
+ "element_types": {
+  "Type": 709,
+  "Formula": 198,
+  "P": 172,
+  "Link": 36,
+  "?": 36,
+  "TD": 34,
+  "Span": 26,
+  "Div": 20,
+  "Sect": 18,
+  "Lbl": 16,
+  "TR": 16,
+  "Caption": 10,
+  "H2": 10,
+  "TH": 7,
+  "LI": 6,
+  "LBody": 6,
+  "Figure": 5,
+  "H1": 4,
+  "Table": 3,
+  "L": 2,
+  "H3": 2,
+  "Document": 1
+ },
+ "raw_element_types": {
+  "Type": 709,
+  "Formula": 198,
+  "text": 112,
+  "text-unit": 58,
+  "Link": 36,
+  "?": 36,
+  "TD": 34,
+  "Sect": 16,
+  "section-number": 16,
+  "TR": 16,
+  "Div": 12,
+  "Caption": 10,
+  "Lbl": 10,
+  "subsection": 10,
+  "Em": 10,
+  "float": 8,
+  "TH": 7,
+  "item": 6,
+  "itemlabel": 6,
+  "itembody": 6,
+  "Figure": 5,
+  "section": 4,
+  "Table": 3,
+  "Title": 2,
+  "enumerate": 2,
+  "theorem-like": 2,
+  "subsubsection": 2,
+  "Document": 1
+ },
+ "rolemap_entries": 41,
+ "t1_headings": {
+  "count": 16,
+  "expected": 16,
+  "by_level": {
+   "H1": 4,
+   "H2": 10,
+   "H3": 2
+  },
+  "skipped_levels": [],
+  "pass": true
+ },
+ "t2_reachability": {
+  "total_ops": 3505,
+  "artifact_ops": 23,
+  "reachable_ops": 3482,
+  "unreachable_ops": 0,
+  "orphans_by_page": {},
+  "pass": true
+ },
+ "t3_artifacts": {
+  "artifact_frames": 134,
+  "by_subtype": {
+   "unclassified": 134
+  },
+  "suspicious": [],
+  "tagged_content_inside_artifact": [],
+  "pass": true
+ },
+ "t4_figure_positions": {
+  "figure_count": 5,
+  "positions_pct": [
+   6.4,
+   15.3,
+   17.1,
+   31.9,
+   66.9
+  ],
+  "past_90pct": [],
+  "pass": true
+ },
+ "lists_tables": {
+  "counts": {
+   "L": 2,
+   "LI": 6,
+   "Lbl": 16,
+   "LBody": 6,
+   "Table": 3,
+   "TR": 16,
+   "TH": 7,
+   "TD": 34,
+   "THead": 0,
+   "TBody": 0,
+   "TFoot": 0
+  },
+  "LI_missing_child": [],
+  "tables_without_TH": [],
+  "tables_without_summary": [],
+  "TR_bad_parent": [],
+  "pass": true
+ },
+ "math": {
+  "formula_elements": 198,
+  "mathml_attached_files": 153,
+  "mathml_empty": 0,
+  "mathml_empty_xrefs": [],
+  "empty_with_fallback": [],
+  "empty_without_fallback": [],
+  "formulas_with_alt_or_actualtext": 198,
+  "spoken_fallbacks": [
+   [
+    106,
+    "LaTeX formula starts \\begin {math} m \\end {math} LaTeX formula ends "
+   ],
+   [
+    107,
+    "LaTeX formula starts \\begin {align} E &= \\frac {m}{2}\\,v_0^{2}, \\label"
+   ],
+   [
+    109,
+    "LaTeX formula starts \\begin {math} s \\end {math} LaTeX formula ends "
+   ],
+   [
+    110,
+    "LaTeX formula starts \\begin {equation} \\label {eq:s-of-ell} s = \\frac "
+   ],
+   [
+    120,
+    "LaTeX formula starts \\begin {math} s \\end {math} LaTeX formula ends "
+   ],
+   [
+    121,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    122,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    123,
+    "LaTeX formula starts \\begin {math} \\theta +\\d \\theta  \\end {math} LaTe"
+   ],
+   [
+    124,
+    "LaTeX formula starts \\begin {math} 2\\pi s\\,\\d s \\end {math} LaTeX form"
+   ],
+   [
+    126,
+    "LaTeX formula starts \\begin {math} r_< \\end {math} LaTeX formula ends "
+   ],
+   [
+    127,
+    "LaTeX formula starts \\begin {math} r_m \\end {math} LaTeX formula ends "
+   ],
+   [
+    131,
+    "LaTeX formula starts \\begin {equation} \\label {eq:solid-angle} \\d ^{3}"
+   ],
+   [
+    133,
+    "LaTeX formula starts \\begin {math} \\varphi  \\end {math} LaTeX formula "
+   ],
+   [
+    134,
+    "LaTeX formula starts \\begin {math} 2\\pi  \\end {math} LaTeX formula end"
+   ],
+   [
+    135,
+    "LaTeX formula starts \\begin {math} s(\\theta ,E) \\end {math} LaTeX form"
+   ],
+   [
+    141,
+    "LaTeX formula starts \\begin {equation} \\label {eq:intensity} I = \\frac"
+   ],
+   [
+    142,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dcs-def} \\sigma (\\Om"
+   ],
+   [
+    144,
+    "LaTeX formula starts \\begin {math} \\sigma  \\end {math} LaTeX formula e"
+   ],
+   [
+    145,
+    "LaTeX formula starts \\begin {math} \\Om  \\end {math} LaTeX formula ends"
+   ],
+   [
+    146,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    147,
+    "LaTeX formula starts \\begin {math} \\sigma (\\Om ) \\end {math} LaTeX for"
+   ],
+   [
+    148,
+    "LaTeX formula starts \\begin {math} \\sigma (\\theta ) \\end {math} LaTeX "
+   ],
+   [
+    151,
+    "LaTeX formula starts \\begin {math} s \\end {math} LaTeX formula ends "
+   ],
+   [
+    152,
+    "LaTeX formula starts \\begin {math} s+\\d s \\end {math} LaTeX formula en"
+   ],
+   [
+    153,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    154,
+    "LaTeX formula starts \\begin {math} \\theta +\\d \\theta  \\end {math} LaTe"
+   ],
+   [
+    156,
+    "LaTeX formula starts \\begin {equation} \\label {eq:count-match} I\\,(2\\p"
+   ],
+   [
+    158,
+    "sigma of theta equals s over sine theta, times the absolute value of d"
+   ],
+   [
+    160,
+    "sigma sub T equals the integral of d Omega times sigma of Omega"
+   ],
+   [
+    865,
+    "LaTeX formula starts \\begin {math} \\psi  \\end {math} LaTeX formula end"
+   ],
+   [
+    874,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    875,
+    "LaTeX formula starts \\begin {math} \\psi  \\end {math} LaTeX formula end"
+   ],
+   [
+    880,
+    "LaTeX formula starts \\begin {equation} \\label {eq:repulsive-angles} \\p"
+   ],
+   [
+    882,
+    "LaTeX formula starts \\begin {equation} \\label {eq:attractive-angles} \\"
+   ],
+   [
+    884,
+    "theta equals the absolute value of pi minus 2 psi"
+   ],
+   [
+    888,
+    "LaTeX formula starts \\begin {math} s(\\theta ,E) \\end {math} LaTeX form"
+   ],
+   [
+    891,
+    "LaTeX formula starts \\begin {math} \\orbang  \\end {math} LaTeX formula "
+   ],
+   [
+    892,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    893,
+    "LaTeX formula starts \\begin {align} E &= \\frac {m}{2}\\dot r^{2} + V(r)"
+   ],
+   [
+    895,
+    "LaTeX formula starts \\begin {math} \\ell = mr^{2}\\,\\orbrate  \\end {math"
+   ],
+   [
+    896,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dtheta} \\orbrate = \\"
+   ],
+   [
+    898,
+    "LaTeX formula starts \\begin {math} 2E/m \\end {math} LaTeX formula ends"
+   ],
+   [
+    899,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dtheta-factored} \\d "
+   ],
+   [
+    901,
+    "LaTeX formula starts \\begin {equation} \\label {eq:psi-quadrature} \\psi"
+   ],
+   [
+    903,
+    "LaTeX formula starts \\begin {math} \\orbang _m \\end {math} LaTeX formul"
+   ],
+   [
+    904,
+    "LaTeX formula starts \\begin {math} r_m \\end {math} LaTeX formula ends "
+   ],
+   [
+    909,
+    "LaTeX formula starts \\begin {math} V(r) \\end {math} LaTeX formula ends"
+   ],
+   [
+    910,
+    "LaTeX formula starts \\begin {math} V(r)/E \\end {math} LaTeX formula en"
+   ],
+   [
+    912,
+    "LaTeX formula starts \\begin {math} /E \\end {math} LaTeX formula ends "
+   ],
+   [
+    916,
+    "LaTeX formula starts \\begin {equation} \\label {eq:u-sub} u = \\frac {1}"
+   ],
+   [
+    920,
+    "LaTeX formula starts \\begin {math} \\d u = r^{-2}\\,\\d r \\end {math} LaT"
+   ],
+   [
+    921,
+    "LaTeX formula starts \\begin {math} \\int _{r_m}^{\\infty } \\end {math} L"
+   ],
+   [
+    922,
+    "LaTeX formula starts \\begin {math} 0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    923,
+    "LaTeX formula starts \\begin {math} u_m \\end {math} LaTeX formula ends "
+   ],
+   [
+    927,
+    "theta of s equals the absolute value of pi minus twice the integral fr"
+   ],
+   [
+    929,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dsdtheta-inv} \\left "
+   ],
+   [
+    931,
+    "LaTeX formula starts \\begin {math} \\sigma (\\theta ) = \\frac {s}{\\sin \\"
+   ],
+   [
+    936,
+    "LaTeX formula starts \\begin {math} V(r) \\end {math} LaTeX formula ends"
+   ],
+   [
+    942,
+    "LaTeX formula starts \\begin {math} 4\\pi \\epsilon _0 \\end {math} LaTeX "
+   ],
+   [
+    951,
+    "LaTeX formula starts \\begin {math} Ze \\end {math} LaTeX formula ends "
+   ],
+   [
+    952,
+    "LaTeX formula starts \\begin {math} Z'e \\end {math} LaTeX formula ends "
+   ],
+   [
+    956,
+    "LaTeX formula starts \\begin {equation} \\label {eq:coulomb-force} f = \\"
+   ],
+   [
+    959,
+    "LaTeX formula starts \\begin {math} E>0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    960,
+    "LaTeX formula starts \\begin {equation} \\label {eq:orbit} \\frac {1}{r} "
+   ],
+   [
+    962,
+    "LaTeX formula starts \\begin {equation} \\label {eq:eccentricity} \\varep"
+   ],
+   [
+    964,
+    "LaTeX formula starts \\begin {math} \\ell = s\\,m\\,v_0 = s\\sqrt {2mE} \\en"
+   ],
+   [
+    966,
+    "LaTeX formula starts \\begin {equation} \\label {eq:2l2E} \\frac {2\\ell ^"
+   ],
+   [
+    974,
+    "LaTeX formula starts \\begin {math} V=-k/r \\end {math} LaTeX formula en"
+   ],
+   [
+    983,
+    "LaTeX formula starts \\begin {math} E>0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    987,
+    "LaTeX formula starts \\begin {math} E=0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    991,
+    "LaTeX formula starts \\begin {math} E<0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    1002,
+    "LaTeX formula starts \\begin {math} Z Z' > 0 \\implies k = -Z Z' e^{2} <"
+   ],
+   [
+    1008,
+    "LaTeX formula starts \\begin {math} Z Z' < 0 \\implies k = -Z Z' e^{2} >"
+   ],
+   [
+    1009,
+    "LaTeX formula starts \\begin {math} k = G m_1 m_2 \\end {math} LaTeX for"
+   ],
+   [
+    1015,
+    "LaTeX formula starts \\begin {math} k<0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    1016,
+    "LaTeX formula starts \\begin {math} C = mk/\\ell ^{2} < 0 \\end {math} La"
+   ],
+   [
+    1017,
+    "LaTeX formula starts \\begin {math} C \\end {math} LaTeX formula ends "
+   ],
+   [
+    1018,
+    "LaTeX formula starts \\begin {align} \\frac {1}{r} = C\\left [1 + \\vareps"
+   ],
+   [
+    1020,
+    "LaTeX formula starts \\begin {math} 1/\\varepsilon  \\end {math} LaTeX fo"
+   ],
+   [
+    1021,
+    "LaTeX formula starts \\begin {math} \\orbang = \\orbang ' \\end {math} LaT"
+   ],
+   [
+    1022,
+    "LaTeX formula starts \\begin {math} \\cos (\\orbang '-\\orbang ') = \\cos 0"
+   ],
+   [
+    1023,
+    "LaTeX formula starts \\begin {math} \\frac {1}{r} = C\\left [1+\\varepsilo"
+   ],
+   [
+    1024,
+    "LaTeX formula starts \\begin {math} \\orbang = \\orbang ' \\end {math} LaT"
+   ],
+   [
+    1025,
+    "LaTeX formula starts \\begin {math} \\orbang = \\orbang ' \\pm \\pi  \\end {"
+   ],
+   [
+    1026,
+    "LaTeX formula starts \\begin {math} \\orbang ' = \\pi  \\end {math} LaTeX "
+   ],
+   [
+    1027,
+    "LaTeX formula starts \\begin {equation} \\label {eq:cos-shift} \\cos (\\or"
+   ],
+   [
+    1029,
+    "LaTeX formula starts \\begin {equation} \\label {eq:repulsive-orbit} \\fr"
+   ],
+   [
+    1031,
+    "LaTeX formula starts \\begin {math} \\orbang = 0 \\end {math} LaTeX formu"
+   ],
+   [
+    1032,
+    "LaTeX formula starts \\begin {equation} \\label {eq:rmin-repulsive} \\fra"
+   ],
+   [
+    1034,
+    "LaTeX formula starts \\begin {math} \\orbang = 0 \\end {math} LaTeX formu"
+   ],
+   [
+    1035,
+    "LaTeX formula starts \\begin {math} \\orbang  \\end {math} LaTeX formula "
+   ],
+   [
+    1036,
+    "LaTeX formula starts \\begin {math} \\orbang = 0 \\end {math} LaTeX formu"
+   ],
+   [
+    1038,
+    "LaTeX formula starts \\begin {math} \\orbang = \\pi  \\end {math} LaTeX fo"
+   ],
+   [
+    1041,
+    "LaTeX formula starts \\begin {math} \\psi = \\orbang (r\\to \\infty ) = \\or"
+   ],
+   [
+    1042,
+    "LaTeX formula starts \\begin {math} \\theta = \\pi - 2\\psi  \\end {math} L"
+   ],
+   [
+    1043,
+    "LaTeX formula starts \\begin {math} \\psi = (\\pi -\\theta )/2 \\end {math}"
+   ],
+   [
+    1044,
+    "LaTeX formula starts \\begin {equation} \\label {eq:psi-repulsive} 0 = \\"
+   ],
+   [
+    1050,
+    "LaTeX formula starts \\begin {math} k>0 \\end {math} LaTeX formula ends "
+   ],
+   [
+    1051,
+    "LaTeX formula starts \\begin {math} C = km/\\ell ^{2} > 0 \\end {math} La"
+   ],
+   [
+    1052,
+    "LaTeX formula starts \\begin {math} \\orbang ' = 0 \\end {math} LaTeX for"
+   ],
+   [
+    1053,
+    "LaTeX formula starts \\begin {math} \\orbang = \\orbang ' = 0 \\end {math}"
+   ],
+   [
+    1054,
+    "LaTeX formula starts \\begin {equation} \\label {eq:attractive-orbit} \\f"
+   ],
+   [
+    1056,
+    "LaTeX formula starts \\begin {math} \\orbang = 0 \\end {math} LaTeX formu"
+   ],
+   [
+    1057,
+    "LaTeX formula starts \\begin {math} 1/r_m = C\\left [1+\\varepsilon \\righ"
+   ],
+   [
+    1058,
+    "LaTeX formula starts \\begin {math} \\orbang = 0 \\end {math} LaTeX formu"
+   ],
+   [
+    1061,
+    "LaTeX formula starts \\begin {math} \\psi = \\orbang (r\\to \\infty ) = \\or"
+   ],
+   [
+    1062,
+    "LaTeX formula starts \\begin {math} \\theta = 2\\psi - \\pi  \\end {math} L"
+   ],
+   [
+    1063,
+    "LaTeX formula starts \\begin {math} \\psi = (\\pi +\\theta )/2 \\end {math}"
+   ],
+   [
+    1064,
+    "LaTeX formula starts \\begin {equation} \\label {eq:psi-attractive} 0 = "
+   ],
+   [
+    1072,
+    "LaTeX formula starts \\begin {math} 1/\\varepsilon = \\sin (\\theta /2) \\e"
+   ],
+   [
+    1078,
+    "LaTeX formula starts \\begin {equation} \\label {eq:cot2} \\cot ^{2}\\frac"
+   ],
+   [
+    1080,
+    "s equals the absolute value of Z Z prime e squared over 2 E, times cot"
+   ],
+   [
+    1083,
+    "LaTeX formula starts \\begin {align} \\dd {s}{\\theta } &= \\left \\lvert \\"
+   ],
+   [
+    1088,
+    "LaTeX formula starts \\begin {math} \\sin ^{-2}(\\theta /2) \\end {math} L"
+   ],
+   [
+    1089,
+    "LaTeX formula starts \\begin {math} \\sin ^{2}(\\theta /2) \\end {math} La"
+   ],
+   [
+    1090,
+    "LaTeX formula starts \\begin {math} -\\tfrac {1}{2}\\cot ^{2}(\\theta /2) "
+   ],
+   [
+    1091,
+    "LaTeX formula starts \\begin {math} -\\tfrac {1}{2}\\csc ^{2}(\\theta /2) "
+   ],
+   [
+    1095,
+    "LaTeX formula starts \\begin {equation} \\label {eq:sigma-build} \\sigma "
+   ],
+   [
+    1097,
+    "sigma of theta equals one quarter times, Z Z prime e squared over 2 E,"
+   ],
+   [
+    1109,
+    "LaTeX formula starts \\begin {math} (Z Z')^{2} \\end {math} LaTeX formul"
+   ],
+   [
+    1115,
+    "LaTeX formula starts \\begin {math} E^{-2} \\end {math} LaTeX formula en"
+   ],
+   [
+    1121,
+    "LaTeX formula starts \\begin {math} \\theta ^{-4} \\end {math} LaTeX form"
+   ],
+   [
+    1122,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    1131,
+    "LaTeX formula starts \\begin {math} (zz')^{2} \\end {math} LaTeX formula"
+   ],
+   [
+    1132,
+    "LaTeX formula starts \\begin {math} E^{-2} \\end {math} LaTeX formula en"
+   ],
+   [
+    1133,
+    "LaTeX formula starts \\begin {math} \\theta ^{-4} \\end {math} LaTeX form"
+   ],
+   [
+    1134,
+    "LaTeX formula starts \\begin {math} Z Z' \\end {math} LaTeX formula ends"
+   ],
+   [
+    1141,
+    "LaTeX formula starts \\begin {equation} \\label {eq:sigmaT} \\sigma _T = "
+   ],
+   [
+    1143,
+    "LaTeX formula starts \\begin {math} \\sigma (\\theta ) = \\text {const}\\cd"
+   ],
+   [
+    1144,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dOmega-half} \\d \\Om "
+   ],
+   [
+    1145,
+    "LaTeX formula starts \\begin {equation} \\label {eq:sigmaT-integral} \\si"
+   ],
+   [
+    1147,
+    "LaTeX formula starts \\begin {math} 0<\\theta \\le \\pi  \\end {math} LaTeX"
+   ],
+   [
+    1149,
+    "LaTeX formula starts \\begin {equation} \\label {eq:divergence} \\sigma _"
+   ],
+   [
+    1158,
+    "LaTeX formula starts \\begin {math} 0<\\theta \\le \\pi  \\end {math} LaTeX"
+   ],
+   [
+    1181,
+    "LaTeX formula starts \\begin {math} \\sigma _T=+\\infty  \\end {math} LaTe"
+   ],
+   [
+    1187,
+    "LaTeX formula starts \\begin {math} \\sigma _T=+\\infty  \\end {math} LaTe"
+   ],
+   [
+    1188,
+    "LaTeX formula starts \\begin {math} V(r) \\end {math} LaTeX formula ends"
+   ],
+   [
+    1189,
+    "LaTeX formula starts \\begin {math} r\\to \\infty  \\end {math} LaTeX form"
+   ],
+   [
+    1197,
+    "LaTeX formula starts \\begin {math} \\sigma (\\Om ) \\end {math} LaTeX for"
+   ],
+   [
+    1198,
+    "LaTeX formula starts \\begin {math} \\sigma _T \\end {math} LaTeX formula"
+   ],
+   [
+    1199,
+    "LaTeX formula starts \\begin {math} \\dd {\\sigma }{\\Om } \\end {math} LaT"
+   ],
+   [
+    1200,
+    "LaTeX formula starts \\begin {math} \\sigma  \\end {math} LaTeX formula e"
+   ],
+   [
+    1217,
+    "LaTeX formula starts \\begin {math} \\sigma (\\Om ) \\end {math} LaTeX for"
+   ],
+   [
+    1219,
+    "LaTeX formula starts \\begin {math} \\sigma (\\Om ) \\end {math} LaTeX for"
+   ],
+   [
+    1223,
+    "LaTeX formula starts \\begin {math} \\dd {\\sigma }{\\Om } \\end {math} LaT"
+   ],
+   [
+    1226,
+    "LaTeX formula starts \\begin {math} \\sigma _T \\end {math} LaTeX formula"
+   ],
+   [
+    1228,
+    "LaTeX formula starts \\begin {math} \\sigma _T \\end {math} LaTeX formula"
+   ],
+   [
+    1232,
+    "LaTeX formula starts \\begin {math} \\sigma  \\end {math} LaTeX formula e"
+   ],
+   [
+    1235,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    1237,
+    "LaTeX formula starts \\begin {math} \\Theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    1243,
+    "LaTeX formula starts \\begin {math} \\orbang  \\end {math} LaTeX formula "
+   ],
+   [
+    1245,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    1251,
+    "LaTeX formula starts \\begin {math} \\psi  \\end {math} LaTeX formula end"
+   ],
+   [
+    1253,
+    "LaTeX formula starts \\begin {math} \\Psi  \\end {math} LaTeX formula end"
+   ],
+   [
+    1259,
+    "LaTeX formula starts \\begin {math} \\varepsilon  \\end {math} LaTeX form"
+   ],
+   [
+    1261,
+    "LaTeX formula starts \\begin {math} e \\end {math} LaTeX formula ends "
+   ],
+   [
+    1265,
+    "LaTeX formula starts \\begin {math} e \\end {math} LaTeX formula ends "
+   ],
+   [
+    750,
+    "LaTeX formula starts \\begin {math} s \\end {math} LaTeX formula ends "
+   ],
+   [
+    752,
+    "LaTeX formula starts \\begin {math} s \\end {math} LaTeX formula ends "
+   ],
+   [
+    757,
+    "LaTeX formula starts \\begin {math} b \\end {math} LaTeX formula ends "
+   ],
+   [
+    760,
+    "LaTeX formula starts \\begin {math} q_i,\\,p_i \\end {math} LaTeX formula"
+   ],
+   [
+    762,
+    "LaTeX formula starts \\begin {math} q_i,\\,p_i \\end {math} LaTeX formula"
+   ],
+   [
+    772,
+    "LaTeX formula starts \\begin {equation} \\label {eq:yukawa} V = -\\frac {"
+   ],
+   [
+    774,
+    "LaTeX formula starts \\begin {math} V^{\\mathrm {screen}}(r) \\end {math}"
+   ],
+   [
+    775,
+    "LaTeX formula starts \\begin {math} 1/r \\end {math} LaTeX formula ends "
+   ],
+   [
+    781,
+    "LaTeX formula starts \\begin {equation} \\label {eq:lagrangian} L = T - "
+   ],
+   [
+    783,
+    "LaTeX formula starts \\begin {equation} \\label {eq:lagrange-eq} 0 = \\dd"
+   ],
+   [
+    789,
+    "LaTeX formula starts \\begin {math} \\partial L/\\partial \\dot \\theta = p"
+   ],
+   [
+    790,
+    "LaTeX formula starts \\begin {math} \\theta  \\end {math} LaTeX formula e"
+   ],
+   [
+    791,
+    "retracted: L equals L of r, r-dot, p-theta"
+   ],
+   [
+    797,
+    "LaTeX formula starts \\begin {equation} \\label {eq:legendre-goal} q_1,\\"
+   ],
+   [
+    799,
+    "LaTeX formula starts \\begin {equation} \\label {eq:df} f(x,y) \\implies "
+   ],
+   [
+    805,
+    "LaTeX formula starts \\begin {math} T \\end {math} LaTeX formula ends "
+   ],
+   [
+    806,
+    "LaTeX formula starts \\begin {math} V \\end {math} LaTeX formula ends "
+   ],
+   [
+    807,
+    "LaTeX formula starts \\begin {math} p \\end {math} LaTeX formula ends "
+   ],
+   [
+    808,
+    "LaTeX formula starts \\begin {math} N \\end {math} LaTeX formula ends "
+   ],
+   [
+    809,
+    "LaTeX formula starts \\begin {equation} \\label {eq:first-law} \\d U = \\d"
+   ],
+   [
+    811,
+    "LaTeX formula starts \\begin {math} T \\end {math} LaTeX formula ends "
+   ],
+   [
+    812,
+    "LaTeX formula starts \\begin {math} V \\end {math} LaTeX formula ends "
+   ],
+   [
+    813,
+    "LaTeX formula starts \\begin {math} F = A = U - TS \\end {math} LaTeX fo"
+   ],
+   [
+    814,
+    "LaTeX formula starts \\begin {equation} \\label {eq:helmholtz} \\d A = \\d"
+   ],
+   [
+    820,
+    "LaTeX formula starts \\begin {math} u \\end {math} LaTeX formula ends "
+   ],
+   [
+    821,
+    "LaTeX formula starts \\begin {math} x \\end {math} LaTeX formula ends "
+   ],
+   [
+    822,
+    "LaTeX formula starts \\begin {math} 1/r \\end {math} LaTeX formula ends "
+   ],
+   [
+    824,
+    "LaTeX formula starts \\begin {equation} \\label {eq:general-legendre} f("
+   ],
+   [
+    829,
+    "LaTeX formula starts \\begin {math} f(x,y) \\end {math} LaTeX formula en"
+   ],
+   [
+    830,
+    "LaTeX formula starts \\begin {math} \\d f \\end {math} LaTeX formula ends"
+   ],
+   [
+    834,
+    "LaTeX formula starts \\begin {equation} \\label {eq:g} g = f - ux \\impli"
+   ],
+   [
+    840,
+    "LaTeX formula starts \\begin {math} L(q_1,\\dots ,q_n,\\dot q_1,\\dots ,\\d"
+   ],
+   [
+    841,
+    "p sub i equals the partial derivative of L with respect to q dot sub i"
+   ],
+   [
+    843,
+    "LaTeX formula starts \\begin {equation} \\label {eq:H-def} H = -\\left (L"
+   ],
+   [
+    845,
+    "LaTeX formula starts \\begin {math} g = f - ux \\end {math} LaTeX formul"
+   ],
+   [
+    847,
+    "LaTeX formula starts \\begin {math} H = -g \\end {math} LaTeX formula en"
+   ],
+   [
+    848,
+    "LaTeX formula starts \\begin {math} \\sum _i p_i\\dot q_i - L \\end {math}"
+   ],
+   [
+    849,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dH-expand} \\d H = -\\"
+   ],
+   [
+    16,
+    "LaTeX formula starts \\begin {equation} \\label {eq:dH} \\d H = -\\pd {L}{"
+   ],
+   [
+    22,
+    "LaTeX formula starts \\begin {math} -\\pd {L}{t}\\,\\d t \\end {math} LaTeX"
+   ],
+   [
+    26,
+    "partial H by partial p i equals q dot i; partial H by partial q i equa"
+   ]
+  ],
+  "replacement_chars_in_mathml": 12,
+  "pass": true
+ },
+ "alt_text": {
+  "figures": 5,
+  "with_alt": 5,
+  "missing_alt": [],
+  "generic_alt": [],
+  "sidecar_match": true,
+  "sidecar_missing": [],
+  "pass": true
+ },
+ "metadata": {
+  "title": "Scattering by a Central Potential; the Hamiltonian",
+  "lang": "en-US",
+  "DisplayDocTitle": true,
+  "pdfuaid_part": "1",
+  "encrypted": false,
+  "permissions_int": -4,
+  "pass": true
+ },
+ "full_text": {
+  "extracted_chars": 16724,
+  "pass": true
+ }
+}

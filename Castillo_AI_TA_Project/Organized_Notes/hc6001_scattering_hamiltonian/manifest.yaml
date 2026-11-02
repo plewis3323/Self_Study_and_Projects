@@ -1,0 +1,89 @@
+lecture_id: hc6001_2024-10-22_scattering_hamiltonian
+course: HC 6001 — Classical Mechanics
+topic: Central-potential scattering, Coulomb/Rutherford cross section, and Hamiltonian mechanics
+date: "2024-10-22"
+source_pages:
+  - page_01.jpg
+  - page_02.jpg
+  - page_03.jpg
+  - page_04.jpg
+reading_order:
+  - block_001
+  - block_002
+  - block_003
+  - block_004
+  - block_005
+  - block_006
+  - block_007
+  - block_008
+  - block_009
+  - block_010
+  - block_011
+  - block_012
+  - block_013
+  - block_014
+  - block_015
+  - block_016
+  - block_017
+sections:
+  - id: central_scattering_setup
+    title: Scattering by a central potential — setup
+    block_ids: [block_001]
+  - id: differential_cross_section
+    title: Differential and total cross section
+    block_ids: [block_002]
+  - id: scattering_geometry
+    title: Repulsive vs attractive scattering geometry
+    block_ids: [block_003]
+  - id: universal_scattering_angle
+    title: Universal scattering-angle integral for any V(r)
+    block_ids: [block_004, block_005]
+  - id: coulomb_scattering
+    title: Coulomb scattering — general hyperbolic orbits
+    block_ids: [block_006, block_007]
+  - id: coulomb_repulsive
+    title: Coulomb scattering — repulsive case
+    block_ids: [block_008]
+  - id: coulomb_attractive
+    title: Coulomb scattering — attractive case
+    block_ids: [block_009]
+  - id: rutherford_cross_section
+    title: Rutherford differential cross section
+    block_ids: [block_010, block_011, block_012]
+  - id: rutherford_remarks
+    title: Notation, divergent total cross section, screened potentials
+    block_ids: [block_013]
+  - id: hamiltonian_intro
+    title: Hamiltonian mechanics — Lagrangian review
+    block_ids: [block_014]
+  - id: legendre_transformation
+    title: Legendre transformation (math and thermodynamics)
+    block_ids: [block_015]
+  - id: hamiltonian_derivation
+    title: Hamiltonian and canonical equations of motion
+    block_ids: [block_016, block_017]
+physics_context:
+  prerequisites:
+    - Central-force motion and angular momentum
+    - Lagrangian mechanics and Euler-Lagrange equations
+    - Variational calculus (basic)
+    - Coulomb potential and conic-section orbits
+  notation:
+    - "s — impact parameter"
+    - "θ — scattering (deflection) angle"
+    - "ψ — angle from horizontal to apsidal point"
+    - "σ(θ) or σ(Ω) — differential cross section"
+    - "σ_T — total cross section"
+    - "l — orbital angular momentum"
+    - "E — incident energy"
+    - "V(r) — central potential"
+    - "k — Coulomb force constant (k = -ZZ'e²)"
+    - "ε — orbit eccentricity"
+    - "H — Hamiltonian"
+    - "p_i — generalized momentum"
+conversion_path_hint: mathpix
+notes: >
+  Source PDF from Castillo_Note_files/HC_6001_sample_lectures/Test_Case/
+  (Lecture-scattering-Hamiltonian_241022-forward.pdf). Pages 1–3 cover scattering;
+  page 4 begins Chapter 8 on the Hamiltonian. Block images are handwriting-preserving
+  crops; typed remarks on page 3 are included in their respective blocks.

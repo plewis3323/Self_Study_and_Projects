@@ -1,0 +1,158 @@
+{
+ "policy": "Source errata are transcribed exactly as written and flagged in a bracketed editorial remark placed after the display they concern. Nothing is silently corrected and nothing is silently propagated. This file is the checklist the built document is verified against.",
+ "source": "Input/Lecture-scattering-Hamiltonian_241022-forward.pdf",
+ "errata": [
+  {
+   "id": "E1",
+   "page": 1,
+   "approx_y": [
+    2380,
+    2500
+   ],
+   "written": "psi integral denominator [1 - V(r) - s^2/r^2]^(1/2)",
+   "intended": "[1 - V(r)/E - s^2/r^2]^(1/2)",
+   "evidence": "The preceding line carries the /E explicitly, and the boxed theta(s) two lines later restores it. Without /E the bracket adds an energy to two dimensionless terms.",
+   "severity": "major",
+   "handling": "transcribed as written, flagged after eq:psi-quadrature",
+   "tex_label": "eq:psi-quadrature"
+  },
+  {
+   "id": "E2",
+   "page": 1,
+   "approx_y": [
+    2510,
+    2570
+   ],
+   "written": "du = r^-2 dr",
+   "intended": "du = -r^-2 dr",
+   "evidence": "The sign is absorbed by the reversal of limits that turns the integral from r_m..infinity into 0..u_m; the boxed result is correct.",
+   "severity": "major",
+   "handling": "transcribed as written, flagged after eq:u-sub",
+   "tex_label": "eq:u-sub"
+  },
+  {
+   "id": "E5",
+   "page": 3,
+   "approx_y": [
+    370,
+    560
+   ],
+   "written": "second quotient-rule term written over sin^-2(theta/2)",
+   "intended": "sin^2(theta/2)",
+   "evidence": "The quotient rule gives -(1/2)cot^2(theta/2) for that term, which with the first term makes -(1/2)csc^2(theta/2) -- and that is what the next line uses. (The FIRST term's omitted denominator, flagged in an earlier draft, is value-preserving and was withdrawn as a false erratum.)",
+   "severity": "major",
+   "handling": "transcribed as written, flagged after eq:dsdtheta",
+   "tex_label": "eq:dsdtheta"
+  },
+  {
+   "id": "E6",
+   "page": 4,
+   "approx_y": [
+    1730,
+    1800
+   ],
+   "written": "f(x,y) = u dx + v dy",
+   "intended": "df = u dx + v dy",
+   "evidence": "A function cannot equal a one-form. The same page writes df = (df/dx)dx + (df/dy)dy correctly earlier, and the next line consumes the expression as df in dg = df - d(ux).",
+   "severity": "major",
+   "handling": "transcribed as written, flagged after eq:general-legendre",
+   "tex_label": "eq:general-legendre"
+  },
+  {
+   "id": "E7",
+   "page": 4,
+   "approx_y": [
+    2400,
+    2760
+   ],
+   "written": "dH = -dL/dt + sum_i (qdot_i dp_i - dL/dq_i dq_i)",
+   "intended": "the first term is -(dL/dt) dt",
+   "evidence": "Every other term is a differential; as written the equation adds a rate to a set of one-forms. Appears twice, in the caret insertion and in the reduced line. The boxed consequence dH/dt = -dL/dt is nevertheless correct.",
+   "severity": "major",
+   "handling": "transcribed as written, flagged after eq:dH",
+   "tex_label": "eq:dH"
+  },
+  {
+   "id": "E9",
+   "page": 3,
+   "approx_y": [
+    880,
+    1160
+   ],
+   "written": "(zz')^2 in lower case; E^{-2} and \\theta^{-4} as literal unrendered markup; the third remark reads 'VERY STRONG!!!'",
+   "intended": "(ZZ')^2 in the upper case used throughout; the powers set as mathematics",
+   "evidence": "The Remarks block is typed rather than handwritten and carries its markup literally.",
+   "severity": "minor",
+   "handling": "set as mathematics in the case used throughout; the casing, the literal markup and the wording of the third remark are all noted in the erratum attached to the Remarks list. The closing 'Reproduced above as written.' is omitted (star form of \\erratum), because the casing was deliberately not reproduced as written.",
+   "tex_label": "remarks"
+  }
+ ],
+ "not_errata": [
+  {
+   "id": "E8",
+   "page": 4,
+   "item": "H = -(L - sum_i p_i qdot_i)",
+   "why": "Correct. It equals sum p qdot - L, the standard Hamiltonian, written this way to mirror the Legendre pattern g = f - ux established four lines above, with H = -g. Transcribed verbatim, not flagged."
+  }
+ ],
+ "editorial_additions": [
+  {
+   "where": "start of the Rutherford section",
+   "what": "the bridging statement that 1/eccentricity = sin(theta/2) holds in both cases",
+   "why": "The source carries the two cases to separate results and then uses them together without ever writing the step that joins them. Supplied and marked as supplied."
+  },
+  {
+   "where": "caption of the beam-and-ring figure",
+   "what": "a note that r_< and r_m denote the same distance of closest approach",
+   "why": "The source uses both symbols for one quantity without relating them."
+  },
+  {
+   "where": "the universal-method section",
+   "what": "the orbit angle is set as theta-tilde throughout",
+   "why": "The source writes the orbit angle and the scattering angle with the same letter on page 1, then silently switches to a tilde on page 2. The tilde convention is applied from the start and the collision noted."
+  }
+ ],
+ "illegible": [
+  {
+   "page": 3,
+   "approx_y": [
+    1791,
+    1852
+   ],
+   "x": 2549,
+   "what": "a glyph to the right of STRONGLY is cut off by the edge of the source scan",
+   "handling": "not transcribed and not guessed"
+  }
+ ],
+ "colour_only_information": [
+  {
+   "page": 1,
+   "what": "the particle trajectory is drawn in blue pen, the axis and the pair of bracketing lines in black",
+   "measured": "blue pen (51,51,204) is 8.45:1 against the paper, so it clears the 3:1 non-text floor; but blue and black separate by only 2.49:1 in greyscale, below the 3:1 at which lightness alone would distinguish them",
+   "handling": "the distinction is named in words in BOTH the figure's alt text and its caption (WCAG 1.4.1)"
+  },
+  {
+   "page": 4,
+   "what": "in the SOURCE a red X strikes out L = L(r, rdot, p_theta) and the Lagrange-equation line beneath it, leaving the line above unstruck",
+   "handling": "the output carries no colour here: the retraction is rendered as a black strike-through plus a sentence that states it, so nothing depends on hue. The strike is not extended to the line above."
+  }
+ ],
+ "id_note": "IDs are the ones assigned during review and are kept stable so review threads stay traceable. E3 was raised (an overloaded integration dummy) and withdrawn as a style observation rather than an error; E4 and E5's first claim were withdrawn as FALSE errata after a referee showed the expressions correct. Nothing is missing -- the gaps are decisions.",
+ "withdrawn": [
+  {
+   "id": "E3",
+   "claim": "psi = integral from 0 to psi of d psi overloads the dummy variable",
+   "why_withdrawn": "A style observation, not an error; the value is unambiguous."
+  },
+  {
+   "id": "E4",
+   "claim": "cos(theta-tilde' - theta-tilde') has both symbols primed",
+   "why_withdrawn": "Correct as written: it is cos(theta-tilde - theta-tilde') EVALUATED at theta-tilde = theta-tilde'. Flagging it would have manufactured a defect."
+  },
+  {
+   "id": "E5a",
+   "claim": "the first quotient-rule term omits its sin^2 denominator",
+   "why_withdrawn": "Value-preserving: (1/2)(-sin/sin) = -1/2 is exactly -(1/2)(sin^2/sin^2)."
+  }
+ ]
+}

@@ -1,0 +1,811 @@
+% Chapter 3 -- Scattering by a central potential; Chapter 8 -- Hamiltonian.
+%
+% Reference convention: Goldstein, Poole & Safko, "Classical Mechanics,"
+% 3rd ed., Ch. 3 Sec. 3.10 (scattering) and Ch. 8 (Hamilton's equations),
+% adopted for terminology, symbol choice and equation style. Every deviation
+% from Goldstein is stated in the document itself, in the notation table of
+% Sec. 3 -- a convention a reader cannot see is not a convention.
+
+\documentclass[11pt]{article}
+\usepackage{goldsteinnotes}
+\hypersetup{
+  pdftitle={Scattering by a Central Potential; the Hamiltonian},
+  pdfauthor={HC 6001 -- Dr. Castillo},
+  pdflang={en-US},
+  pdfdisplaydoctitle=true,
+}
+
+\usepackage{float}
+
+\graphicspath{{figures/}}
+% A table caption sits above its rules. skip=6pt was measured at ~2 pt in the
+% tagged build (the setting is not honoured once tagging rewrites captions),
+% so the gap is forced with \abovetopsep inside the tabular, which tagging
+% does not swallow. Target: at least 6 pt of clear paper between descenders
+% and the rule, verified in pixels after the build, not by the setting.
+\captionsetup[table]{skip=12pt,position=top}
+\captionsetup{width=\linewidth}
+\setlength{\abovetopsep}{10pt}
+
+% --- symbols fixed for THIS document -------------------------------------
+% m            : mass of the incident particle
+% \ell         : conserved angular momentum
+% s            : impact parameter (Goldstein's own symbol; kept, not Taylor's b)
+% \theta       : scattering angle -- the final, measured deflection
+% \psi         : apsidal angle
+% \orbang      : the running orbit angle, \orbang' its integration constant
+% \varepsilon  : orbit eccentricity
+% \sigma_T     : total cross section
+% q_i, p_i     : generalized coordinates and conjugate momenta
+\newcommand{\orbang}{\tilde\theta}
+\newcommand{\Om}{\Omega}
+% The orbit angle's time derivative is written as an explicit quotient rather
+% than with a dot: a dot over a tilded symbol stacks two accents on one letter
+% and produces a composite glyph that appears in no physics text.
+\newcommand{\orbrate}{\frac{\d\orbang}{\d t}}
+\newcommand{\ee}{\mathrm{e}}   % exponential, kept upright so it cannot be
+                               % read as the elementary charge e
+
+% Source errata and editorial additions are opposite claims -- one says the
+% source is wrong, the other says the source left a gap -- so they get
+% different devices and are never confusable.
+% Star form omits the closing sentence, for the one erratum (E9) where the
+% text is deliberately *not* reproduced as written.
+\makeatletter
+\newcommand{\erratum}{\@ifstar\erratum@nosay\erratum@say}
+\newcommand{\erratum@say}[1]{\par\smallskip\noindent\emph{Erratum.} #1
+  \ Reproduced above as written.\par\smallskip}
+\newcommand{\erratum@nosay}[1]{\par\smallskip\noindent\emph{Erratum.} #1\par\smallskip}
+\makeatother
+\newcommand{\supplied}[1]{\par\smallskip\noindent\emph{Supplied.} #1\par\smallskip}
+
+\title{Scattering by a Central Potential;\\ the Hamiltonian}
+\author{HC 6001 \quad--\quad Dr.\ Castillo}
+\date{22 October 2024}
+
+\begin{document}
+\maketitle
+
+\section{Scattering by a central potential}
+
+For a particle of mass $m$, the incident energy, the incident velocity and the
+angular momentum are
+%
+\begin{align}
+  E    &= \frac{m}{2}\,v_0^{2}, \label{eq:E}\\
+  v_0  &= \sqrt{2E/m}, \label{eq:v0}\\
+  \ell &= s\,m\,v_0 = s\sqrt{2mE}, \label{eq:ell}
+\end{align}
+%
+where $s$ is the impact parameter, so that
+%
+\begin{equation}\label{eq:s-of-ell}
+  s = \frac{\ell}{\sqrt{2mE}}.
+\end{equation}
+%
+The geometry these quantities describe is set out in Fig.~\ref{fig:beam-ring}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[alt={A horizontal axis runs to a scattering center marked by a dot. Two kinds of line are distinguished in the drawing only by colour, so they are named here: the particle's path is the continuous blue curve, while the axis and a pair of closely spaced straight lines running from the center up to the right are black. That black pair brackets the narrow interval of directions between theta and theta plus d theta. The blue path enters from the left parallel to the axis, offset above it by a height marked s between two arrowheads; a narrow, pointed lens shape around the entering beam, with a cusp where its two curves meet at top and bottom, marks the ring of incident particles, labelled as having area 2 pi s ds. The path stays straight until the apsidal point, a labelled dot above the axis, which is joined to the center by a short segment marked r with the subscript less-than, r sub less-than. Past that point the path turns up and to the right. The angle theta is marked between the lower black bracketing line and the forward axis. At the right a narrow hatched band curves the full height of the figure, standing for the ring of directions into which the particles emerge. A double-headed arrow sits between the text naming the particles incident with impact parameter between s and s plus ds and that band, touching neither; just below it a second double-headed arrow carries the label s and theta, stating that each impact parameter corresponds to one scattering angle. Three lines of equations sit at the upper left, a fourth sits above the axis near the apsidal-point label, and the heading INCIDENT INTENSITY sits at the lower left; all of them are set as text in the surrounding document.}, width=0.62\textwidth]{scat_fig1_beam_ring.png}
+  \caption{The scattering geometry that fixes the cross section. A particle
+  approaches parallel to the axis at impact parameter $s$, turns at the
+  apsidal point of closest approach, and leaves along an asymptote making the
+  scattering angle $\theta$ with the forward direction; the pair of closely
+  spaced straight lines from the center bracket the interval from $\theta$ to
+  $\theta+\d\theta$. Particles entering through the ring of area
+  $2\pi s\,\d s$ are precisely those emerging into that interval, and matching
+  the two counts is what gives Eq.~\eqref{eq:sigma-general}. The particle's
+  path is the curve drawn in blue and the axis and bracketing lines are black,
+  a distinction of colour alone, named here in words. The
+  distance of closest approach is marked $r_<$ in the drawing and written
+  $r_m$ from Eq.~\eqref{eq:psi-quadrature} onward; they are one quantity.}
+  \label{fig:beam-ring}
+\end{figure}
+
+The volume element and the solid angle are
+%
+\begin{equation}\label{eq:solid-angle}
+  \d^{3}r = r^{2}\,\d r\,
+    \underbrace{\d\varphi\,\sin\theta\,\d\theta}_{\textstyle =\ \d\Om},
+  \qquad
+  \d\Om = 2\pi \sin\theta\,\d\theta ,
+\end{equation}
+%
+the azimuthal angle $\varphi$ integrating to $2\pi$ because it is irrelevant by
+symmetry. The quantity to be computed is $s(\theta,E)$.
+
+\subsection{Incident intensity and differential cross section}
+
+The incident intensity and the differential cross section are defined as
+ratios of counts:
+%
+\begin{equation}\label{eq:intensity}
+  I = \frac{\text{number of particles incident per unit time}}
+           {\text{incident beam cross-sectional area}},
+\end{equation}
+%
+\begin{equation}\label{eq:dcs-def}
+  \sigma(\Om)\,\d\Om
+    = \frac{\text{number of particles scattered into } \d\Om \text{ per unit time}}
+           {\text{incident intensity}} .
+\end{equation}
+%
+For a central potential $\sigma$ depends on $\Om$ only through $\theta$, so
+$\sigma(\Om)$ and $\sigma(\theta)$ denote the same function throughout.
+
+Particles crossing the incident ring between $s$ and $s+\d s$ are exactly those
+emerging with scattering angle between $\theta$ and $\theta+\d\theta$
+(Fig.~\ref{fig:beam-ring}), so the two counts are equal:
+%
+\begin{equation}\label{eq:count-match}
+  I\,(2\pi s)\,\lvert \d s\rvert
+    = \genfrac{}{}{0pt}{}{\text{particles through the ring}}{\text{between } s \text{ and } s+\d s}
+    = \genfrac{}{}{0pt}{}{\text{particles emerging between}}{\theta \text{ and } \theta+\d\theta}
+    = I\,\sigma(\theta)\,2\pi \sin\theta\,\lvert \d\theta\rvert .
+\end{equation}
+%
+Therefore
+%
+\begin{equation}\label{eq:sigma-general}
+  \boxeq[sigma of theta equals s over sine theta, times the absolute value of
+  d s by d theta]{%
+    \sigma(\theta) = \frac{s}{\sin\theta}\left\lvert \dd{s}{\theta} \right\rvert }
+\end{equation}
+%
+Define also the total cross section
+%
+\begin{equation}\label{eq:sigma-T-def}
+  \boxeq[sigma sub T equals the integral of d Omega times sigma of Omega]{%
+    \sigma_T = \int \d\Om\,\sigma(\Om) }
+\end{equation}
+
+\subsection{The deflection angle and the apsidal angle}
+
+The two signs of the force give the two geometries of
+Figs.~\ref{fig:repulsive} and~\ref{fig:attractive}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[alt={Repulsive deflection, under the heading REPULSIVE CASE set at the top of the frame. A curved particle path arrives from the left just above a horizontal baseline, carries an arrowhead, and bends away from the center, leaving up and to the right; a separate straight line from the center marks the outgoing asymptote that the path approaches. A steep straight line, the apsidal line, runs from the upper left down through the turning point of the path to a vertex on the baseline, and the short segment marked along it is the distance of closest approach; the turning point above is labelled as the apsidal point. Two equal angles, both marked psi, share that vertex on the baseline and are measured from the apsidal line, one back to the incoming direction and one forward to the outgoing asymptote. The angle between the outgoing asymptote and the forward baseline is marked theta, further to the right. Alongside are the relations pi equals theta plus 2 psi; theta equals pi minus 2 psi; and psi equals, pi minus theta, all over two.}, width=0.62\textwidth]{scat_fig2_repulsive.png}
+  \caption{Repulsive deflection. The path turns away from the center at the
+  apsidal point, and the two apsidal angles $\psi$ are measured from the
+  apsidal line, one back to the incoming asymptote and one forward to the
+  outgoing one, which is what makes Eq.~\eqref{eq:repulsive-angles} a
+  statement about a straight line.}
+  \label{fig:repulsive}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[alt={Attractive deflection. A particle path arrives from the left above a horizontal baseline carrying an arrowhead and is pulled toward the center rather than pushed away, crossing the baseline at the vertex and continuing downward and to the right, still carrying the arrowhead. A steep straight line runs from the upper right down through the apsidal point, which is labelled at the upper right, and continues to that same vertex on the baseline: this is the apsidal line. Two angles marked psi share the vertex, one above the baseline opening back toward the incoming direction and one below it opening toward the outgoing asymptote. The deflection angle theta is marked lower right, between the outgoing asymptote and the forward baseline direction. Alongside are the relations pi equals 2 psi minus theta; theta equals 2 psi minus pi; and psi equals, pi plus theta, all over two.}, width=0.56\textwidth]{scat_fig3_attractive.png}
+  \caption{Attractive deflection. The path is pulled across the axis rather
+  than away from it, which reverses how $\theta$ is built from the same
+  apsidal angle $\psi$ and accounts for the sign difference between
+  Eqs.~\eqref{eq:repulsive-angles} and~\eqref{eq:attractive-angles}.}
+  \label{fig:attractive}
+\end{figure}
+
+In the repulsive case
+%
+\begin{equation}\label{eq:repulsive-angles}
+  \pi = \theta + 2\psi,
+  \qquad \theta = \pi - 2\psi,
+  \qquad \psi = \frac{\pi-\theta}{2},
+\end{equation}
+%
+and in the attractive case
+%
+\begin{equation}\label{eq:attractive-angles}
+  \pi = 2\psi - \theta,
+  \qquad \theta = 2\psi - \pi,
+  \qquad \psi = \frac{\pi+\theta}{2} .
+\end{equation}
+%
+In all cases
+%
+\begin{equation}\label{eq:theta-abs}
+  \boxeq[theta equals the absolute value of pi minus 2 psi]{%
+    \theta = \lvert \pi - 2\psi \rvert }
+\end{equation}
+
+\subsection{Computing \texorpdfstring{$s(\theta,E)$}{s(theta,E)}: the universal method}
+
+The radial energy equation and the angular momentum together reduce the orbit
+to a quadrature. Writing $\orbang$ for the running orbit angle, to keep it
+distinct from the scattering angle $\theta$,
+%
+\begin{align}
+  E &= \frac{m}{2}\dot r^{2} + V(r) + \frac{\ell^{2}}{2mr^{2}},
+      \label{eq:energy-radial}\\
+  \dot r &= \left[\frac{2}{m}\left(E - V(r) - \frac{\ell^{2}}{2mr^{2}}\right)\right]^{1/2},
+      \qquad \dot r = \dd{r}{t} \implies \d t = \frac{\d r}{\dot r},
+      \label{eq:rdot}
+\end{align}
+%
+and, since $\ell = mr^{2}\,\orbrate$,
+%
+\begin{equation}\label{eq:dtheta}
+  \orbrate = \frac{\ell}{mr^{2}}
+  \implies
+  \d\orbang = \frac{\ell}{mr^{2}}\,\d t
+            = \frac{\ell}{mr^{2}}\,\frac{\d r}
+              {\left[\frac{2}{m}\left(E - V(r) - \frac{\ell^{2}}{2mr^{2}}\right)\right]^{1/2}} .
+\end{equation}
+%
+Taking $2E/m$ out of the bracket turns this into
+%
+\begin{equation}\label{eq:dtheta-factored}
+  \d\orbang =
+    \underbrace{\frac{\ell}{m}\sqrt{\frac{m}{2E}}}_{\textstyle =\ \ell/\sqrt{2mE}\ =\ s}
+    \ \frac{r^{-2}\,\d r}
+      {\left[1 - \dfrac{V(r)}{E}
+        - \underbrace{\frac{\ell^{2}}{2mE}}_{\textstyle =\ s^{2}}\ \frac{1}{r^{2}}\right]^{1/2}} ,
+\end{equation}
+%
+so that, integrating from the apsis out to infinity,
+%
+\begin{equation}\label{eq:psi-quadrature}
+  \psi = \int_{0}^{\psi}\d\psi
+       = \int_{\orbang_m}^{\pi}\d\orbang
+       = \int_{r_m}^{\infty}
+         \frac{s\,r^{-2}\,\d r}
+              {\left[1 - V(r) - \dfrac{s^{2}}{r^{2}}\right]^{1/2}} ,
+\end{equation}
+%
+where $\orbang_m$ is the orbit angle at the apsis and $r_m$ the corresponding
+radius.
+%
+\erratum{The potential term in Eq.~\eqref{eq:psi-quadrature} is written $V(r)$
+where $V(r)/E$ is meant. Eq.~\eqref{eq:dtheta-factored}, which it comes from,
+carries the $/E$, and so does the result it leads to,
+Eq.~\eqref{eq:theta-of-s}; without it the bracket adds an energy to two
+dimensionless terms.}
+%
+With the substitution
+%
+\begin{equation}\label{eq:u-sub}
+  u = \frac{1}{r}, \qquad \d u = r^{-2}\,\d r, \qquad u_m = \frac{1}{r_m},
+\end{equation}
+%
+\erratum{$\d u = r^{-2}\,\d r$ is written without its minus sign. The sign is
+absorbed exactly by the reversal of limits that turns
+$\int_{r_m}^{\infty}$ into the integral from $0$ to $u_m$ below.}
+%
+Eq.~\eqref{eq:psi-quadrature} then becomes
+%
+\begin{equation}\label{eq:theta-of-s}
+  \boxeq[theta of s equals the absolute value of pi minus twice the integral
+  from zero to u sub m of s d u, over the square root of one minus V of u over
+  E minus s squared u squared]{%
+    \theta(s) = \left\lvert\, \pi - 2\int_{0}^{u_m}
+      \frac{s\,\d u}{\left[1 - \frac{V(u)}{E} - s^{2}u^{2}\right]^{1/2}} \,\right\rvert }
+\end{equation}
+%
+From here, compute
+%
+\begin{equation}\label{eq:dsdtheta-inv}
+  \left\lvert\dd{s}{\theta}\right\rvert
+    = \frac{1}{\left\lvert\dfrac{\d\theta}{\d s}\right\rvert}
+\end{equation}
+%
+and use it to get
+$\sigma(\theta) = \frac{s}{\sin\theta}\left\lvert\dd{s}{\theta}\right\rvert$,
+which is Eq.~\eqref{eq:sigma-general}.
+
+Up to here the results are valid for \emph{any} central potential $V(r)$.
+
+\section{Coulomb scattering}
+
+Charges are written in Gaussian units throughout, as in the reference
+convention, so that the Coulomb force carries no factor of $4\pi\epsilon_0$.
+The two like charges of Fig.~\ref{fig:charges} drive each other apart.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[alt={Two small circles stand for point charges, the left one labelled Z e and the right one labelled Z prime e, set a short distance apart on a diagonal. Each carries a short arrow pointing away from the other along the line joining them, the left charge driven up and to the left and the right charge down and to the right, indicating that the two repel one another.}, width=0.46\textwidth]{scat_fig0_charges.png}
+  \caption{The two charges $Ze$ and $Z'e$ driving each other apart along the
+  line joining them, the case in which the force of
+  Eq.~\eqref{eq:coulomb-force} is repulsive.}
+  \label{fig:charges}
+\end{figure}
+
+The force and potential are
+%
+\begin{equation}\label{eq:coulomb-force}
+  f = \frac{Z Z' e^{2}}{r^{2}}, \qquad
+  f = -\frac{k}{r^{2}}, \qquad
+  V = -\frac{k}{r}, \qquad
+  k = -Z Z' e^{2} .
+\end{equation}
+
+For scattering, $E>0$, and the orbit is
+%
+\begin{equation}\label{eq:orbit}
+  \frac{1}{r} = C\left[1 + \varepsilon\cos(\orbang - \orbang')\right],
+  \qquad
+  C = \frac{mk}{\ell^{2}} = -\frac{m}{\ell^{2}}\,Z Z' e^{2} ,
+\end{equation}
+%
+with eccentricity
+%
+\begin{equation}\label{eq:eccentricity}
+  \varepsilon = \left[1 + \frac{2E\ell^{2}}{mk^{2}}\right]^{1/2}
+              = \left[1 + \frac{2E\ell^{2}}{m\,(Z Z' e^{2})^{2}}\right]^{1/2}
+              = \left[1 + \left(\frac{2sE}{Z Z' e^{2}}\right)^{2}\right]^{1/2} > 1 ,
+\end{equation}
+%
+the last step following from $\ell = s\,m\,v_0 = s\sqrt{2mE}$, which gives
+%
+\begin{equation}\label{eq:2l2E}
+  \frac{2\ell^{2}E}{m}
+    = \frac{s^{2}\,2^{2}\,\cancelled[m cancels]{m}\,E^{2}}{\cancelled[m cancels]{m}}
+    = (2sE)^{2} .
+\end{equation}
+
+The orbit types this potential admits are listed in Table~\ref{tab:conics}.
+
+\begin{table}[H]
+  \centering
+  \caption{Orbit type by sign of the energy. These three cases hold only for
+  the potential $V=-k/r$.}
+  \label{tab:conics}
+  \headerrows{1}
+  \begin{tabular}{ll}
+    \noalign{\tablesummary{Gives the orbit type -- hyperbolic, parabolic or elliptic -- for each sign of the energy, for the potential minus k over r.}}%
+    \toprule
+    Energy & Orbit \\
+    \midrule
+    $E>0$ & hyperbolic \\
+    $E=0$ & parabolic  \\
+    $E<0$ & elliptic   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+There are two situations:
+%
+\begin{enumerate}
+  \item repulsive case, $Z Z' > 0 \implies k = -Z Z' e^{2} < 0$;
+  \item attractive case, $Z Z' < 0 \implies k = -Z Z' e^{2} > 0$
+        (also gravity, $k = G m_1 m_2$).
+\end{enumerate}
+
+\subsection{Repulsive case}
+
+Here $k<0$ and $C = mk/\ell^{2} < 0$, so, dividing by the negative $C$ and
+reversing the inequality at each step,
+%
+\begin{align}
+  \frac{1}{r} = C\left[1 + \varepsilon\cos(\orbang-\orbang')\right] > 0
+  &\iff 1 + \varepsilon\cos(\orbang-\orbang') < 0 \notag\\
+  &\iff \varepsilon\cos(\orbang-\orbang') < -1 \notag\\
+  &\iff \cos(\orbang-\orbang') < -\frac{1}{\varepsilon} .
+  \label{eq:repulsive-ineq}
+\end{align}
+%
+The cosine must be negative and larger in magnitude than $1/\varepsilon$. In
+this case $\orbang = \orbang'$ is not a physical point, because
+$\cos(\orbang'-\orbang') = \cos 0 = 1$ would give
+$\frac{1}{r} = C\left[1+\varepsilon\right] < 0$, which is unphysical. So
+$\orbang = \orbang'$ lies in the middle of the inaccessible region of the
+hyperbola, and $\orbang = \orbang' \pm \pi$ is the periapsis; choosing
+$\orbang' = \pi$ gives
+%
+\begin{equation}\label{eq:cos-shift}
+  \cos(\orbang-\orbang') = \cos(\orbang-\pi)
+    = \cos\orbang\,\underbrace{\cos\pi}_{-1}
+    + \sin\orbang\,\underbrace{\sin\pi}_{0}
+    = -\cos\orbang ,
+\end{equation}
+%
+and therefore
+%
+\begin{equation}\label{eq:repulsive-orbit}
+  \frac{1}{r} = \left(-\frac{mk}{\ell^{2}}\right)
+                \left[-1 - \varepsilon\cos(\orbang-\orbang')\right]
+              = \frac{m\,Z Z' e^{2}}{\ell^{2}}\left[\varepsilon\cos\orbang - 1\right].
+\end{equation}
+%
+This is a maximum at $\orbang = 0$, so the minimum radius is
+%
+\begin{equation}\label{eq:rmin-repulsive}
+  \frac{1}{r_m} = \frac{m\,Z Z' e^{2}}{\ell^{2}}\left[\varepsilon - 1\right],
+\end{equation}
+%
+and the angle at the apsidal point is $\orbang = 0$. From here on the origin of
+$\orbang$ is the apsidal line, so the apsis is at $\orbang = 0$. In
+Eq.~\eqref{eq:psi-quadrature} the origin was the forward beam axis, with the
+incoming asymptote at $\orbang = \pi$.
+
+What is needed now is $\psi = \orbang(r\to\infty) = \orbang(1/r \to 0)$. In the
+repulsive case $\theta = \pi - 2\psi$, so $\psi = (\pi-\theta)/2$ and
+%
+\begin{equation}\label{eq:psi-repulsive}
+  0 = \varepsilon\cos\psi - 1
+  \iff
+  \frac{1}{\varepsilon} = \cos\psi = \cos\!\left(\frac{\pi-\theta}{2}\right)
+    = \underbrace{\cos\frac{\pi}{2}}_{0}\cos\frac{\theta}{2}
+    + \underbrace{\sin\frac{\pi}{2}}_{1}\sin\frac{\theta}{2}
+    = \sin\frac{\theta}{2} .
+\end{equation}
+
+\subsection{Attractive case}
+
+Here $k>0$ and $C = km/\ell^{2} > 0$. Take $\orbang' = 0$; then
+$\orbang = \orbang' = 0$ gives
+%
+\begin{equation}\label{eq:attractive-orbit}
+  \frac{1}{r} = C\left[1 + \varepsilon\cos(0)\right] = C\left[1+\varepsilon\right],
+\end{equation}
+%
+a maximum at $\orbang = 0$, so the minimum radius is
+$1/r_m = C\left[1+\varepsilon\right]$ and the apsidal point is also at
+$\orbang = 0$.
+
+Again what is needed is $\psi = \orbang(r\to\infty) = \orbang(1/r\to 0)$. In the
+attractive case $\theta = 2\psi - \pi$, so $\psi = (\pi+\theta)/2$ and
+%
+\begin{equation}\label{eq:psi-attractive}
+  0 = 1 + \varepsilon\cos\psi
+  \iff
+  -\frac{1}{\varepsilon} = \cos\psi = \cos\!\left(\frac{\pi+\theta}{2}\right)
+    = \underbrace{\cos\frac{\pi}{2}}_{0}\cos\frac{\theta}{2}
+    - \underbrace{\sin\frac{\pi}{2}}_{1}\sin\frac{\theta}{2}
+    = -\sin\frac{\theta}{2} .
+\end{equation}
+
+\section{The Rutherford cross section}
+
+Cancelling the overall minus sign in Eq.~\eqref{eq:psi-attractive} gives
+$1/\varepsilon = \sin(\theta/2)$, exactly as
+Eq.~\eqref{eq:psi-repulsive} does, so both cases can be carried forward
+together.
+
+\supplied{The step joining the two cases is supplied. Each case is carried to
+its own result and the two are then used together without it.}
+
+\begin{equation}\label{eq:cot2}
+  \cot^{2}\frac{\theta}{2}
+    = \frac{1}{\tan^{2}\frac{\theta}{2}}
+    = \frac{\cos^{2}\frac{\theta}{2}}{\sin^{2}\frac{\theta}{2}}
+    = \frac{1-\sin^{2}\frac{\theta}{2}}{\sin^{2}\frac{\theta}{2}}
+    = \frac{1}{\sin^{2}\frac{\theta}{2}} - 1
+    = \varepsilon^{2} - 1
+    = \left(\frac{2sE}{Z Z' e^{2}}\right)^{2},
+\end{equation}
+%
+so that
+%
+\begin{equation}\label{eq:s-of-theta}
+  \boxeq[s equals the absolute value of Z Z prime e squared over 2 E, times
+  cotangent of theta over 2]{%
+    s = s(\theta,E) = \left\lvert \frac{Z Z' e^{2}}{2E} \right\rvert
+        \cot\frac{\theta}{2} }
+\end{equation}
+
+Differentiating,
+%
+\begin{align}
+  \dd{s}{\theta}
+    &= \left\lvert\frac{Z Z' e^{2}}{2E}\right\rvert
+       \dd{}{\theta}\!\left(\frac{\cos\frac{\theta}{2}}{\sin\frac{\theta}{2}}\right)
+     = \left\lvert\frac{Z Z' e^{2}}{2E}\right\rvert
+       \left(\frac{1}{2}\frac{-\sin\frac{\theta}{2}}{\sin\frac{\theta}{2}}
+             - \frac{1}{2}\frac{\cos^{2}\frac{\theta}{2}}{\sin^{-2}\frac{\theta}{2}}\right)
+       \notag\\
+    &= -\left\lvert\frac{Z Z' e^{2}}{4E}\right\rvert
+        \frac{1}{\sin^{2}\frac{\theta}{2}} ,
+  \label{eq:dsdtheta}
+\end{align}
+%
+\erratum{The second term inside the bracket of Eq.~\eqref{eq:dsdtheta} is
+written over $\sin^{-2}(\theta/2)$ where $\sin^{2}(\theta/2)$ is meant; the
+quotient rule gives $-\tfrac{1}{2}\cot^{2}(\theta/2)$ for it, which with the
+first term makes $-\tfrac{1}{2}\csc^{2}(\theta/2)$, and that is what the second
+line uses.}
+%
+Substituting into Eq.~\eqref{eq:sigma-general} gives
+%
+\begin{equation}\label{eq:sigma-build}
+  \sigma(\theta) = \frac{s}{\sin\theta}\left\lvert\dd{s}{\theta}\right\rvert
+    = \frac{1}{2}\left(\frac{Z Z' e^{2}}{2E}\right)^{2}
+      \cdot \frac{1}{2\sin\frac{\theta}{2}\,\cancelled[cosine of theta over two cancels]{\cos\frac{\theta}{2}}}
+      \cdot \frac{\cancelled[cosine of theta over two cancels]{\cos\frac{\theta}{2}}}{\sin\frac{\theta}{2}}
+      \cdot \frac{1}{\sin^{2}\frac{\theta}{2}} ,
+\end{equation}
+%
+which is the Rutherford scattering cross section for Coulomb forces:
+%
+\begin{equation}\label{eq:rutherford}
+  \boxeq[sigma of theta equals one quarter times, Z Z prime e squared over 2 E,
+  all squared, times cosecant to the fourth power of theta over 2]{%
+    \sigma(\theta) = \frac{1}{4}\left(\frac{Z Z' e^{2}}{2E}\right)^{2}
+      \csc^{4}\!\left(\frac{\theta}{2}\right) }
+\end{equation}
+
+\subsection[Remarks on Eq. (37)]{Remarks on Eq.~\eqref{eq:rutherford}}
+
+\begin{enumerate}
+  \item The cross section is the same for the repulsive and attractive cases,
+        since it is proportional to $(Z Z')^{2}$.
+  \item It diverges like $E^{-2}$ at low energies.
+  \item It diverges like $\theta^{-4}$ (very strongly) for small angles $\theta$.
+  \item This classical result is exactly the same as the result obtained in
+        quantum mechanics.
+\end{enumerate}
+%
+\erratum*{$(zz')^{2}$ is written in lower case, $E^{-2}$ and $\theta^{-4}$ as
+unrendered markup, and the third remark as ``VERY STRONG!!!''. The mathematics
+is set here as mathematics and the casing brought into line with the $Z Z'$
+used throughout.}
+
+\subsection{Total scattering cross section}
+
+The total cross section of Eq.~\eqref{eq:sigma-T-def} may now be evaluated:
+%
+\begin{equation}\label{eq:sigmaT}
+  \sigma_T = \int \sigma(\Om)\,\d\Om .
+\end{equation}
+%
+In this case $\sigma(\theta) = \text{const}\cdot 1/\sin^{4}(\theta/2)$, and
+with
+%
+\begin{equation}\label{eq:dOmega-half}
+  \d\Om = 2\pi\sin\theta\,\d\theta
+        = 4\pi\sin\frac{\theta}{2}\cos\frac{\theta}{2}\,\d\theta ,
+\end{equation}
+%
+\begin{equation}\label{eq:sigmaT-integral}
+  \sigma_T = \frac{4\pi}{4}\left(\frac{Z Z' e^{2}}{2E}\right)^{2}
+    \int_{0}^{\pi}
+    \frac{\sin\frac{\theta}{2}\cos\frac{\theta}{2}}{\sin^{4}\frac{\theta}{2}}\,\d\theta ,
+\end{equation}
+%
+the range $0<\theta\le\pi$ being the full span of deflections available
+(Fig.~\ref{fig:scatcenter}). The small-angle behaviour of the integrand
+controls the result:
+%
+\begin{equation}\label{eq:divergence}
+  \sigma_T \sim \int_{0}^{\delta}\frac{\d\theta}{(\theta/2)^{3}}
+     = 8\int_{0}^{\delta}\frac{\d\theta}{\theta^{3}}
+     = 8\left.\frac{\theta^{-2}}{(-2)}\right|_{0}^{\delta}
+     = +\infty ,
+\end{equation}
+%
+which is strongly divergent.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[alt={A horizontal baseline with a dot at its middle marks the scattering center, labelled beneath it. A short beam arrow at the far left travels parallel to the baseline, offset above it by a height marked s between two arrowheads. A wide arc sweeps over the top from just above the baseline left of the center round to just above the baseline to its right, carrying an arrowhead at each end, and is labelled with the range 0 less than theta, theta at most pi, showing that every deflection direction from forward to backward, including exact backscattering, is available. A straight line runs up and to the right from the center as one such outgoing direction, and a plain arc with a rounded terminus at each end, not an arrowhead, runs from the baseline to that line to mark the angle theta between them.}, width=0.60\textwidth]{scat_fig4_scattering_center.png}
+  \caption{The full range of deflection directions available to a particle
+  passing the scattering center, $0<\theta\le\pi$, which is the range integrated
+  over in Eq.~\eqref{eq:sigmaT-integral}.}
+  \label{fig:scatcenter}
+\end{figure}
+
+The divergence behaves differently in the two theories, as
+Table~\ref{tab:classical-quantum} records.
+
+\begin{table}[H]
+  \centering
+  \caption{Behaviour of the total cross section for long-range potentials in
+  the two theories.}
+  \label{tab:classical-quantum}
+  \headerrows{1}
+  \begin{tabular}{l>{\raggedright\arraybackslash}p{0.62\linewidth}}
+    \noalign{\tablesummary{Compares the classical and quantum total cross section for long-range potentials, stating for which potentials each diverges.}}%
+    \toprule
+    Theory & Total cross section \\
+    \midrule
+    Classical & $\sigma_T = +\infty$ for any long-range potential \\
+    Quantum   & $\sigma_T = +\infty$ for some long-range potentials, those
+                whose $V(r)$ does not decay fast enough as $r\to\infty$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\clearpage
+\subsection{Notation}
+
+The source itself compares two of these symbols to Goldstein, Poole \&
+Safko, \emph{Classical Mechanics}, 3rd~ed.: $\sigma(\Om)$ and $\sigma_T$,
+against $\dd{\sigma}{\Om}$ and $\sigma$ as written elsewhere. The remaining
+rows of Table~\ref{tab:notation} are supplied to extend that same comparison
+to the other symbols in this document, drawn from Ch.~3.10 and Ch.~8, whose
+notation might otherwise be read against a different convention.
+
+\begin{table}[H]
+  \centering
+  \caption{Symbols used here, their counterparts in Goldstein, Poole \& Safko,
+  and the departures from that convention.}
+  \label{tab:notation}
+  \headerrows{1}
+  \begin{tabular}{ll>{\raggedright\arraybackslash}p{0.46\linewidth}}
+    \noalign{\tablesummary{Lists each symbol used here beside the symbol used in Goldstein, Poole and Safko for the same quantity, and notes where this document departs from that convention.}}%
+    \toprule
+    Used here & Goldstein / elsewhere & Quantity, and any departure \\
+    \midrule
+    $\sigma(\Om)$ & $\sigma(\Om)$      & differential scattering cross
+                                         section; matches Goldstein directly
+                                         ($\dd{\sigma}{\Om}$ is common
+                                         elsewhere) \\
+    $\sigma_T$    & $\sigma_T$         & total scattering cross section;
+                                         matches Goldstein directly ($\sigma$
+                                         alone is common elsewhere) \\
+    $\theta$      & $\Theta$           & scattering angle; Goldstein sets it
+                                         capital, and lower case is kept here \\
+    $\orbang$     & $\theta$           & running orbit angle, tilded so that it
+                                         cannot be read as the scattering angle \\
+    $\psi$        & $\Psi$             & angle from the apsidal line to the
+                                         incoming asymptote (Figs.~2, 3);
+                                         Goldstein introduces it unnamed and
+                                         capitalized, lower case is kept here \\
+    $\varepsilon$ & $e$                & orbit eccentricity, kept distinct from
+                                         the elementary charge $e$ \\
+    $s$           & $s$                & impact parameter; matches Goldstein
+                                         directly (Taylor's \emph{Classical
+                                         Mechanics} writes $b$ for the same
+                                         quantity, noted here only for a reader
+                                         coming from that text) \\
+    $q_i,\,p_i$   & $q_i,\,p_i$        & generalized coordinate and conjugate
+                                         momentum (Ch.~8); match Goldstein
+                                         directly \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{caveat}
+In a dense conducting material the potential is screened,
+%
+\begin{equation}\label{eq:yukawa}
+  V = -\frac{k}{r} \longrightarrow
+  V^{\mathrm{screen}}(r) = -\frac{k}{r}\,\ee^{-r/\lambda},
+\end{equation}
+%
+the screened Coulomb (``Yukawa'') potential. In non-conducting materials
+$V^{\mathrm{screen}}(r)$ may take a different form, but will still vanish much
+faster than $1/r$.
+\end{caveat}
+
+\section{The Hamiltonian and Hamilton's equations of motion}
+
+Starting from
+%
+\begin{equation}\label{eq:lagrangian}
+  L = T - V = L(q_1,\dots,q_n,\dot q_1,\dots,\dot q_n,t),
+\end{equation}
+%
+the Lagrange equations and the conjugate momenta are
+%
+\begin{equation}\label{eq:lagrange-eq}
+  0 = \ddt{}\left(\evalat{\pd{L}{\dot q_i}}{q_j,\dot q_j}\right)
+      - \evalat{\pd{L}{q_i}}{\dot q_j,q_j},
+  \qquad
+  p_i = \evalat{\pd{L}{\dot q_i}}{q_j,\dot q_j} .
+\end{equation}
+
+\begin{remark}[Midterm remark]
+In polar coordinates $\partial L/\partial\dot\theta = p_\theta = \ell_z$,
+where $\theta$ is the polar coordinate rather than the scattering angle of the
+preceding sections. What follows from it is struck out:
+$\formulaalt{retracted: L equals L of r, r-dot, p-theta}%
+\xcancel{L = L(r,\dot r,p_\theta)}$,
+\sout{giving the Lagrange equation}. The conserved momentum may not be
+substituted back into the Lagrangian and the Lagrange equations then reused.
+\end{remark}
+
+\subsection{The Legendre transformation}
+
+The transformation to be made is
+%
+\begin{equation}\label{eq:legendre-goal}
+  q_1,\dots,q_n,\dot q_1,\dots,\dot q_n \longrightarrow q_1,\dots,q_n,p_1,\dots,p_n ,
+\end{equation}
+%
+and for a function of two variables it rests on
+%
+\begin{equation}\label{eq:df}
+  f(x,y) \implies \d f = \pd{f}{x}\,\d x + \pd{f}{y}\,\d y .
+\end{equation}
+
+\subsubsection{The thermodynamic case}
+
+In this subsection $T$, $V$ and $p$ denote temperature, volume and pressure,
+not the kinetic energy, potential and momenta of the preceding sections. The
+first law, for a fluid at constant $N$, is
+%
+\begin{equation}\label{eq:first-law}
+  \d U = \dbar Q + \dbar W = T\,\d S - p\,\d V,
+  \qquad U = U(S,V) \ \text{the internal energy}.
+\end{equation}
+%
+To have $T$ and $V$ as the variables instead, introduce the Helmholtz free
+energy $F = A = U - TS$:
+%
+\begin{equation}\label{eq:helmholtz}
+  \d A = \d U - \d(TS)
+       = \cancelled[T d S cancels]{T\,\d S} - p\,\d V
+         - \cancelled[T d S cancels]{T\,\d S} - S\,\d T
+       = -S\,\d T - p\,\d V
+  \implies A = A(T,V) .
+\end{equation}
+
+\subsubsection{The general case}
+
+The same transformation in the abstract, with $u$ here the variable conjugate
+to $x$ rather than the $1/r$ of Eq.~\eqref{eq:u-sub}, reads
+%
+\begin{equation}\label{eq:general-legendre}
+  f(x,y) = u\,\d x + v\,\d y,
+  \qquad u = \pd{f}{x}, \qquad v = \pd{f}{y},
+  \qquad (x,y) \longrightarrow (u,y) .
+\end{equation}
+%
+\erratum{The left-hand side of Eq.~\eqref{eq:general-legendre} is written
+$f(x,y)$ where the differential $\d f$ is meant, as Eq.~\eqref{eq:df} has it
+and as Eq.~\eqref{eq:g} then consumes it.}
+%
+\begin{equation}\label{eq:g}
+  g = f - ux
+  \implies
+  \d g = \d f - \d(ux)
+       = \cancelled[u d x cancels]{u\,\d x} + v\,\d y
+         - \cancelled[u d x cancels]{u\,\d x} - x\,\d u
+       = -x\,\d u + v\,\d y,
+  \qquad g = g(u,y) .
+\end{equation}
+
+\subsection{The Hamiltonian}
+
+Applying this to $L(q_1,\dots,q_n,\dot q_1,\dots,\dot q_n)$ with
+%
+\begin{equation}\label{eq:p-def}
+  \ovaleq[p sub i equals the partial derivative of L with respect to q dot sub
+  i, at fixed q j and q dot j]{p_i = \evalat{\pd{L}{\dot q_i}}{q_j,\dot q_j}}
+\end{equation}
+%
+gives
+%
+\begin{equation}\label{eq:H-def}
+  H = -\left(L - \sum_i p_i \dot q_i\right),
+\end{equation}
+%
+written this way to mirror $g = f - ux$ of Eq.~\eqref{eq:g}, with $H = -g$; it
+is the usual $\sum_i p_i\dot q_i - L$. Then
+%
+\begin{equation}\label{eq:dH-expand}
+  \d H = -\d L + \sum_i \d(p_i \dot q_i)
+       = -\pd{L}{t} -\sum_i\left(\pd{L}{q_i}\,\d q_i
+         + \cancelled[the partial L by partial q dot i term cancels]
+           {\pd{L}{\dot q_i}\,\d\dot q_i}\right)
+         + \sum_i\left(\cancelled[the p i d q dot i term cancels]{p_i\,\d\dot q_i}
+           + \dot q_i\,\d p_i\right) ,
+\end{equation}
+%
+so that
+%
+\begin{equation}\label{eq:dH}
+  \d H = -\pd{L}{t} + \sum_i\left(\dot q_i\,\d p_i - \pd{L}{q_i}\,\d q_i\right)
+  \implies H = H(p_1,\dots,p_n,q_1,\dots,q_n,t) .
+\end{equation}
+%
+\erratum{The first term of Eqs.~\eqref{eq:dH-expand} and~\eqref{eq:dH} carries
+no differential: with every other term a differential, it is
+$-\pd{L}{t}\,\d t$.}
+
+Reading off the coefficients gives the canonical equations of motion, the
+middle one using the Lagrange equation~\eqref{eq:lagrange-eq}:
+%
+\begin{equation}\label{eq:canonical}
+  \boxeq[partial H by partial p i equals q dot i; partial H by partial q i
+  equals minus partial L by partial q i equals minus p dot i; partial H by
+  partial t equals minus partial L by partial t]{%
+    \pd{H}{p_i} = \dot q_i,
+    \qquad
+    \pd{H}{q_i} = -\pd{L}{q_i} = -\dot p_i,
+    \qquad
+    \pd{H}{t} = -\pd{L}{t} }
+\end{equation}
+
+\end{document}

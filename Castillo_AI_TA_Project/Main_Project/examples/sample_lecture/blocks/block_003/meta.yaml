@@ -1,0 +1,15 @@
+block_id: block_003
+section: euler_lagrange
+reading_order: 3
+content_type: equation
+source_ref:
+  page: page_01.jpg
+  region: bottom third of page
+ai_summary: States the Euler-Lagrange equation obtained from the stationary action condition.
+handwriting_preserved: true
+equations_detected:
+  - "d/dt (partial L / partial q-dot) - partial L / partial q = 0"
+depends_on:
+  - block_002
+confidence: medium
+review_notes: Lower portion of equation slightly smudged; verify partial derivative notation.

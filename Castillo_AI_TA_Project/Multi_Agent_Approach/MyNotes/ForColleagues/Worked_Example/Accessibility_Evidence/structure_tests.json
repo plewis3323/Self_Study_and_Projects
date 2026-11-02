@@ -1,0 +1,243 @@
+{
+ "pdf": "Final_Product_Ready/hc6001_2024-10-22_scattering_hamiltonian.pdf",
+ "pages": 11,
+ "structure_elements": 1292,
+ "element_types": {
+  "Parent": 687,
+  "Formula": 187,
+  "P": 113,
+  "Part": 58,
+  "Link": 36,
+  "?": 36,
+  "TD": 28,
+  "Span": 25,
+  "Sect": 18,
+  "Lbl": 16,
+  "TR": 14,
+  "Caption": 10,
+  "H2": 10,
+  "Div": 10,
+  "Note": 8,
+  "TH": 7,
+  "LI": 6,
+  "LBody": 6,
+  "Figure": 5,
+  "H1": 4,
+  "Table": 3,
+  "L": 2,
+  "H3": 2,
+  "Document": 1
+ },
+ "raw_element_types": {
+  "Parent": 687,
+  "Formula": 187,
+  "text": 112,
+  "text-unit": 58,
+  "Link": 36,
+  "?": 36,
+  "TD": 28,
+  "Sect": 16,
+  "section-number": 16,
+  "TR": 14,
+  "Caption": 10,
+  "Lbl": 10,
+  "subsection": 10,
+  "Div": 10,
+  "Em": 9,
+  "float": 8,
+  "TH": 7,
+  "item": 6,
+  "itemlabel": 6,
+  "itembody": 6,
+  "Figure": 5,
+  "section": 4,
+  "Table": 3,
+  "enumerate": 2,
+  "theorem-like": 2,
+  "subsubsection": 2,
+  "Document": 1,
+  "Title": 1
+ },
+ "rolemap_entries": 40,
+ "t1_headings": {
+  "count": 16,
+  "expected": 16,
+  "by_level": {
+   "H1": 4,
+   "H2": 10,
+   "H3": 2
+  },
+  "skipped_levels": [],
+  "pass": true
+ },
+ "t2_reachability": {
+  "total_ops": 3406,
+  "artifact_ops": 23,
+  "reachable_ops": 3383,
+  "unreachable_ops": 0,
+  "orphans_by_page": {},
+  "pass": true
+ },
+ "t3_artifacts": {
+  "artifact_frames": 132,
+  "by_subtype": {
+   "unclassified": 132
+  },
+  "suspicious": [],
+  "tagged_content_inside_artifact": [],
+  "pass": true
+ },
+ "t4_figure_positions": {
+  "figure_count": 5,
+  "positions_pct": [
+   6.7,
+   15.9,
+   17.8,
+   33.0,
+   69.3
+  ],
+  "past_90pct": [],
+  "pass": true
+ },
+ "lists_tables": {
+  "counts": {
+   "L": 2,
+   "LI": 6,
+   "Lbl": 16,
+   "LBody": 6,
+   "Table": 3,
+   "TR": 14,
+   "TH": 7,
+   "TD": 28,
+   "THead": 0,
+   "TBody": 0,
+   "TFoot": 0
+  },
+  "LI_missing_child": [],
+  "tables_without_TH": [],
+  "tables_without_summary": [],
+  "TR_bad_parent": [],
+  "pass": true
+ },
+ "math": {
+  "formula_elements": 187,
+  "mathml_attached_files": 151,
+  "mathml_empty": 8,
+  "mathml_empty_xrefs": [
+   503,
+   507,
+   587,
+   698,
+   1027,
+   1087,
+   1418,
+   1583
+  ],
+  "empty_with_fallback": [
+   {
+    "formula_xref": 503,
+    "mathml_xref": 66,
+    "spoken": "sigma of theta equals s over sine theta, times the absolute value of d"
+   },
+   {
+    "formula_xref": 507,
+    "mathml_xref": 68,
+    "spoken": "sigma sub T equals the integral of d Omega times sigma of Omega"
+   },
+   {
+    "formula_xref": 587,
+    "mathml_xref": 76,
+    "spoken": "theta equals the absolute value of pi minus 2 psi"
+   },
+   {
+    "formula_xref": 698,
+    "mathml_xref": 110,
+    "spoken": "theta of s equals the absolute value of pi minus twice the integral fr"
+   },
+   {
+    "formula_xref": 1027,
+    "mathml_xref": 208,
+    "spoken": "s equals the absolute value of Z Z prime e squared over 2 E, times cot"
+   },
+   {
+    "formula_xref": 1087,
+    "mathml_xref": 222,
+    "spoken": "sigma of theta equals one quarter times, Z Z prime e squared over 2 E,"
+   },
+   {
+    "formula_xref": 1418,
+    "mathml_xref": 275,
+    "spoken": "retracted: L equals L of r, r-dot, p-theta"
+   },
+   {
+    "formula_xref": 1583,
+    "mathml_xref": 325,
+    "spoken": "partial H by partial p i equals q dot i; partial H by partial q i equa"
+   }
+  ],
+  "empty_without_fallback": [],
+  "formulas_with_alt_or_actualtext": 9,
+  "spoken_fallbacks": [
+   [
+    503,
+    "sigma of theta equals s over sine theta, times the absolute value of d"
+   ],
+   [
+    507,
+    "sigma sub T equals the integral of d Omega times sigma of Omega"
+   ],
+   [
+    587,
+    "theta equals the absolute value of pi minus 2 psi"
+   ],
+   [
+    698,
+    "theta of s equals the absolute value of pi minus twice the integral fr"
+   ],
+   [
+    1027,
+    "s equals the absolute value of Z Z prime e squared over 2 E, times cot"
+   ],
+   [
+    1087,
+    "sigma of theta equals one quarter times, Z Z prime e squared over 2 E,"
+   ],
+   [
+    1418,
+    "retracted: L equals L of r, r-dot, p-theta"
+   ],
+   [
+    1542,
+    "p sub i equals the partial derivative of L with respect to q dot sub i"
+   ],
+   [
+    1583,
+    "partial H by partial p i equals q dot i; partial H by partial q i equa"
+   ]
+  ],
+  "replacement_chars_in_mathml": 20,
+  "pass": true
+ },
+ "alt_text": {
+  "figures": 5,
+  "with_alt": 5,
+  "missing_alt": [],
+  "generic_alt": [],
+  "sidecar_match": true,
+  "sidecar_missing": [],
+  "pass": true
+ },
+ "metadata": {
+  "title": "Scattering by a Central Potential; the Hamiltonian",
+  "lang": "en-US",
+  "DisplayDocTitle": true,
+  "pdfuaid_part": "2",
+  "encrypted": false,
+  "permissions_int": -4,
+  "pass": true
+ },
+ "full_text": {
+  "extracted_chars": 16064,
+  "pass": true
+ }
+}

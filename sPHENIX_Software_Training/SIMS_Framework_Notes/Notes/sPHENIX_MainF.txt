@@ -1,0 +1,11 @@
+
+                                                             ** Main sPHENIX Framework and  Software Notes for class ** 
+
+ 
+ 
+ * Main Class: http://localhost:8000/lessons/ (ssh in sPHENIX environment and have browser same page) 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+

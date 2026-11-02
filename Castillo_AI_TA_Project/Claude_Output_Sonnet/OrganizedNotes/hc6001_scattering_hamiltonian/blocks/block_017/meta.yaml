@@ -1,0 +1,19 @@
+block_id: block_017
+section: hamiltonian_derivation
+reading_order: 17
+content_type: theorem
+source_ref:
+  page: page_04.jpg
+  region: bottom — boxed canonical equations of motion
+ai_summary: >
+  Boxed canonical (Hamilton's) equations of motion, read off from dH:
+  ∂H/∂p_i = q̇_i, ∂H/∂q_i = −∂L/∂q_i = −ṗ_i (via the Lagrange equation), and
+  ∂H/∂t = −∂L/∂t.
+handwriting_preserved: true
+equations_detected:
+  - "partial H/partial p_i = qdot_i"
+  - "partial H/partial q_i = -partial L/partial q_i = -pdot_i"
+  - "partial H/partial t = -partial L/partial t"
+depends_on:
+  - block_016
+confidence: high

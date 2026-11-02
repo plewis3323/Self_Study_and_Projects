@@ -1,0 +1,42 @@
+
+(Side Note: software for taking written equations to latex readings: mathpix) 
+
+
+
+                                                                                        ** Project Outline:**
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+- Goal of Project: 
+
+    Use AI (Chatbots & Agentic) to convert human level physics lecture notes in readable and organizable pdf-latex outputs that are reproducible 
+    process for the Ohio University Physics Departents and will be inside a shared Repo.  
+    
+    
+    
+
+- Outline: 
+
+Steps: 
+0) Raw human-level notes (paper, whiteboard, scans) — disorganized or partially organized
+
+1) OrganizedNotes package (AI-readable structure, handwriting preserved)
+   - Segment notes into logical blocks (definitions, derivations, equations, diagrams, etc.)
+   - Preserve professor handwriting in cropped block images
+   - Write manifest.yaml + per-block meta.yaml (see Main_Project/schemas/organized_notes_schema.yaml)
+   - Cursor skill: .cursor/skills/physics-notes-organizer/SKILL.md
+   - Standalone prompts: Original_Prompts_Precontext_files/organize_notes_*.md
+   - Example: Main_Project/examples/sample_lecture/
+   - Output directory: OrganizedNotes/<lecture_id>/
+
+2) Two conversion paths from OrganizedNotes:
+
+3a) Mathpix path — OCR each blocks/block_NNN/image.png → raw LaTeX per block → merge by reading_order → clean → PDF
+
+3b) Direct LaTeX agent path — feed manifest.yaml + all meta.yaml + block images → single LaTeX document → PDF
+   (Block images remain authoritative for math content; metadata is hints only)
+
+
+

@@ -1,0 +1,12 @@
+block_id: block_001
+section: action_principle
+reading_order: 1
+content_type: definition
+source_ref:
+  page: page_01.jpg
+  region: top third of page
+ai_summary: Defines the action S as the time integral of the Lagrangian L over a path.
+handwriting_preserved: true
+equations_detected:
+  - "S = integral L dt"
+confidence: high

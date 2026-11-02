@@ -1,0 +1,27 @@
+lecture_id: sample_lecture_lagrangian
+course: PHYS 6801 — Classical Mechanics (Example)
+topic: Lagrangian mechanics and the principle of least action
+date: "2026-01-15"
+source_pages:
+  - page_01.jpg
+reading_order:
+  - block_001
+  - block_002
+  - block_003
+sections:
+  - id: action_principle
+    title: Principle of least action
+    block_ids: [block_001, block_002]
+  - id: euler_lagrange
+    title: Euler-Lagrange equation
+    block_ids: [block_003]
+physics_context:
+  prerequisites:
+    - Newtonian mechanics
+    - Variational calculus (basic)
+  notation:
+    - "S — action"
+    - "L — Lagrangian"
+    - "q — generalized coordinates"
+conversion_path_hint: mathpix
+notes: Minimal example for schema validation; block images are placeholders.

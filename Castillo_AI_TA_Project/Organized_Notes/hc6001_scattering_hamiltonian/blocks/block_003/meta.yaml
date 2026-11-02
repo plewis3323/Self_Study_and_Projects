@@ -1,0 +1,19 @@
+block_id: block_003
+section: scattering_geometry
+reading_order: 3
+content_type: diagram
+source_ref:
+  page: page_01.jpg
+  region: middle band — repulsive and attractive trajectory diagrams
+ai_summary: >
+  Side-by-side diagrams for repulsive and attractive central potentials showing the
+  relation between scattering angle θ and apsidal angle ψ. Repulsive: θ = π − 2ψ;
+  attractive: θ = 2ψ − π; universal form θ = |π − 2ψ|.
+handwriting_preserved: true
+equations_detected:
+  - "theta = pi - 2 psi (repulsive)"
+  - "theta = 2 psi - pi (attractive)"
+  - "theta = |pi - 2 psi|"
+depends_on:
+  - block_001
+confidence: high

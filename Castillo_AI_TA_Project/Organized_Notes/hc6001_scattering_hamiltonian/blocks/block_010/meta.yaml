@@ -1,0 +1,19 @@
+block_id: block_010
+section: rutherford_cross_section
+reading_order: 10
+content_type: derivation
+source_ref:
+  page: page_03.jpg
+  region: top — combining cases through Rutherford σ(θ) formula
+ai_summary: >
+  Combines repulsive and attractive Coulomb results to express cot²(θ/2) in terms of s and E,
+  solves for s(θ, E), computes ds/dθ, and derives the Rutherford differential cross section
+  σ(θ) = (1/4)(zz'e²/2E)² csc⁴(θ/2).
+handwriting_preserved: true
+equations_detected:
+  - "s(theta, E) = |zz'e^2 / (2E)| cot(theta/2)"
+  - "sigma(theta) = (1/4) (zz'e^2 / (2E))^2 csc^4(theta/2)"
+depends_on:
+  - block_008
+  - block_009
+confidence: high

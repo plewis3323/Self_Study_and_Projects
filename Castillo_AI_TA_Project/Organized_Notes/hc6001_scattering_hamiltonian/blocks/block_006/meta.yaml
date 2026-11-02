@@ -1,0 +1,18 @@
+block_id: block_006
+section: coulomb_scattering
+reading_order: 6
+content_type: definition
+source_ref:
+  page: page_02.jpg
+  region: top — Coulomb scattering header, force/potential, orbit types
+ai_summary: >
+  Introduces Coulomb scattering: force f = ZZ'e²/r², potential V = −k/r with k = −ZZ'e².
+  Classifies orbit types by energy (hyperbolic E > 0, parabolic E = 0, elliptic E < 0),
+  noting these apply only for V = −k/r.
+handwriting_preserved: true
+equations_detected:
+  - "f = ZZ'e^2 / r^2"
+  - "V = -k/r, k = -ZZ'e^2"
+depends_on:
+  - block_005
+confidence: high

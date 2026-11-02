@@ -1,0 +1,19 @@
+block_id: block_012
+section: rutherford_cross_section
+reading_order: 12
+content_type: derivation
+source_ref:
+  page: page_03.jpg
+  region: left — total cross section and its divergence
+ai_summary: >
+  Total cross section σ_T = ∫ σ(Ω) dΩ. With σ(θ) ∝ 1/sin^4(θ/2) and
+  dΩ = 2π sin θ dθ = 4π sin(θ/2) cos(θ/2) dθ, the integrand ~ 1/θ^3 for small θ,
+  so σ_T diverges strongly (σ_T → +∞).
+handwriting_preserved: true
+equations_detected:
+  - "sigma_T = integral sigma(Omega) dOmega"
+  - "dOmega = 4 pi sin(theta/2) cos(theta/2) d theta"
+  - "integrand ~ 1/theta^3 for small theta => sigma_T -> +infinity (strongly divergent)"
+depends_on:
+  - block_010
+confidence: high

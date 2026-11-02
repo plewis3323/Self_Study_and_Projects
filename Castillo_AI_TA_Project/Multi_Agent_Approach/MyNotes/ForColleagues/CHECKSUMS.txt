@@ -1,0 +1,104 @@
+# Kit contents -- 95 files
+#
+# Verify after unzipping:      md5sum -c CHECKSUMS.txt
+# (BSD/macOS:                  md5 -r <file>  and compare)
+#
+# The deliverable itself is the line for
+# Worked_Example/Deliverable/hc6001_2024-10-22_scattering_hamiltonian.pdf --
+# md5 85b05d31081368d8b811063456c7f769, the hash the run log, the manifest and
+# the auditor report all describe.
+369e3dce72e1538cecbd7b883ea597fa  CHANGES_SINCE_RUN.md
+1f2c2afff9504cca0c8e1c9efaedfa7b  HOW_TO_REPRODUCE.md
+281198a7a3199942452400f41196202e  Multi_Agent_Outline.md
+76b8b90b51d942f3d70db4aa82fa84cf  README.md
+133db9d8767dd6c6c7e5694e415e92ed  Worked_Example/00_PROCESS_REPORT.md
+c558c777d666f297c1e4afbff63defd3  Worked_Example/Accessibility_Evidence/auditor_report.md
+f632e780367c0577dd66c88bc19e3626  Worked_Example/Accessibility_Evidence/contrast_figures.json
+2bba9b21477445038b5a473dcb496465  Worked_Example/Accessibility_Evidence/contrast_pdf.json
+2de42403bd60480359af07b45c317b80  Worked_Example/Accessibility_Evidence/reading_order_walk.txt
+ea058dedb0610620f6359130f7330feb  Worked_Example/Accessibility_Evidence/review_log_stage4c.md
+250c342f57f64201bb626af48a841f96  Worked_Example/Accessibility_Evidence/screen_reader_walk.txt
+76145252df2cce6d44daa7fac0358b92  Worked_Example/Accessibility_Evidence/structure_tests.json
+30c4873570bb73345c3d0d3f6b7fbcd7  Worked_Example/Accessibility_Evidence/verapdf_ua1.txt
+92c676ebd9c9f6e4d37b2c2c9158063a  Worked_Example/Accessibility_Evidence/verapdf_ua1.xml
+695f38b015908d2535dee6c91ced70a1  Worked_Example/Accessibility_Evidence/verapdf_ua2.txt
+d49bca11f8b8e4ee705bf7bb901efe28  Worked_Example/Accessibility_Evidence/verapdf_ua2.xml
+a810ab227f53e03cfbd9f1f5a404fb9e  Worked_Example/Accessibility_Evidence/verify.sh
+52562939702badbb900702cd9f9089c7  Worked_Example/Deliverable/alt_text.json
+0a913fa79839205c948b4b0e9e6084c0  Worked_Example/Deliverable/errata.json
+2ceb070b324d406b6bbd534f00b4e5d1  Worked_Example/Deliverable/figures/figure_crops.json
+1b4d8e3a2bcb62585b14619c76fcd013  Worked_Example/Deliverable/figures/scat_fig0_charges.png
+cb105469ababe589b140e01e4524b393  Worked_Example/Deliverable/figures/scat_fig1_beam_ring.png
+82666f12c1114dd4ca566232718a13b9  Worked_Example/Deliverable/figures/scat_fig2_repulsive.png
+8c515a1d7f632bdd7af10573d7f2ee36  Worked_Example/Deliverable/figures/scat_fig3_attractive.png
+99d9d841c82918b0cb04ffebcfa09f93  Worked_Example/Deliverable/figures/scat_fig4_scattering_center.png
+2f4158d359441432405b1425d51a266c  Worked_Example/Deliverable/goldsteinnotes.sty
+85b05d31081368d8b811063456c7f769  Worked_Example/Deliverable/hc6001_2024-10-22_scattering_hamiltonian.pdf
+579fc7d29caa94880a2104ede7a0385d  Worked_Example/Deliverable/hc6001_2024-10-22_scattering_hamiltonian.tex
+1b4d8e3a2bcb62585b14619c76fcd013  Worked_Example/Deliverable/html/figures/scat_fig0_charges.png
+cb105469ababe589b140e01e4524b393  Worked_Example/Deliverable/html/figures/scat_fig1_beam_ring.png
+82666f12c1114dd4ca566232718a13b9  Worked_Example/Deliverable/html/figures/scat_fig2_repulsive.png
+8c515a1d7f632bdd7af10573d7f2ee36  Worked_Example/Deliverable/html/figures/scat_fig3_attractive.png
+99d9d841c82918b0cb04ffebcfa09f93  Worked_Example/Deliverable/html/figures/scat_fig4_scattering_center.png
+0857d8b0fff3739502772fcdd3861b15  Worked_Example/Deliverable/html/notes.css
+8ca9d0915eb36d7a230325aa63a8ade7  Worked_Example/Deliverable/html/notes.html
+c20fa069766e25e9fb6b8882a97626d3  Worked_Example/Input/Lecture-scattering-Hamiltonian_241022-forward.pdf
+52562939702badbb900702cd9f9089c7  Worked_Example/Intermediate/alt_text.json
+2ceb070b324d406b6bbd534f00b4e5d1  Worked_Example/Intermediate/figure_crops.json
+7eabd8c1fbe63adbe4f0adbae223f364  Worked_Example/Intermediate/notes_src.tex
+3f0708e9dc9bac525e76c89f54a6ba6b  Worked_Example/Intermediate/pages/page-1.png
+5cf8f2c5b4a64cc787ab140a89efe54f  Worked_Example/Intermediate/pages/page-2.png
+3114e1559109253071bf5adcf0bcc507  Worked_Example/Intermediate/pages/page-3.png
+2e8ae4e08c7989f8894541eddecc25d5  Worked_Example/Intermediate/pages/page-4.png
+159bac8d7217a0c65890b164d77e1f4f  Worked_Example/Intermediate/review_log.md
+159bac8d7217a0c65890b164d77e1f4f  Worked_Example/Intermediate/review_log_stage2.md
+810c234f6b557e43ba366ce9e83dff5d  Worked_Example/Intermediate/scattering_hamiltonian_approved.pdf
+4cb26b5b66874f94aeaf882ef4c73204  Worked_Example/Intermediate/segment_manifest.json
+9a7b0b7ccd6c8dddaff0fe5f7d0e6631  Worked_Example/Intermediate/segment_run.json
+8f52e6a1745fe8cd13d0b9239fdc4a05  Worked_Example/Intermediate/segments/page01_seg01.png
+a871e8bbe76e3ff0f8972339979c4b73  Worked_Example/Intermediate/segments/page01_seg02.png
+2ddd300df72508838199469ab09fba72  Worked_Example/Intermediate/segments/page01_seg03.png
+1b887d45f9cbe123f76cb5a954943233  Worked_Example/Intermediate/segments/page02_seg01.png
+856a608e4d718ac9036b256d5d9b3255  Worked_Example/Intermediate/segments/page02_seg02.png
+b09633bdce78d8d5b9c7d4714d475dfb  Worked_Example/Intermediate/segments/page02_seg03.png
+1e6fc977ec68c4995015ab59ea6dd375  Worked_Example/Intermediate/segments/page02_seg04.png
+7db6bf4fad6d80b5468acc142cab532f  Worked_Example/Intermediate/segments/page03_seg01.png
+082c8670a4910d596b2ac971f24e1ac1  Worked_Example/Intermediate/segments/page03_seg02.png
+d83da0747f5c7c0cfb313105995b3351  Worked_Example/Intermediate/segments/page03_seg03.png
+1d3276de242fdb81b74d996100844a01  Worked_Example/Intermediate/segments/page03_seg04.png
+fa5e8ebdbf348313bb88dcd4a4d8bd3a  Worked_Example/Intermediate/segments/page04_seg01.png
+9b4352dc0da6268dab31d7d328256028  Worked_Example/Intermediate/segments/page04_seg02.png
+1fddf79ecd99b0f4489b054927aa4333  Worked_Example/Intermediate/segments/page04_seg03.png
+f956a43b97720b4e7f8dc29d8c4d3fa4  Worked_Example/Intermediate/segments/page04_seg04.png
+323221d49b78b21fc958618d8e1bf5dd  Worked_Example/MANIFEST.json
+17f5e3274421f694da3d9a8f36c735d7  Worked_Example/PIPELINE_LOG.md
+c15a8e25d2797c70034d69b069080019  Worked_Example/README.md
+67b13152062d24bcfbd0c8df4ee82adb  input/README.md
+acf76d7066f0289e400bb80315515f50  install_toolchain.sh
+098e8f6e6e2454eff39c5d186b440e05  probe.tex
+7511fbd56061388d850c1b4e89a3835b  rebuild_example.sh
+0ec7687062688d84bf8d908398d32ffa  refs/OU-accessibility-sources/01_OU-news-DOJ-extension-260505.pdf
+7588a30031f99493075bbaae11162435  refs/OU-accessibility-sources/02_OU-news-faculty-deadline-260200.pdf
+d2dd80ce8ef52ed9f39f5fe8aad08e1c  refs/OU-accessibility-sources/03_OU-OIT-digital-accessibility-guidelines.pdf
+0a7d78f9585fb2e971db00bb83b0b98e  refs/OU-accessibility-sources/04_OU-OIT-accessible-documents.pdf
+d5156235b72a5c049f777fd68a7427ce  refs/OU-accessibility-sources/05_OU-OIT-faculty-course-checklist.pdf
+6e3ec012184325ef7cc2418e1c542f15  refs/OU-accessibility-sources/06_FederalRegister-Title-II-deadline-extension.pdf
+fa7925096b49bfc62d9d3f7b43ea7c59  refs/OU-accessibility-sources/TA_acc_image.png
+daf2f57288ba5bca580f22ce2e7e9055  refs/OU-accessibility-sources/sources.md
+b70dfac50ba0bdea8f86cb07f7bee3c8  requirements.txt
+f9693e12152ecbb2dae658c37ca688df  style/README.md
+c157242a608afa465f3c66bfda1cb4eb  style/goldsteinnotes.sty
+da276270c9c5da1bcd8d35ea5b1646d8  tools/assemble_pdf.py
+e4c336727f34e2172db4f9473bd740a3  tools/check_contrast.py
+d9102e14e2110577d11212e589e6b0ea  tools/check_coverage.py
+2f9b7bed16e2da132dc2e5580923e7de  tools/check_structure.py
+ab2d6955567a1da381d75a19506e74a6  tools/crop_figures.py
+343f8541837976347fe86e8bc41c541b  tools/fix_html_alt.py
+7b0e8206a2a363643b0ae7de50207f47  tools/fix_html_structure.py
+de8754e185e5c4be3ec25bd778e7ba57  tools/make_accessible.py
+764e4a749bb15529de6814bca4ee52d5  tools/render_pages.py
+4705d8c34b9257bdf7e6fbe2cadac731  tools/segment_notes.py
+cadc5a5ffcf3b82a38f972bf2d575ec8  tools/segment_regions.py
+053e57eed9cbbaba8f4b0e34ece6c9ea  tools/segment_seams.py
+853becd5c1ce9bc82ace51ab3fc71afa  tools/verify.sh
+2aee4aa735bd817b5dd3e363c624d2b3  verify.sh

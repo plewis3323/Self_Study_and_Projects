@@ -1,0 +1,22 @@
+block_id: block_013
+section: rutherford_remarks
+reading_order: 13
+content_type: remark
+source_ref:
+  page: page_03.jpg
+  region: right column (notation) and bottom caveat (screened potential)
+ai_summary: >
+  Notation and long-range-potential remarks. Goldstein writes σ(Ω) and σ_T where other
+  texts write dσ/dΩ and σ. Classically σ_T = +∞ for any long-range potential; quantum
+  mechanically σ_T = +∞ for some long-range potentials that do not decay fast enough as
+  r → ∞. Caveat: in a dense conducting material the Coulomb potential becomes a screened
+  (Yukawa) potential V_screen(r) = −(k/r) e^{−r/λ}; in non-conducting materials the form
+  may differ but still vanishes much faster than 1/r.
+handwriting_preserved: true
+equations_detected:
+  - "Goldstein sigma(Omega), sigma_T  <->  others d sigma/d Omega, sigma"
+  - "classical: sigma_T = +infinity for any long-range potential"
+  - "V_screen(r) = -(k/r) e^{-r/lambda} (Yukawa)"
+depends_on:
+  - block_012
+confidence: high

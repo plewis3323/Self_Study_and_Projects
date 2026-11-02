@@ -1,0 +1,19 @@
+block_id: block_007
+section: coulomb_scattering
+reading_order: 7
+content_type: derivation
+source_ref:
+  page: page_02.jpg
+  region: upper middle — hyperbolic orbit equation and eccentricity for E > 0
+ai_summary: >
+  For Coulomb scattering with E > 0, writes orbit equation 1/r = C[1 + ε cos(θ − θ')],
+  constant C = mk/l², and eccentricity ε = [1 + 2El²/(mk²)]^{1/2} > 1. Relates l to
+  impact parameter s via l = s√(2mE).
+handwriting_preserved: true
+equations_detected:
+  - "1/r = C [1 + epsilon cos(theta - theta')]"
+  - "epsilon = [1 + 2 E l^2 / (m k^2)]^{1/2}"
+  - "l = s sqrt(2 m E)"
+depends_on:
+  - block_006
+confidence: high

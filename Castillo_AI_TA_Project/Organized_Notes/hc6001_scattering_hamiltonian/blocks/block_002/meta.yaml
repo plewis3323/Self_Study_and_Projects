@@ -1,0 +1,19 @@
+block_id: block_002
+section: differential_cross_section
+reading_order: 2
+content_type: derivation
+source_ref:
+  page: page_01.jpg
+  region: middle band — incident intensity through σ_T integral
+ai_summary: >
+  Defines incident intensity I and differential cross section σ(Ω) via the flux relation.
+  Derives σ(θ) = (s / sin θ) |ds/dθ| from matching incident ring area to scattered solid
+  angle, and states total cross section σ_T = ∫ σ(Ω) dΩ.
+handwriting_preserved: true
+equations_detected:
+  - "sigma(Omega) dOmega = (# scattered per unit time) / I"
+  - "sigma(theta) = (s / sin theta) |ds/dtheta|"
+  - "sigma_T = integral dOmega sigma(Omega)"
+depends_on:
+  - block_001
+confidence: high

@@ -1,0 +1,14 @@
+block_id: block_002
+section: action_principle
+reading_order: 2
+content_type: derivation
+source_ref:
+  page: page_01.jpg
+  region: middle third of page
+ai_summary: Derives the condition for stationary action by varying the path q(t).
+handwriting_preserved: true
+equations_detected:
+  - "delta S = 0"
+depends_on:
+  - block_001
+confidence: high

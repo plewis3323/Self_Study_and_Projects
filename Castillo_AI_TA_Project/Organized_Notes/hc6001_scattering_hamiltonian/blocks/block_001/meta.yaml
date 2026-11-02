@@ -1,0 +1,19 @@
+block_id: block_001
+section: central_scattering_setup
+reading_order: 1
+content_type: definition
+source_ref:
+  page: page_01.jpg
+  region: top through scattering trajectory diagram
+ai_summary: >
+  Lecture header (Oct 22 2024) for scattering by a central potential. Defines incident
+  energy E = ½mv₀², angular momentum l = ms√(2mE), impact parameter s, and shows the
+  scattering trajectory diagram with apsidal point and angle θ. Notes d³r = r² dr dΩ and
+  dΩ = 2π sin θ dθ.
+handwriting_preserved: true
+equations_detected:
+  - "E = (1/2) m v_0^2"
+  - "l = m s v_0 = s sqrt(2 m E)"
+  - "s = l / sqrt(2 m E)"
+  - "d^3 r = r^2 dr dOmega"
+confidence: high

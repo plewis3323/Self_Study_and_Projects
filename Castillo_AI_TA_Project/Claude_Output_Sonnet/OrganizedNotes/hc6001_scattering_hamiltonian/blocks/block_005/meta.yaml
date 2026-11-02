@@ -1,0 +1,20 @@
+block_id: block_005
+section: universal_scattering_angle
+reading_order: 5
+content_type: equation
+source_ref:
+  page: page_01.jpg
+  region: boxed θ(s) result and closing "valid for any V(r)" statement
+ai_summary: >
+  Boxed universal scattering-angle result
+  θ(s) = |π − 2 ∫_0^{u_m} s du / sqrt(1 − V(u)/E − s^2 u^2)|. From θ(s) one computes
+  |ds/dθ| = 1/|dθ/ds| and hence σ(θ) = (s/sin θ)|ds/dθ|. The professor emphasizes that
+  up to this point all results are valid for ANY central potential V(r).
+handwriting_preserved: true
+equations_detected:
+  - "theta(s) = |pi - 2 integral_0^{u_m} s du / sqrt(1 - V(u)/E - s^2 u^2)|"
+  - "|ds/d theta| = 1/|d theta/ds|"
+  - "sigma(theta) = (s/sin theta)|ds/d theta|"
+depends_on:
+  - block_004
+confidence: high

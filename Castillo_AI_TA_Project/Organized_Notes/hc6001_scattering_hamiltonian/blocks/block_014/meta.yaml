@@ -1,0 +1,19 @@
+block_id: block_014
+section: hamiltonian_intro
+reading_order: 14
+content_type: definition
+source_ref:
+  page: page_04.jpg
+  region: top — Chapter 8 header, Lagrangian, Euler-Lagrange, midterm remark
+ai_summary: >
+  Begins Chapter 8 on the Hamiltonian. Reviews Lagrangian L = T − V, Euler-Lagrange equation,
+  and generalized momentum p_i = ∂L/∂q̇_i. Boxed midterm remark: in polar coordinates
+  ∂L/∂θ̇ = p_θ = l_z.
+handwriting_preserved: true
+equations_detected:
+  - "L = T - V"
+  - "d/dt (partial L / partial dot(q_i)) - partial L / partial q_i = 0"
+  - "p_i = partial L / partial dot(q_i)"
+  - "partial L / partial dot(theta) = p_theta = l_z"
+depends_on: []
+confidence: high

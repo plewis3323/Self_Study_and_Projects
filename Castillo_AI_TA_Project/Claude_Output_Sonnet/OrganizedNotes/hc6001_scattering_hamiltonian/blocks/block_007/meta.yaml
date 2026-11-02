@@ -1,0 +1,22 @@
+block_id: block_007
+section: coulomb_scattering
+reading_order: 7
+content_type: derivation
+source_ref:
+  page: page_02.jpg
+  region: top-right — orbit equation and eccentricity
+ai_summary: >
+  Hyperbolic-orbit equation for Coulomb scattering (E > 0):
+  1/r = C[1 + ε cos(θ − θ')], with C = mk/l^2 and eccentricity
+  ε = [1 + 2El^2/(mk^2)]^{1/2} = [1 + (2sE/(ZZ'e^2))^2]^{1/2} > 1, using
+  l = s sqrt(2mE). Splits into two situations: repulsive (ZZ' > 0, k < 0) and
+  attractive (ZZ' < 0, k > 0; also gravity with k = G m_1 m_2).
+handwriting_preserved: true
+equations_detected:
+  - "1/r = C[1 + epsilon cos(theta - theta')]"
+  - "C = m k / l^2"
+  - "epsilon = [1 + 2 E l^2/(m k^2)]^{1/2} = [1 + (2 s E/(Z Z' e^2))^2]^{1/2} > 1"
+  - "repulsive: Z Z' > 0 => k < 0 ; attractive: Z Z' < 0 => k > 0"
+depends_on:
+  - block_006
+confidence: high

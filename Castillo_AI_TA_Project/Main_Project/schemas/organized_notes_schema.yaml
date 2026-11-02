@@ -1,0 +1,106 @@
+# Physics Notes Organizer — Schema Reference
+# Step 1 output format: AI-readable structure that preserves handwritten blocks.
+
+version: "1.0"
+
+invariants:
+  - Original full-page scans remain unmodified in source/
+  - Every block has a cropped image preserving the professor's handwriting
+  - No block is dropped; unclear content gets content_type unclear
+  - Reading order is explicit in manifest.yaml even when page layout is non-linear
+  - handwriting_preserved is always true on every block
+
+# ---------------------------------------------------------------------------
+# manifest.yaml (lecture level)
+# Path: OrganizedNotes/<lecture_id>/manifest.yaml
+# ---------------------------------------------------------------------------
+manifest:
+  required:
+    lecture_id: "Unique slug, e.g. phys6801_2026-01-15_lagrangian"
+    course: "Course code and title, e.g. PHYS 6801 — Classical Mechanics"
+    topic: "Primary topic of this lecture"
+    date: "ISO date YYYY-MM-DD or unknown"
+    source_pages:
+      - "List of filenames in source/, e.g. page_01.jpg"
+    reading_order:
+      - "Ordered block IDs, e.g. block_001, block_002"
+  optional:
+    sections:
+      - id: "section slug"
+        title: "Human-readable section title"
+        block_ids: ["block_001", "block_002"]
+    physics_context:
+      prerequisites: ["List of assumed background topics"]
+      notation: ["Key symbols and conventions used in these notes"]
+    conversion_path_hint: "mathpix | direct_latex | mixed"
+    notes: "Free-text notes for downstream agents or human reviewers"
+
+# ---------------------------------------------------------------------------
+# blocks/block_NNN/meta.yaml (block level)
+# Path: OrganizedNotes/<lecture_id>/blocks/block_NNN/meta.yaml
+# ---------------------------------------------------------------------------
+block_meta:
+  required:
+    block_id: "Must match folder name, e.g. block_001"
+    section: "Section slug from manifest.sections or a new slug"
+    reading_order: "Integer; position in lecture narrative"
+    content_type:
+      enum:
+        - definition
+        - theorem
+        - derivation
+        - equation
+        - diagram
+        - example
+        - remark
+        - unclear
+    source_ref:
+      page: "Filename in source/, e.g. page_01.jpg"
+      region: "Human-readable crop hint, e.g. top-left quadrant, full page"
+    ai_summary: "1–3 sentences describing what this block contains"
+    handwriting_preserved: true
+  optional:
+    extracted_text_guess: "Best-effort transcription; mark as unverified"
+    equations_detected:
+      - "Short label, e.g. Euler-Lagrange from action S"
+    depends_on:
+      - "Other block IDs referenced by this block"
+    confidence: "high | medium | low"
+    review_notes: "Why confidence is low or what a human should check"
+
+# ---------------------------------------------------------------------------
+# Directory layout
+# ---------------------------------------------------------------------------
+layout:
+  root: "OrganizedNotes/<lecture_id>/"
+  structure:
+    - manifest.yaml
+    - source/
+    - blocks/block_NNN/image.png
+    - blocks/block_NNN/meta.yaml
+
+# ---------------------------------------------------------------------------
+# Segmentation guidance (for agents)
+# ---------------------------------------------------------------------------
+segmentation_rules:
+  split_on:
+    - New definition, theorem, or named equation
+    - Start or end of a multi-step derivation
+    - Worked example vs general theory
+    - Diagram or figure with nearby caption-like text
+    - Topic shift within graduate physics (e.g. Lagrangian to Hamiltonian)
+  when_ambiguous:
+    - Keep the block intact
+    - Set confidence to low
+    - Do not merge unrelated content or split mid-derivation without clear boundary
+
+# ---------------------------------------------------------------------------
+# Downstream handoff
+# ---------------------------------------------------------------------------
+handoff:
+  path_3a_mathpix:
+    input: "blocks/block_NNN/image.png for each block in reading_order"
+    output: "Raw .tex per block; merge using manifest reading_order"
+  path_3b_direct_latex:
+    input: "manifest.yaml + all blocks/*/meta.yaml + block images"
+    output: "Single .tex document; images remain authoritative for math"

@@ -1,0 +1,25 @@
+{
+ "pdf": {
+  "colors": [
+   {
+    "rgb": [
+     0,
+     0,
+     0
+    ],
+    "ratio": 21.0,
+    "chars": 16011
+   }
+  ],
+  "lowest": {
+   "rgb": [
+    0,
+    0,
+    0
+   ],
+   "ratio": 21.0,
+   "page": 1,
+   "sample": "Scattering by a Central Potential;"
+  }
+ }
+}

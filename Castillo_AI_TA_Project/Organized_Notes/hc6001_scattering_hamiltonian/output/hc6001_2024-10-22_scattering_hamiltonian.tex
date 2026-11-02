@@ -1,0 +1,322 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+
+\graphicspath{{../blocks/}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\title{Central-Potential Scattering, Rutherford Cross Section,\\and Hamiltonian Mechanics}
+\author{HC 6001 --- Classical Mechanics}
+\date{October 22, 2024}
+
+\begin{document}
+\maketitle
+
+\section{Scattering by a central potential --- setup}
+
+% block_001 | content_type: definition | confidence: high
+\begin{definition}[Scattering by a central potential]
+Consider scattering by a central potential $V(r)$. The incident energy and velocity are
+\begin{equation}
+  E = \frac{1}{2} m v_0^2, \qquad v_0 = \sqrt{\frac{2E}{m}}.
+\end{equation}
+The orbital angular momentum and impact parameter are related by
+\begin{equation}
+  l = m s v_0 = s\sqrt{2mE}, \qquad s = \frac{l}{\sqrt{2mE}}.
+\end{equation}
+The volume element in spherical coordinates is $d^3r = r^2\,dr\,d\Omega$, with
+$d\Omega = \sin\theta\,d\theta\,d\phi$. By azimuthal symmetry, the relevant solid-angle
+element for scattering into angle $\theta$ is
+\begin{equation}
+  d\Omega = 2\pi\sin\theta\,d\theta.
+\end{equation}
+\end{definition}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{block_001/image.png}
+  \caption{Scattering trajectory: impact parameter $s$, apsidal point at $r_c$, and scattering angle $\theta$.}
+\end{figure}
+
+\section{Differential and total cross section}
+
+% block_002 | content_type: derivation | confidence: high | depends_on: block_001
+Let $I$ denote the incident intensity (number of particles incident per unit time per unit
+area). The differential cross section $\sigma(\Omega)$ is defined by
+\begin{equation}
+  \sigma(\Omega)\,d\Omega
+  = \frac{\text{\# particles scattered into }d\Omega\text{ per unit time}}{I}.
+\end{equation}
+Particles incident in a ring between impact parameters $s$ and $s+ds$ have area
+$2\pi s\,|ds|$. Flux conservation gives
+\begin{equation}
+  I(2\pi s)|ds| = I\,\sigma(\theta)\,2\pi\sin\theta\,|d\theta|,
+\end{equation}
+hence
+\begin{equation}
+  \sigma(\theta) = \frac{s}{\sin\theta}\left|\frac{ds}{d\theta}\right|.
+  \label{eq:sigma-theta}
+\end{equation}
+The total cross section is
+\begin{equation}
+  \sigma_T = \int d\Omega\,\sigma(\Omega).
+\end{equation}
+
+\section{Repulsive vs attractive scattering geometry}
+
+% block_003 | content_type: diagram | confidence: high | depends_on: block_001
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{block_003/image.png}
+  \caption{Repulsive and attractive central-potential trajectories. Let $\psi$ be the angle from the horizontal to the apsidal direction. Repulsive: $\theta = \pi - 2\psi$; attractive: $\theta = 2\psi - \pi$; in all cases $\theta = |\pi - 2\psi|$.}
+\end{figure}
+
+\section{Universal scattering-angle integral for any $V(r)$}
+
+% block_004 | content_type: derivation | confidence: high | depends_on: block_001, block_003
+To compute $S(\theta,E)$ (equivalently $s(\theta,E)$) for any central potential, start from
+\begin{equation}
+  E = \frac{1}{2}m\dot{r}^2 + V(r) + \frac{l^2}{2mr^2}.
+\end{equation}
+Solving for the radial velocity,
+\begin{equation}
+  \dot{r} = \sqrt{\frac{2}{m}\left(E - V(r) - \frac{l^2}{2mr^2}\right)},
+  \qquad dt = \frac{dr}{\dot{r}}.
+\end{equation}
+With $l = mr^2\dot{\theta}$,
+\begin{equation}
+  d\theta = \dot{\theta}\,dt = \frac{l}{mr^2}\,dt
+  = \frac{l\,r^{-2}\,dr}{\sqrt{\frac{2m}{E}\left(1 - \frac{V(r)}{E} - \frac{l^2}{2mEr^2}\right)}}.
+\end{equation}
+Using $l = s\sqrt{2mE}$,
+\begin{equation}
+  d\theta = \frac{s\,r^{-2}\,dr}{\sqrt{1 - \frac{V(r)}{E} - \frac{s^2}{r^2}}}.
+\end{equation}
+The apsidal angle is
+\begin{equation}
+  \psi = \int_{r_m}^{\infty} \frac{s\,r^{-2}\,dr}{\sqrt{1 - \frac{V(r)}{E} - \frac{s^2}{r^2}}}.
+\end{equation}
+With $u = 1/r$ and $du = -r^{-2}\,dr$,
+\begin{equation}
+  \psi = \int_0^{u_m} \frac{s\,du}{\sqrt{1 - \frac{V(u)}{E} - s^2 u^2}},
+\end{equation}
+where $u_m = 1/r_m$.
+
+% block_005 | content_type: equation | confidence: high | depends_on: block_004
+\begin{equation}
+  \theta(s) = \left|\pi - 2\int_0^{u_m} \frac{s\,du}{\sqrt{1 - \frac{V(u)}{E} - s^2 u^2}}\right|.
+  \label{eq:theta-universal}
+\end{equation}
+From $\theta(s)$ one obtains $|ds/d\theta|$ and hence $\sigma(\theta)$ via \eqref{eq:sigma-theta}.
+\textbf{Up to here, results are valid for any central potential $V(r)$.}
+
+\section{Coulomb scattering --- general hyperbolic orbits}
+
+% block_006 | content_type: definition | confidence: high | depends_on: block_005
+\begin{definition}[Coulomb scattering]
+For Coulomb scattering,
+\begin{equation}
+  f = \frac{ZZ'e^2}{r^2}, \qquad V(r) = -\frac{k}{r}, \qquad k = -ZZ'e^2.
+\end{equation}
+For $V = -k/r$ only:
+\begin{itemize}
+  \item $E > 0$: hyperbolic orbit
+  \item $E = 0$: parabolic orbit
+  \item $E < 0$: elliptic orbit
+\end{itemize}
+\end{definition}
+
+% block_007 | content_type: derivation | confidence: high | depends_on: block_006
+For scattering ($E > 0$), the orbit equation is
+\begin{equation}
+  \frac{1}{r} = C\bigl[1 + \epsilon\cos(\theta - \theta')\bigr],
+\end{equation}
+with
+\begin{equation}
+  C = \frac{mk}{l^2}, \qquad
+  \epsilon = \left[1 + \frac{2El^2}{mk^2}\right]^{1/2}
+  = \left[1 + \left(\frac{2sE}{ZZ'e^2}\right)^2\right]^{1/2} > 1,
+\end{equation}
+using $l = s\sqrt{2mE}$.
+
+\section{Coulomb scattering --- repulsive case}
+
+% block_008 | content_type: derivation | confidence: high | depends_on: block_007
+\textbf{Case i: repulsive} ($ZZ' > 0$, so $k < 0$ and $C < 0$). Take periapsis at $\theta' = \pi$:
+\begin{equation}
+  \frac{1}{r} = \frac{mZZ'e^2}{l^2}\bigl(\epsilon\cos\theta - 1\bigr).
+\end{equation}
+The apsidal point is at $\theta = 0$, with
+\begin{equation}
+  \frac{1}{r_m} = \frac{mZZ'e^2}{l^2}(\epsilon - 1).
+\end{equation}
+As $r \to \infty$, $\cos\psi = 1/\epsilon$. With $\psi = (\pi - \theta)/2$,
+\begin{equation}
+  \frac{1}{\epsilon} = \sin\frac{\theta}{2}.
+\end{equation}
+
+\section{Coulomb scattering --- attractive case}
+
+% block_009 | content_type: derivation | confidence: high | depends_on: block_007
+\textbf{Case ii: attractive} ($ZZ' < 0$, so $k > 0$; also gravity with $k = Gm_1m_2$).
+Take $\theta' = 0$:
+\begin{equation}
+  \frac{1}{r} = C\bigl[1 + \epsilon\cos\theta\bigr].
+\end{equation}
+The apsidal point is at $\theta = 0$. As $r \to \infty$, $\cos\psi = -1/\epsilon$.
+With $\psi = (\pi + \theta)/2$,
+\begin{equation}
+  \frac{1}{\epsilon} = \sin\frac{\theta}{2},
+\end{equation}
+the same relation as in the repulsive case.
+
+\section{Rutherford differential cross section}
+
+% block_010 | content_type: derivation | confidence: high | depends_on: block_008, block_009
+Combining both Coulomb cases,
+\begin{align}
+  \cot^2\frac{\theta}{2}
+  &= \frac{1}{\sin^2\frac{\theta}{2}} - 1
+  = \epsilon^2 - 1
+  = \left(\frac{2sE}{zz'e^2}\right)^2,
+\end{align}
+so
+\begin{equation}
+  s(\theta,E) = \left|\frac{zz'e^2}{2E}\right|\cot\frac{\theta}{2}.
+\end{equation}
+Then
+\begin{equation}
+  \frac{ds}{d\theta}
+  = -\left|\frac{zz'e^2}{4E}\right|\frac{1}{\sin^2\frac{\theta}{2}},
+\end{equation}
+and using \eqref{eq:sigma-theta},
+\begin{equation}
+  \sigma(\theta) = \frac{1}{4}\left(\frac{zz'e^2}{2E}\right)^2
+  \csc^4\frac{\theta}{2}.
+  \label{eq:rutherford}
+\end{equation}
+This is the \textbf{Rutherford scattering cross section} (for Coulomb force).
+
+% block_011 | content_type: remark | confidence: high | depends_on: block_010
+\begin{remark}
+\begin{enumerate}
+  \item The cross section is the same for repulsive and attractive cases, since it is proportional to $(zz')^2$.
+  \item It diverges like $E^{-2}$ at low energies.
+  \item It diverges like $\theta^{-4}$ (very strong) for small angles $\theta$.
+  \item The classical result is identical to the quantum-mechanical result.
+\end{enumerate}
+\end{remark}
+
+% block_012 | content_type: derivation | confidence: high | depends_on: block_010
+The total cross section is
+\begin{equation}
+  \sigma_T = \int \sigma(\Omega)\,d\Omega.
+\end{equation}
+Substituting \eqref{eq:rutherford} and $d\Omega = 4\pi\sin\frac{\theta}{2}\cos\frac{\theta}{2}\,d\theta$,
+\begin{equation}
+  \sigma_T = \pi\left(\frac{zz'e^2}{2E}\right)^2
+  \int_0^\pi \frac{\sin\frac{\theta}{2}\cos\frac{\theta}{2}}{\sin^4\frac{\theta}{2}}\,d\theta.
+\end{equation}
+For small $\theta$, the integrand behaves like $1/\theta^3$, so the integral diverges;
+$\sigma_T$ is \textbf{strongly divergent}.
+
+\section{Notation, divergent total cross section, screened potentials}
+
+% block_013 | content_type: remark | confidence: high | depends_on: block_012
+\begin{remark}[Notation and long-range potentials]
+Goldstein uses $\sigma(\Omega)$ and $\sigma_T$ for the differential and total cross sections;
+other texts use $d\sigma/d\Omega$ and $\sigma$, respectively.
+
+Classically, $\sigma_T = +\infty$ for any long-range potential. In quantum mechanics,
+$\sigma_T = +\infty$ for some long-range potentials $V(r)$ that do not decay fast enough as
+$r \to \infty$.
+
+\textbf{Caveat:} In a dense conducting material, the Coulomb potential becomes a screened
+(Yukawa) potential:
+\begin{equation}
+  V_{\mathrm{screen}}(r) = -\frac{k}{r}\,e^{-r/\lambda}.
+\end{equation}
+In non-conducting materials the screened potential may differ but still vanishes much faster
+than $1/r$.
+\end{remark}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{block_013/image.png}
+  \caption{Scattering geometry and notation comparison (from block notes).}
+\end{figure}
+
+\section{Hamiltonian mechanics --- Lagrangian review}
+
+% block_014 | content_type: definition | confidence: high
+\begin{definition}[Lagrangian formalism]
+The Lagrangian is $L = T - V = L(q_1,\ldots,q_n,\dot{q}_1,\ldots,\dot{q}_n,t)$.
+The Euler--Lagrange equations are
+\begin{equation}
+  \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right)
+  - \frac{\partial L}{\partial q_i} = 0,
+\end{equation}
+with generalized momentum $p_i = \partial L/\partial \dot{q}_i$.
+\end{definition}
+
+\begin{remark}
+In polar coordinates, $\partial L/\partial \dot{\theta} = p_\theta = l_z$.
+\end{remark}
+
+\section{Legendre transformation (math and thermodynamics)}
+
+% block_015 | content_type: derivation | confidence: high | depends_on: block_014
+We wish to transform coordinates from $(q_1,\ldots,q_n,\dot{q}_1,\ldots,\dot{q}_n)$ to
+$(q_1,\ldots,q_n,p_1,\ldots,p_n)$.
+
+For a function $f(x,y)$, $df = u\,dx + v\,dy$ with $u = \partial f/\partial x$ and
+$v = \partial f/\partial y$.
+
+\textbf{Thermodynamics example} (fluid at fixed particle number $N$): the first law is
+$dU = \delta Q + \delta W = T\,dS - p\,dV$, with $U = U(S,V)$. To change variables to
+$(T,V)$, define the Helmholtz free energy $A = U - TS$, giving
+$dA = -S\,dT - p\,dV$, so $A = A(T,V)$.
+
+\textbf{General Legendre transform:} to transform $(x,y) \to (u,y)$, define $g = f - ux$.
+Then
+\begin{equation}
+  dg = df - d(ux) = -x\,du + v\,dy,
+\end{equation}
+so $g = g(u,y)$.
+
+\section{Hamiltonian and canonical equations of motion}
+
+% block_016 | content_type: derivation | confidence: high | depends_on: block_014, block_015
+Apply the Legendre transform to the Lagrangian with $p_i = \partial L/\partial \dot{q}_i$:
+\begin{equation}
+  H = \sum_i p_i\dot{q}_i - L.
+\end{equation}
+Expanding $dL$ and $d\!\left(\sum_i p_i\dot{q}_i\right)$,
+\begin{equation}
+  dH = -\frac{\partial L}{\partial t}\,dt
+  + \sum_i\left(\dot{q}_i\,dp_i - \frac{\partial L}{\partial q_i}\,dq_i\right),
+\end{equation}
+so $H = H(p_1,\ldots,p_n,q_1,\ldots,q_n,t)$.
+
+% block_017 | content_type: theorem | confidence: high | depends_on: block_016
+\begin{theorem}[Canonical equations of motion]
+\begin{align}
+  \frac{\partial H}{\partial p_i} &= \dot{q}_i, \\
+  \frac{\partial H}{\partial q_i} &= -\frac{\partial L}{\partial q_i} = -\dot{p}_i
+  \quad\text{(Lagrange equation)}, \\
+  \frac{\partial H}{\partial t} &= -\frac{\partial L}{\partial t}.
+\end{align}
+\end{theorem}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{block_017/image.png}
+  \caption{Canonical equations of motion (from lecture notes).}
+\end{figure}
+
+\end{document}

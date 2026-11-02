@@ -1,0 +1,238 @@
+% goldsteinnotes.sty -- shared preamble for the HC 6001 chapter documents.
+%
+% Reference convention: Goldstein, Poole & Safko, "Classical Mechanics,"
+% 3rd ed. (Addison-Wesley), adopted for terminology, equation style and
+% structural vocabulary.
+%
+% SCOPE -- READ BEFORE USING. Goldstein is the reference for terminology,
+% equation style and structural vocabulary ONLY. He is NOT authoritative over
+% symbols. Chapters are internally consistent and mutually inconsistent by
+% design, and each chapter's own symbol wins wherever it differs.
+%
+% Consequently this file deliberately defines NO macro that binds a physical
+% quantity to a particular letter. Each document declares its own symbols in
+% its own preamble, and those declarations govern.
+
+\ProvidesPackage{goldsteinnotes}[2026/07/30 HC6001 typesetting conventions]
+
+\RequirePackage{amsmath,amssymb,mathtools}
+\RequirePackage{array}
+\RequirePackage{bm}
+\RequirePackage{graphicx}
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{enumitem}
+% microtype's protrusion/expansion pass re-typesets material, which makes
+% tagpdf 0.93 create duplicate structure objects and silently drop content
+% out of the tag tree. Skip it when the document is being built tagged --
+% the typographic polish is not worth losing the structure.
+\@ifundefined{GNmoderntagging}
+  {\@ifpackageloaded{tagpdf}
+     {\PackageInfo{goldsteinnotes}{legacy tagged build: microtype skipped}}
+     {\RequirePackage{microtype}}}
+  {\RequirePackage{microtype}}
+\RequirePackage{booktabs}
+\RequirePackage{caption}
+\RequirePackage{cancel}             % struck terms in derivations
+\RequirePackage{fancybox}           % \ovalbox, for circled results
+\RequirePackage[normalem]{ulem}     % \sout, for struck-out material
+\RequirePackage[hidelinks]{hyperref}
+% hidelinks leaves link text in the body colour rather than tinting it, so the
+% link text keeps the body's contrast ratio instead of inheriting hyperref's
+% defaults, which do not reliably clear WCAG 1.4.3's 4.5:1 on white.
+% An outline is the primary way a screen-reader user moves through a document
+% of this length; /PageMode /UseOutlines alone does not create one, so the
+% bookmark package has to build it.
+\RequirePackage{bookmark}
+\hypersetup{pdfpagemode=UseOutlines}
+% Every link annotation needs a /Contents alternate description. hyperref
+% ships the plug that writes one but leaves it disabled whenever the declared
+% standard does not itself verify the key -- which is the case under PDF/UA-2,
+% so the annotations come out bare and only a UA-1 check notices. Turn it on
+% explicitly rather than leaving the entry to the choice of profile.
+\ExplSyntaxOn
+\socket_if_exist:nT {hyp/link/GoTo/Contents}
+  { \socket_assign_plug:nn{hyp/link/GoTo/Contents}{default} }
+\socket_if_exist:nT {hyp/link/GoToR/Contents}
+  { \socket_assign_plug:nn{hyp/link/GoToR/Contents}{default} }
+\socket_if_exist:nT {hyp/link/URI/Contents}
+  { \socket_assign_plug:nn{hyp/link/URI/Contents}{default} }
+\ExplSyntaxOff
+
+\captionsetup{font=small,labelfont=bf,width=0.92\textwidth}
+\setlist{itemsep=2pt,topsep=3pt,parsep=0pt}
+\allowdisplaybreaks[1]
+
+% --- structural asides ------------------------------------------------------
+% A current tagging kernel provides \theoremstyle/\newtheorem itself, and its
+% versions are the ones that close the theorem structure inside its section.
+% amsthm would overwrite them, so it is loaded only where they are absent --
+% which is the tex4ht path that builds the HTML companion.
+\@ifundefined{theoremstyle}{\RequirePackage{amsthm}}{}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{caveat}{Caveat}
+\newtheorem*{aside}{Aside}
+
+% --- struck-out / retracted material ---------------------------------------
+\newcommand{\retracted}[1]{\sout{#1}}
+\newcommand{\retractednote}{\textsuperscript{\,[retracted]}}
+
+% --- notation-neutral typesetting shorthands -------------------------------
+% These take the symbol as an argument; they never choose one.
+\newcommand{\vect}[1]{\bm{#1}}
+\newcommand{\unit}[1]{\hat{\bm{#1}}}
+\newcommand{\mat}[1]{\mathsf{#1}}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\dd}[2]{\frac{\d #1}{\d #2}}
+\newcommand{\ddn}[3]{\frac{\d^{#3} #1}{\d #2^{#3}}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pdn}[3]{\frac{\partial^{#3} #1}{\partial #2^{#3}}}
+\newcommand{\ddt}[1]{\frac{\d #1}{\d t}}
+\newcommand{\evalat}[2]{\left.#1\right|_{#2}}   % held-fixed variable labels
+
+% Inexact differential, for the thermodynamics detour that motivates the
+% Legendre transformation (dbar Q, dbar W -- not plain dQ, dW).
+% \mathchar'26 addresses a slot in the legacy CM math encoding and produces
+% nothing under unicode-math, silently erasing the bar and turning the inexact
+% differential into an ordinary one. Use the real Unicode glyph when the OpenType
+% math font is in play, and keep the classic construction otherwise.
+% The glyph alone is announced as "d with stroke", which names the character
+% instead of the quantity, so it carries a spoken rendition of what it means.
+\AtBeginDocument{%
+  \@ifpackageloaded{unicode-math}
+    {\renewcommand{\dbar}{%
+       \BeginAccSupp{method=escape,ActualText={inexact differential }}%
+       \mathrm{\text{\dj}}%
+       \EndAccSupp{}}}
+    {}%
+}
+\newcommand{\dbar}{\mathchar'26\mkern-12mu \mathrm{d}}
+
+% Boxed results.
+% A box hides its contents from the math tagger: the exported MathML for a
+% boxed expression contains no equation at all (\fbox, \ovalbox and tcolorbox
+% behave the same way). The boxes are kept, because the source boxes these
+% results, but each takes an optional spoken rendition that is attached as
+% /ActualText so assistive technology has something to read.
+\RequirePackage{accsupp}
+
+% A box defeats the MathML generator outright: the exported MathML for a boxed
+% expression is a shell containing the equation number and a replacement
+% character, with none of the mathematics. The accsupp span rescues text
+% extraction, but it sits INSIDE the Formula and so leaves the Formula element
+% itself with no accessible representation -- which is what a UA-1 checker
+% reports and what a reader relying on the element loses. The spoken rendition
+% is therefore also written onto the enclosing Formula as /ActualText, so the
+% equation carries its meaning at the element level and not only in the
+% content stream.
+\ExplSyntaxOn
+\newcommand{\formulaalt}[1]{%
+  \cs_if_exist:cT { __tag_struct_prop_gput:nnn }
+   {
+     \use:c{__tag_struct_prop_gput:nnn}
+       { \use:c{g__tag_struct_stack_current_tl} }{ActualText}{(#1)}
+   }}
+\ExplSyntaxOff
+
+% Spoken rendition is written ONLY onto the Formula element. Doubling it with
+% an accsupp span made a screen reader announce the same string four times
+% (element ActualText + content-stream ActualText, each extracted twice).
+\newcommand{\boxeq}[2][]{%
+  \ifx\relax#1\relax
+    \boxed{#2}%
+  \else
+    \formulaalt{#1}\boxed{#2}%
+  \fi
+}
+
+% --- struck-through terms inside derivations -------------------------------
+% \cancel draws its stroke from a rule font that carries no ToUnicode mapping,
+% so the struck term extracts as a replacement character sitting inside a
+% Formula. The stroke is meaningful here -- it is how the source shows a term
+% dropping out -- so it is kept and given a spoken rendition instead.
+\newcommand{\cancelled}[2][]{%
+  \ifx\relax#1\relax
+    \BeginAccSupp{method=escape,ActualText={ (cancels) }}\cancel{#2}\EndAccSupp{}%
+  \else
+    \BeginAccSupp{method=escape,ActualText={#1}}\cancel{#2}\EndAccSupp{}%
+  \fi
+}
+
+% An oval box hides its contents from the math tagger exactly as \boxed does,
+% so it takes the same optional spoken rendition.
+\newcommand{\ovaleq}[2][]{%
+  \ifx\relax#1\relax
+    \ovalbox{$\displaystyle #2$}%
+  \else
+    \formulaalt{#1}\ovalbox{$\displaystyle #2$}%
+  \fi
+}
+
+% --- data tables -----------------------------------------------------------
+% A data table whose header row tags as TD fails both Acrobat's Headers rule
+% and WCAG 1.3.1: the reader hears a stream of cells with nothing to attach
+% them to. The current kernel emits TH only when the header rows are declared,
+% so every data table in this pipeline declares them.
+% No-op on an untagged build so the same source still compiles there.
+\newcommand{\headerrows}[1]{%
+  \@ifundefined{tagpdfsetup}{}{\tagpdfsetup{table/header-rows={#1}}}}
+
+% A table summary says what the table compares. Acrobat reports a missing one
+% as *skipped*, which is a silent omission rather than a pass, and this kernel
+% offers no documented key for it -- so it is written onto the Table structure
+% directly. Place \tablesummary immediately after \begin{tabular}, before
+% \toprule: after \toprule the open structure is already the first header
+% cell, and writing then puts /Summary on the TH rather than the Table.
+% The command also walks the structure stack for a Table/tabular ancestor, so
+% a mis-placed call still lands on the table rather than on whatever happens
+% to be current.
+\ExplSyntaxOn
+\tl_new:N \l_GN_table_id_tl
+\tl_new:N \l_GN_stype_tl
+\newcommand{\tablesummary}[1]{%
+  \cs_if_exist:cT { __tag_struct_prop_gput:nnn }
+   {
+     \tl_set:NV \l_GN_table_id_tl \g__tag_struct_stack_current_tl
+     \seq_if_exist:NT \g__tag_struct_stack_seq
+      {
+        \seq_map_inline:Nn \g__tag_struct_stack_seq
+          {
+            \tl_set:Nx \l_GN_stype_tl
+              { \prop_item:cn { g__tag_struct_##1_prop } { S } }
+            % \tl_if_in:Nn has no predicate form. Writing \tl_if_in_p:Nn here
+            % is undefined and recovers as 40 TeX errors per table (80 more
+            % from the argument it then mis-reads); the summary still lands,
+            % so the only symptom is a log full of recovered errors and a
+            % non-zero lualatex exit status. Use the TF form.
+            \tl_if_in:NnTF \l_GN_stype_tl {Table}
+              { \tl_set:Nn \l_GN_table_id_tl { ##1 } }
+              {
+                \tl_if_in:NnT \l_GN_stype_tl {tabular}
+                  { \tl_set:Nn \l_GN_table_id_tl { ##1 } }
+              }
+          }
+      }
+     \use:c{__tag_struct_prop_gput:nnn}
+       { \l_GN_table_id_tl } { Summary } { (#1) }
+   }}
+\ExplSyntaxOff
+
+% --- heading structure for tagged builds ----------------------------------
+% phase-II tags no sectioning command, so every heading lands in the tag tree
+% as an ordinary paragraph and the PDF gets no navigable outline. veraPDF
+% cannot detect this -- it passes either way -- so it has to be done by hand.
+\@ifundefined{GNmoderntagging}{\@ifpackageloaded{tagpdf}{%
+  \newcommand{\GN@hlevel}{H2}
+  \let\GN@sect@a\section     \renewcommand{\section}{\gdef\GN@hlevel{H2}\GN@sect@a}
+  \let\GN@sect@b\subsection  \renewcommand{\subsection}{\gdef\GN@hlevel{H3}\GN@sect@b}
+  \let\GN@sect@c\subsubsection \renewcommand{\subsubsection}{\gdef\GN@hlevel{H4}\GN@sect@c}
+  \let\GN@ssect\@ssect
+  \renewcommand{\@ssect}[5]{\GN@ssect{#1}{#2}{#3}{#4}{%
+    \tagstructbegin{tag=\GN@hlevel}\tagmcbegin{tag=\GN@hlevel}#5\tagmcend\tagstructend}}
+  \let\GN@sect\@sect
+  \def\@sect#1#2#3#4#5#6[#7]#8{%
+    \GN@sect{#1}{#2}{#3}{#4}{#5}{#6}[{#7}]{%
+      \tagstructbegin{tag=\GN@hlevel}\tagmcbegin{tag=\GN@hlevel}#8\tagmcend\tagstructend}}
+}{}}{}
+
+\endinput

@@ -1,0 +1,19 @@
+block_id: block_014
+section: hamiltonian_intro
+reading_order: 14
+content_type: definition
+source_ref:
+  page: page_04.jpg
+  region: "Chapter 8" heading, Lagrangian review, and boxed midterm remark
+ai_summary: >
+  Chapter 8 — Hamiltonian and Hamilton's equations of motion. Reviews the Lagrangian
+  L = T − V = L(q_1,...,q_n, q̇_1,...,q̇_n, t), the Euler–Lagrange equations
+  d/dt(∂L/∂q̇_i) − ∂L/∂q_i = 0, and the generalized momentum p_i = ∂L/∂q̇_i. Boxed
+  "midterm remark": in polar coordinates ∂L/∂θ̇ = p_θ = l_z.
+handwriting_preserved: true
+equations_detected:
+  - "L = T - V = L(q_1..q_n, qdot_1..qdot_n, t)"
+  - "d/dt(partial L/partial qdot_i) - partial L/partial q_i = 0"
+  - "p_i = partial L/partial qdot_i"
+  - "polar: partial L/partial thetadot = p_theta = l_z"
+confidence: high

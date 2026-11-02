@@ -1,0 +1,18 @@
+block_id: block_013
+section: rutherford_remarks
+reading_order: 13
+content_type: remark
+source_ref:
+  page: page_03.jpg
+  region: bottom — notation comparison, scattering diagram, caveat on screened potentials
+ai_summary: >
+  Compares Goldstein notation (σ(Ω), σ_T) with other texts (dσ/dΩ, σ). Shows scattering
+  geometry diagram. Notes classical and quantum σ_T = +∞ for long-range potentials. Caveat:
+  in dense conducting material the Coulomb potential becomes screened Yukawa V_screen(r) =
+  −(k/r)e^{−r/λ}.
+handwriting_preserved: true
+equations_detected:
+  - "V_screen(r) = -(k/r) e^{-r/lambda}"
+depends_on:
+  - block_012
+confidence: high

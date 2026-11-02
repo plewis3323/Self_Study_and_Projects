@@ -1,0 +1,129 @@
+{
+ "images": [
+  {
+   "file": "scat_fig0_charges.png",
+   "bg_luminance": 1.0,
+   "layers": {
+    "black pen": {
+     "px": 23458,
+     "representative_rgb": [
+      0,
+      0,
+      0
+     ],
+     "luminance": 0.0,
+     "ratio": 21.0,
+     "darkest_2pct_ratio": 21.0
+    }
+   },
+   "ratio": 21.0,
+   "worst_layer": "black pen",
+   "greyscale_separation": {}
+  },
+  {
+   "file": "scat_fig1_beam_ring.png",
+   "bg_luminance": 1.0,
+   "layers": {
+    "black pen": {
+     "px": 145113,
+     "representative_rgb": [
+      0,
+      0,
+      0
+     ],
+     "luminance": 0.0,
+     "ratio": 21.0,
+     "darkest_2pct_ratio": 21.0
+    },
+    "blue pen": {
+     "px": 8625,
+     "representative_rgb": [
+      51,
+      51,
+      204
+     ],
+     "luminance": 0.0743,
+     "ratio": 8.45,
+     "darkest_2pct_ratio": 10.53
+    },
+    "printed ruling": {
+     "px": 1046,
+     "representative_rgb": [
+      52,
+      132,
+      210
+     ],
+     "luminance": 0.2189,
+     "ratio": 3.91,
+     "darkest_2pct_ratio": 5.8
+    }
+   },
+   "ratio": 8.45,
+   "worst_layer": "blue pen",
+   "greyscale_separation": {
+    "black pen vs blue pen": 2.49
+   }
+  },
+  {
+   "file": "scat_fig2_repulsive.png",
+   "bg_luminance": 1.0,
+   "layers": {
+    "black pen": {
+     "px": 41949,
+     "representative_rgb": [
+      0,
+      0,
+      0
+     ],
+     "luminance": 0.0,
+     "ratio": 21.0,
+     "darkest_2pct_ratio": 21.0
+    }
+   },
+   "ratio": 21.0,
+   "worst_layer": "black pen",
+   "greyscale_separation": {}
+  },
+  {
+   "file": "scat_fig3_attractive.png",
+   "bg_luminance": 1.0,
+   "layers": {
+    "black pen": {
+     "px": 38080,
+     "representative_rgb": [
+      0,
+      0,
+      0
+     ],
+     "luminance": 0.0,
+     "ratio": 21.0,
+     "darkest_2pct_ratio": 21.0
+    }
+   },
+   "ratio": 21.0,
+   "worst_layer": "black pen",
+   "greyscale_separation": {}
+  },
+  {
+   "file": "scat_fig4_scattering_center.png",
+   "bg_luminance": 1.0,
+   "layers": {
+    "black pen": {
+     "px": 27038,
+     "representative_rgb": [
+      0,
+      0,
+      0
+     ],
+     "luminance": 0.0,
+     "ratio": 21.0,
+     "darkest_2pct_ratio": 21.0
+    }
+   },
+   "ratio": 21.0,
+   "worst_layer": "black pen",
+   "greyscale_separation": {}
+  }
+ ],
+ "verdict_excludes": "printed ruling -- the pre-printed graph-paper grid. It is not content a reader needs in order to understand the drawing, so it is excluded from the WCAG 1.4.11 verdict, but it is measured and its ratio is reported so the exclusion is visible rather than silent."
+}

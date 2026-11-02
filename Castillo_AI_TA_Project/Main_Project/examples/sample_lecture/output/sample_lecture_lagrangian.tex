@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+\title{Lagrangian Mechanics and the Principle of Least Action}
+\author{PHYS 6801 --- Classical Mechanics (Example)}
+\date{January 15, 2026}
+
+\begin{document}
+\maketitle
+
+\section{Principle of Least Action}
+
+% block_001 | content_type: definition | confidence: high
+\begin{definition}[Action]
+The \emph{action} $S$ associated with a path $q(t)$ is defined as the time integral of the
+Lagrangian $L$ along that path:
+\begin{equation}
+  S = \int L\bigl(q(t), \dot{q}(t), t\bigr)\, dt.
+  \label{eq:action}
+\end{equation}
+\end{definition}
+
+% block_002 | content_type: derivation | confidence: high | depends_on: block_001
+We seek paths for which the action is stationary under variations $\delta q(t)$ of the trajectory.
+Requiring the first variation of the action to vanish gives the condition
+\begin{equation}
+  \delta S = 0.
+  \label{eq:stationary-action}
+\end{equation}
+This variational principle selects the physical path among all paths with fixed endpoints.
+
+\section{Euler--Lagrange Equation}
+
+% block_003 | content_type: equation | confidence: medium
+% REVIEW: Lower portion of equation slightly smudged; verify partial derivative notation.
+Imposing \eqref{eq:stationary-action} on \eqref{eq:action} yields the Euler--Lagrange equation:
+\begin{equation}
+  \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right)
+  - \frac{\partial L}{\partial q} = 0.
+  \label{eq:euler-lagrange}
+\end{equation}
+
+\end{document}

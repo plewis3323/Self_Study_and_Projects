@@ -1,0 +1,109 @@
+{
+ "run": "2026-08-16",
+ "archive_of_previous_run": "Run_Archive/2026-08-16_220625",
+ "inputs": [
+  {
+   "file": "Input/Lecture-scattering-Hamiltonian_241022-forward.pdf",
+   "slug": "scattering_hamiltonian",
+   "pages": 4,
+   "output_tex": "Final_Product_Ready/hc6001_2024-10-22_scattering_hamiltonian.tex",
+   "output_pdf": "Final_Product_Ready/hc6001_2024-10-22_scattering_hamiltonian.pdf",
+   "output_pages": 11,
+   "pdf_md5": "85b05d31081368d8b811063456c7f769",
+   "supersedes_md5": "07b8e22921f1e63b0821db8e52c3f8a1"
+  }
+ ],
+ "mapping": "1:1 (1 input PDF -> 1 output document)",
+ "toolchain": {
+  "texlive": "2026",
+  "engine": "lualatex",
+  "passes": 3,
+  "testphase": "latest,math,table,sec,title,float,graphic",
+  "standard": "PDF/UA-2",
+  "probe": "equation+list+table+figure verified in the OUTPUT to emit /Formula, /L, /Table, /TH, /Alt before the run started",
+  "checker": "veraPDF 1.30.2",
+  "pac_2026": "not run -- Windows only, this run was on Linux",
+  "acrobat": "not available"
+ },
+ "segmentation": {
+  "segments": 15,
+  "per_page": [3, 4, 4, 4],
+  "overlap_px": 250,
+  "seams_on_zero_ink_rows": "8 of 11",
+  "uncovered_ink_rows": 0,
+  "protected_bands_intact": "4 of 4",
+  "review_rounds": 3,
+  "verdicts": "REVISE x3, then REVISE x3, then APPROVE x3"
+ },
+ "accessibility": {
+  "verapdf_ua2": "PASS",
+  "verapdf_ua1": "FAIL - 3 rules / 180 checks: clause 6.1 (1) and clause 5 (1) inherent to UA-2; clause 7.7 on 178 formulas whose MathML is attached via /AF",
+  "headings": 16,
+  "headings_expected": 16,
+  "unreachable_text_ops": 0,
+  "total_text_ops": 3406,
+  "artifacts_carrying_words": 0,
+  "tagged_content_buried_in_artifact": 0,
+  "figure_reading_positions_pct": [6.7, 15.9, 17.8, 33.0, 69.3],
+  "formula_elements": 187,
+  "mathml_files": 151,
+  "mathml_empty": 8,
+  "empty_mathml_identity": "each of the 8 empty Formulas has /ActualText on that same Formula (7 boxed + 1 xcancel retraction); ovaleq Eq. (51) is spoken but not empty",
+  "structure_counts": {
+   "L": 2, "LI": 6, "Lbl": 16, "LBody": 6,
+   "Table": 3, "TR": 14, "TH": 7, "TD": 28,
+   "THead": 0, "TBody": 0, "TFoot": 0
+  },
+  "table_summaries": "3 of 3 on the Table element (not on TH)",
+  "th_scope": "all 7 TH carry /C /TH-col; ClassMap supplies /Scope /Column",
+  "bookmarks": 16,
+  "lowest_content_contrast": 8.45,
+  "printed_ruling_contrast": "3.91:1 -- excluded from the verdict as paper, not content",
+  "body_text_contrast": "21.0:1",
+  "caption_toprule_gap_pt": [11.0, 10.5, 8.3],
+  "replacement_chars_in_mathml": 20,
+  "replacement_chars_note": "20 U+FFFD: 7 in boxed empty shells, 1 in the xcancel retraction, 10 in \\cancel strokes of otherwise well-formed MathML, 2 in ovaleq decoration (Eq. 51). Not all boxed; ovaleq is not empty and has no \\cancel.",
+  "html_companion": {
+   "mathml": 187,
+   "rasterised_equations": 0,
+   "heading_levels": [1, 2, 3, 4],
+   "th": "7 real header cells plus 3 empty noalign rows",
+   "captions": 3,
+   "lists": 2,
+   "reflow_fixed": true
+  }
+ },
+ "closed_from_2026_08_13": [
+  "no TH -> 7 with /C /TH-col",
+  "no table /Summary -> 3 of 3 on Table",
+  "no bookmarks -> 16",
+  "link /Contents missing -> all present",
+  "HTML skipped h2 -> no skipped levels",
+  "dbar spoken as 'd with stroke' -> 'inexact differential'",
+  "no equation numbering -> numbered with \\eqref throughout",
+  "orbit angle collided with scattering angle -> set as \\tilde\\theta and recorded in the notation table",
+  "45 U+FFFD in formulas -> 20 (7 boxed empty + 1 xcancel empty + 10 cancel + 2 ovaleq decoration)",
+  "boxed equations had no element-level fallback -> each empty Formula including the retraction carries /ActualText"
+ ],
+ "known_gaps": [
+  "8 equations export MathML with no content (7 boxed + 1 xcancel retraction); each has /ActualText on that Formula; HTML MathML is complete for the boxed results",
+  "20 U+FFFD: 7 boxed empty + 1 xcancel empty + 10 \\cancel strokes + 2 ovaleq decoration (Eq. 51) -- not closed",
+  "PAC 2026 and Acrobat were not run; veraPDF is the checker of record",
+  "PDF/UA-1 clause 7.7 on 178 formulas -- the UA-2 /AF mechanism, which UA-1 predates",
+  "figures are source crops, so labels inside them are images of text",
+  "get_text() of the retraction is fragmented; structure-tree ActualText is present",
+  "check_coverage.py still cannot fail (overlap inflates ink mass)",
+  "tablesummary expl3 walk logs 120 recovered TeX errors (\\tl_if_in_p:Nn undefined); /Summary still on all 3 Tables; not rebuilt after round-3 votes"
+ ],
+ "errata_policy": "transcribe as written and flag; see Final_Product_Ready/errata.json. E9 uses the star form of \\erratum (no 'Reproduced above as written.') because casing was deliberately not reproduced.",
+ "review": {
+  "stage2_reviewers": 3,
+  "stage2_rounds": 3,
+  "stage2_final": "APPROVE x3",
+  "stage4c_referees": 5,
+  "accessibility_auditors": 1,
+  "round1": "REVISE x6",
+  "round2": "R2/R3 APPROVE; R1/R4/R5 REVISE; auditor incomplete (rate limit)",
+  "round3": "APPROVE x5 referees + auditor on md5 85b05d31081368d8b811063456c7f769"
+ }
+}

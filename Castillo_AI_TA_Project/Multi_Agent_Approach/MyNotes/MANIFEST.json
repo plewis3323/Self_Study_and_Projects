@@ -1,0 +1,258 @@
+{
+ "run": "2026-08-20",
+ "status": "COMPLETE, with one item pending live re-verification. Stage 4c (physics content) closed with APPROVE x6 in round 6 (2026-08-20), content untouched since. Five same-day Stage 4d-only steps followed (see accessibility.pac_2026_review / _run2 / _fifth_addendum below): (1) a tagging-defaults patch (TH scope, RoleMap), (2) a declared-standard switch UA-2->UA-1 closing the 189-formula alt-text gap, (3) a live PAC re-run confirming 0 Failed everywhere and testing-then-rejecting a hypothesis about residual warnings, (4) a follow-up investigation closing out Table/List/Whitespace/P/Character-encoding to stated conclusions, (5) reopening two of (4)'s 'not fixable' conclusions on instruction to keep trying rather than stop -- found and fixed a real, previously-undetected spec-invalid attribute placement (Table /Summary) plus a List ClassMap gap, and fixed the pipeline's OWN test tooling's blind spot that let it ship undetected. Step (5)'s fix is verified against this pipeline's own tools but NOT yet against a live PAC re-run -- the one open item. Physics referees were not re-convened at any step -- no content changed. Stage 5 hand-off (ForDr.Castillo/ rebuilt against pdf_md5 below) re-verified clean throughout.",
+ "archive_of_previous_run": "Run_Archive/2026-08-20_112626",
+ "why_this_run": "rebuild against the goldsteinnotes.sty expl3 fix (\\tl_if_in:NnTF) that PIPELINE_LOG's 2026-08-16 known-partial 9 said the next run would close, plus two Stage 4c revision passes (see review below) after round 1 and round 2 each returned REVISE x5 physics referees / APPROVE accessibility auditor. Same-day addendum 1: a real PAC 2026 detailed report (never run interactively before this) surfaced two tagging defects the six rounds above never checked for; fixed via tools/fix_pdf_tagging_defaults.py. Same-day addendum 2: switched the declared standard from UA-2 to UA-1 because PAC 2026 checks against UA-1 specifically and UA-2's /AF-only math tagging left 189/198 formulas with no alt text UA-1 (or PAC) recognizes; see accessibility.pac_2026_review and toolchain.standard_change.",
+ "inputs": [
+  {
+   "file": "Input/Lecture-scattering-Hamiltonian_241022-forward.pdf",
+   "slug": "scattering_hamiltonian",
+   "pages": 4,
+   "output_tex": "Final_Product_Ready/hc6001_2024-10-22_scattering_hamiltonian.tex",
+   "output_pdf": "Final_Product_Ready/hc6001_2024-10-22_scattering_hamiltonian.pdf",
+   "output_pages": 11,
+   "pdf_md5": "bf4452a18c41fafc87c2d8344295b52d",
+   "supersedes_md5": "b92b19d2a94c28d11ab2dccc3b984c15",
+   "supersedes_chain": ["f6e5c207ecb322c6c53eaca39ba6ee64 (round-6 close)", "0c4d468a6312fb95a5bd3445adc49e8b (+tagging-defaults patch: TH scope, RoleMap)", "8cce35a0d5e7eb5b2a5e4e3fb2942b77 (UA-1 rebuild + tagging-defaults reapplied, but a full source recompile drops any prior post-build patch that isn't reapplied -- this intermediate md5 briefly had mathml_empty regress from 0 back to 8 because fix_pdf_mathml.py had not yet been reapplied)", "b92b19d2a94c28d11ab2dccc3b984c15 (+fix_pdf_mathml.py reapplied -- all checks clean; PAC 2026 Run 2 confirmed 0 Failed against this md5)", "bf4452a18c41fafc87c2d8344295b52d (+Table /Summary promoted into /A, +List /ListNumbering added, both new -- FINAL, not yet re-verified by a live PAC run)"],
+   "supersedes_note": "content and physics unchanged across the whole chain -- only DocumentMetadata's declared standard (ua-2->ua-1, pdfversion 2.0->1.7) and StructTreeRoot metadata changed. This is a genuine recompile (new pdfversion), not a post-build patch alone, so page/byte layout differs even though rendered content does not."
+  }
+ ],
+ "mapping": "1:1 (1 input PDF -> 1 output document)",
+ "toolchain": {
+  "texlive": "2026",
+  "engine": "lualatex",
+  "passes": 3,
+  "recovered_tex_errors": 0,
+  "testphase": "latest,math,table,sec,title,float,graphic",
+  "standard": "PDF/UA-1 (was PDF/UA-2 through round 6; switched 2026-08-20, see standard_change)",
+  "standard_change": "Declaring pdfstandard=ua-1 (pdfversion=1.7) instead of ua-2 (pdfversion=2.0) is a real, kernel-native, documented choice in latex-lab's own pdfmanagement.ltx (g__pdfmeta_standard_pdf/UA-1_prop), not a workaround. Switching it flips a kernel behavior verified directly (latex-lab-math.ltx L477-489): on UA-1 detection the kernel auto-writes /Alt on every Formula element (`math/alt/use`), where under UA-2 only Formulas with an explicit \\formulaalt call got one. Verified before adopting: 3 clean lualatex passes, 0 recovered errors; veraPDF UA-1 flipped FAIL->PASS; check_structure.py's math test shows 198/198 Formulas now carry a spoken/alt fallback (was 9/198); the 9 hand-authored \\formulaalt /ActualText entries are untouched and still take priority over the new fallback where both exist (AT prefers ActualText over Alt). Trade-off, disclosed rather than hidden: the auto-generated /Alt for the other 189 is the raw LaTeX source wrapped in 'LaTeX formula starts ... LaTeX formula ends' (e.g. 's = \\frac{\\ell}{\\sqrt{2mE}}'), not spoken math -- a screen reader announces LaTeX markup, not prose. This satisfies presence-based conformance checks (veraPDF, PAC) but is lower-quality than the 9 hand-authored spoken renditions. Extending \\formulaalt to more/all 198 formulas remains open future work, tracked in known_gaps, not done this round.",
+  "probe": "equation+list+table+figure verified in the OUTPUT to emit /Formula, /L, /Table, /TH, /Alt before the run started",
+  "checker": "veraPDF 1.30.2",
+  "pac_2026": "run interactively by the operator 2026-08-20 14:19 -- first real run of the never-run known-partial. Detailed checkpoint report (not just the summary) obtained and reviewed; see accessibility.pac_2026_review",
+  "acrobat": "run by a colleague the same day against the frozen ForColleagues/Worked_Example/ copy (md5 85b05d31...); summary only (27 Passed/1 Failed/3 Needs-manual-check/1 Skipped), matches the toolchain's already-documented Character-encoding limitation, no new finding"
+ },
+ "segmentation": {
+  "segments": 15,
+  "per_page": [
+   3,
+   4,
+   4,
+   4
+  ],
+  "overlap_px": 250,
+  "uncovered_ink_rows": 0,
+  "coverage_recheck": "re-run 2026-08-20 (check_coverage.py) against unchanged Stage 1 output -- PASS, 0 uncovered rows on all 4 pages; not re-reviewed by fresh Stage 2 reviewers because the source PDF and segment manifest are byte-identical to the 2026-08-16 run's APPROVE x3 round",
+  "review_rounds": 3,
+  "verdicts": "REVISE x3, then REVISE x3, then APPROVE x3 (2026-08-16; not re-run since Stage 1 output is unchanged)"
+ },
+ "accessibility": {
+  "verapdf_ua1": "PASS (2026-08-20, since the standard switch -- was FAIL on clauses 5/6.1/7.7 through round 6 and the tagging-defaults-only patch). This is now the declared and primary standard; it is also the one PAC 2026 checks against.",
+  "verapdf_ua2": "FAIL (2026-08-20, since the standard switch -- was PASS through round 6). Fails on pdfversion alone (this file is now PDF 1.7, UA-2 requires >=2.0); run for contrast per Multi_Agent_Outline.md Step 4d, not treated as a defect.",
+  "headings": 16,
+  "headings_expected": 16,
+  "unreachable_text_ops": 0,
+  "total_text_ops": 3505,
+  "artifacts_carrying_words": 0,
+  "tagged_content_buried_in_artifact": 0,
+  "figure_reading_positions_pct": [
+   6.4,
+   15.3,
+   17.1,
+   31.9,
+   66.9
+  ],
+  "formula_elements": 198,
+  "mathml_files": 153,
+  "mathml_empty": 0,
+  "formulas_with_alt_or_actualtext": 198,
+  "empty_mathml_identity": "closed 2026-08-20 by tools/fix_pdf_mathml.py: the 8 Formulas that exported empty MathML (7 boxed + 1 xcancel retraction) now carry real MathML spliced in from the HTML companion, identity-matched by equation number / strike notation. 9 Formulas still carry a spoken /ActualText fallback in addition (the 8 plus ovaleq Eq. 51, which was never empty). Note: a full source recompile (e.g. the same-day UA-1 switch) regenerates the PDF from scratch and drops this splice -- it must be reapplied after ANY recompile, not just the first time; caught and corrected in supersedes_chain's 8cce35a0->b92b19d2 step.",
+  "formula_alt_text_198_of_198": "closed 2026-08-20 by the UA-1 switch (see toolchain.standard_change): the kernel auto-writes /Alt on every Formula once pdfstandard=ua-1 is detected. 9 formulas keep their hand-authored /ActualText (spoken math, takes priority for AT); the other 189 get a mechanically-generated /Alt = the raw LaTeX source (e.g. 's = \\frac{\\ell}{\\sqrt{2mE}}', not spoken prose) -- disclosed quality gap, see toolchain.standard_change and known_gaps.",
+  "structure_counts": {
+   "L": 2,
+   "LI": 6,
+   "Lbl": 16,
+   "LBody": 6,
+   "Table": 3,
+   "TR": 16,
+   "TH": 7,
+   "TD": 34,
+   "THead": 0,
+   "TBody": 0,
+   "TFoot": 0
+  },
+  "table_summaries": "3 of 3 on the Table element (not on TH), AND since 2026-08-20's fifth addendum properly inside /A << /O /Table /Summary >> (not just a bare top-level key, which is spec-invalid and was the case through pac_2026_review_run2) -- see pac_2026_review_fifth_addendum",
+  "th_scope": "all 7 TH carry /C /TH-col (ClassMap supplies /Scope /Column) AND, since 2026-08-20's pac_2026_review fix, a literal /A duplicating that same dict directly on the element -- see pac_2026_review",
+  "list_numbering": "both L (enumerate) elements carry /C /enumerate (ClassMap supplies /O /List /ListNumbering /Ordered) AND, since 2026-08-20's fifth addendum, a literal /A duplicating that same dict directly -- see pac_2026_review_fifth_addendum",
+  "pac_2026_review": {
+   "provenance": "PAC 2026 (v26.1.0.0) run interactively 2026-08-20 14:19 against ForColleagues/Worked_Example/'s frozen copy (md5 85b05d31...); operator exported the detailed per-checkpoint view (screenshots), not just the one-page summary. PAC's own dialog disclosed incomplete PDF 2.0 support ('this document is based on PDF standard 2.0... errors or unreliable results may occur') -- findings below were independently verified against the round-6 PDF's actual struct tree (pikepdf) before acting, not taken on PAC's word alone.",
+   "alternative_descriptions_189_failed": "exact match to the already-disclosed clause-7.7 figure (198 Formulas - 9 with /Alt or /ActualText = 189 /AF-only). Confirmed, not new; no action.",
+   "structure_elements_7_failed": "PAC: 'Table header cell has no associated data cells', all 7/7 TH. Root cause: TH cells carry /Scope only via /C /TH-col + /ClassMap indirection (ISO 32000-2 conformant, and the mechanism Multi_Agent_Outline.md deliberately chose over a direct key) -- PAC does not appear to resolve it. FIXED 2026-08-20: tools/fix_pdf_tagging_defaults.py adds a literal /A duplicating the ClassMap's resolved dict directly on each TH, redundant with /C, readable by any checker.",
+   "structure_tree_75_warned": "57 'Part' + 8 'Note' + 8 'Caption' + 2 'P' possibly-inappropriate-use warnings. Traced (via pikepdf RoleMap/struct-tree inspection, not assumed) to latex-lab's OWN built-in default RoleMap table for the pdf2/UA-2 namespace (tagpdf-ns-latex-lab.def), not a document-authoring choice: every ordinary paragraph is wrapped as 'text-unit' -> RoleMap default /Part (57 of the 58 Part elements, one per paragraph); every figure/table LaTeX float wrapper -> RoleMap default /Note (8 = 5 figures + 3 tables). FIXED 2026-08-20 for the Part/Note pair (65 of 75 warnings): RoleMap /text-unit remapped /Part->/P (matches this document's existing text->/P mapping) and /float remapped /Note->/Div. The remaining 10 (8 Caption + 2 P, both minor 'possibly inappropriate' advisories, not errors) were not investigated this round -- disclosed in known_gaps.",
+   "character_encoding_adobe_fail": "Adobe Acrobat's checker (run by a colleague against the same frozen 85b05d31 copy) failed 'Reliable character encoding' -- matches Multi_Agent_Outline.md Step 4d's own standing note that this is 'the rule this toolchain actually fails'. Already known, not new, not addressed this round.",
+   "fix_tool": "tools/fix_pdf_tagging_defaults.py, additive/redirective post-build patch (no content, MCID, or reading order touched); verified via veraPDF ua1+ua2 and tools/check_structure.py before replacing the shipped PDF -- both clean, all Step 4d numeric tests still PASS. Applied to Final_Product_Ready/ and ForDr.Castillo/01_Deliverable/ (byte-identical); NOT applied to ForColleagues/Worked_Example/ (deliberately frozen 08-16 evidence -- divergence recorded in ForColleagues/CHANGES_SINCE_RUN.md instead, per standing policy).",
+   "physics_content": "untouched; Stage 4c's round-6 APPROVE x6 stands. This was a Stage 4d-only (tagging/metadata) fix, so physics referees were not re-convened."
+  },
+  "pac_2026_review_run2": {
+   "provenance": "PAC 2026 re-run 2026-08-20 15:18, same day, against the FIXED build (md5 b92b19d2..., after both the tagging-defaults patch and the UA-1 standard switch). 157 detail screenshots, pre-sorted by role into Formula/(52) P/(94) Table/(3) L/(2) Whitespace/(6). Full transcription: Final_Product_Ready/accessibility/pac_2026_detailed_report_2026-08-20.md, 'Run 2' section.",
+   "result": "0 Failed everywhere (was 196). Structure elements 7->0. Alternative Descriptions 189->0 (239/239 pass, same total item count as Run 1 -- confirms full closure of the same population, not a narrower check). Overall PAC verdict flipped red 'not compliant' -> yellow 'possible some requirements not met'.",
+   "structure_tree_warned_75_to_151": "Rose despite the Part/Note fix removing 65 of the original 75. A specific hypothesis (that the UA-1 switch's auto-generated raw-LaTeX Formula /Alt was tripping a PAC content-quality heuristic) was TESTED against the screenshots, not assumed, and DISPROVEN: Formula_007/008 flag Eq (9) and Eq (10) -- eq:sigma-general and eq:sigma-T-def -- two of the 8 boxed equations that already carry hand-authored \\formulaalt spoken text since the first accessibility round on this document. Measured instead against the PDF's own struct tree (pikepdf): 52 /display-class Formulas exist, 146 /inline-class; PAC flags exactly 52/52 display and 0/146 inline, zero correlation with alt-text content or quality. Identical 100%-of-population pattern for Table (3/3) and L (2/2). Conclusion: this reads as a blanket per-role advisory ('a human should confirm this Formula/Table/List is used correctly'), not a per-instance content defect -- structurally the same category as the outline's own 'three items no tool decides'. NOT further pursued: writing spoken-math alt text for the other 44 display formulas was budgeted, then not done, because the hypothesis that would have justified it failed its own test.",
+   "table_and_l_confirmed_blanket": "SUPERSEDED 2026-08-20 (fifth addendum) -- see pac_2026_review_fifth_addendum below. What follows was the original finding: checked all 3 Table screenshots (2col/5row, 2col/3row, 3col/8row) and both L screenshots (2-item, 4-item enumerate) individually, not just one sample each. Flagged regardless of size/complexity -- 100% of both roles, generalizing the Formula finding rather than merely repeating it. This blanket-advisory READ was correct as a description of the symptom (100% flagged, uncorrelated with size); it was wrong as a conclusion that nothing could be done -- a deeper look found a real, fixable attribute-placement defect underneath it.",
+   "whitespace_6": "ROOT CAUSE CONFIRMED. None of the 6 screenshots carry a location marker, but all 6 land on pages 5,5,8,8,9,9 -- the document's 3 table pages, 2 each. Matches goldsteinnotes.sty's \\noalign{\\tablesummary{...}} row (attaches /Summary to the Table element rather than the first TH) -- the same mechanism already disclosed as leaving a leftover empty <tr> in the HTML companion; this is its PDF-side twin. Not fixed: redesigning /Summary attachment would touch markup inside all 3 already-approved tables for a Warned-tier, narrow, cosmetic outcome.",
+   "p_94_of_172": "Substantially explained (was 'genuinely open'). 6 of the 94 have no page number at all (blank screenshots) and sit in the file sequence immediately around pages 5/8/9 -- the identical Whitespace pattern, almost certainly the same 6 locations double-counted by two PAC checkpoints, not 12 separate defects. >=58 more are the Part-remap relocation (known). The remainder was sampled 7 times (not 1-2): 'gives' (one word), 'Eq. (18) then becomes', 'Substituting into Eq. (9) gives', '22 October 2024', plus 3 longer equation-adjacent lead sentences -- all short lead-in/transition clauses immediately beside a display equation, a real and consistent prose-style pattern (nearly every one of the 52 display equations gets its own short introductory clause as a separate paragraph). Not fixed, deliberately: merging these into their equations throughout already-physics-approved content is a substantial rewrite for a Warned-tier finding.",
+   "character_encoding_retested": "Adobe's one remaining Failed item (from Run 1, against the frozen 85b05d31 build) had only been cited as a known limitation, never re-tested against the current build. Tested 2026-08-20: extracted all text from b92b19d2... with two independent extractors (PyMuPDF, poppler pdftotext -enc UTF-8), scanned for U+FFFD and PUA (U+E000-U+F8FF) codepoints -- the ToUnicode-gap signature. ZERO found by either, across 14966 characters; every font (LMRoman10/12/17, LatinModernMath) carries /ToUnicode, confirmed via pikepdf. Not proof Adobe's own checker would pass (its method may be stricter than text-extraction), but real evidence against the finding still applying to this build. Recommended, not assumed: re-run Adobe Acrobat against b92b19d2... specifically.",
+   "lesson": "A checkpoint that fires on literally every instance of a role, independent of content quality, is not measuring a property of that content. The specific, plausible raw-LaTeX-alt-text hypothesis was tested against 2 screenshots before any further .tex edit was made, avoiding ~44 formula-alt-text edits the evidence already showed would not move the number they were meant to fix. Every remaining open item (Table/L generalization, Whitespace root cause, P's residual pattern, Character encoding) was then also investigated to a stated conclusion rather than left as a characterization -- see PIPELINE_LOG.md's fourth same-day addendum and pac_2026_detailed_report_2026-08-20.md's follow-up section for full evidence."
+  },
+  "pac_2026_review_fifth_addendum": {
+   "provenance": "Told explicitly to keep investigating and fixing rather than stop at 'blanket advisory, not worth fixing'. Two conclusions from pac_2026_review_run2 were reopened.",
+   "table_3_of_3_real_defect_found": "The 'no /C class, nothing analogous to the TH fix' conclusion stopped one level too shallow. Every Table's /Summary is a BARE TOP-LEVEL KEY on the Table StructElem dict -- verified directly via pikepdf: {'/ID','/K','/P','/S','/Summary','/Type'}, no /A at all. This is not a valid PDF structure-element key under ISO 32000 -- the spec's table attributes (/RowSpan, /ColSpan, /Headers, /Scope, /Summary) live inside /A with /O /Table, the same location /Scope needed for TH. goldsteinnotes.sty's own comment acknowledges the gap in hindsight: 'this kernel offers no documented key for it -- so it is written onto the Table structure directly.' Plausibly explains 100% of Tables flagged 'possibly inappropriate use' -- a UA-1 reader checking only /A sees no summary at all. FIXED: tools/fix_pdf_tagging_defaults.py's new fix_table_summary_attr() promotes the existing text into a proper /A << /O /Table /Summary (...) >>, additive alongside the legacy key.",
+   "list_2_of_2_same_pattern_as_th": "Unlike Table, L (raw /S /enumerate) DOES carry /C /enumerate, resolving via /ClassMap to <</O /List /ListNumbering /Ordered>> -- the identical ClassMap-only-attribute shape as TH's /Scope (already fixed). FIXED the same way: fix_list_numbering() adds a literal /A duplicating the resolved dict.",
+   "own_test_tooling_was_blind_to_this": "check_structure.py's table_summary test checked for the string '/Summary' anywhere on the Table object, not whether it was in a spec-valid location -- so it reported 'pass' for the invalid bare-key placement since this document's second accessibility round. FIXED: new field tables_summary_not_in_A resolves the /A reference (indirect or inline) and confirms /O /Table + /Summary are actually inside it. Verified able to fail, not assumed: run against the OLD build (pre-fifth-addendum) and confirmed it correctly flags all 3 table xrefs, before being trusted to report clean on the new one.",
+   "formula_reconsidered_and_still_not_fixed": "Formula's /C /display /inline also resolve only through /ClassMap, the same shape as the three defects above. Checked before deciding: /inline uses the identical mechanism and is 0% flagged (vs 100% for /display), directly contradicting an unresolved-ClassMap theory -- unlike Table/List where 100% of the only instances that exist are ALL flagged. Not fixed because the evidence says it would not help, not because it was not reconsidered.",
+   "verification_status": "Fixed and verified against this pipeline's own tools (veraPDF UA-1 stays PASS, all Step 4d tests clean, tables_summary_not_in_A empty). NOT yet re-verified against a live PAC run -- that requires the operator to run PAC again, which had not happened as of this md5. The hypothesis is well-founded (same class of gap as the TH fix, which PAC's Run 2 DID confirm effective) but stated as a hypothesis pending its own confirmation, not oversold as already-proven.",
+   "md5": "b92b19d2... -> bf4452a1..."
+  },
+  "bookmarks": 16,
+  "lowest_content_contrast": 8.45,
+  "printed_ruling_contrast": "3.91:1 -- excluded from the verdict as paper, not content",
+  "body_text_contrast": "21.0:1",
+  "figure_effective_print_dpi": {
+   "scat_fig1_beam_ring.png": 354,
+   "scat_fig2_repulsive.png": 421,
+   "scat_fig3_attractive.png": 478,
+   "scat_fig0_charges.png": 381,
+   "scat_fig4_scattering_center.png": 731,
+   "floor": 300,
+   "note": "all 5 figures now clear the 300 dpi floor: figs 2/3 re-rendered at 600 dpi round 1 (327/372 dpi) then had display width reduced round 2 to fix a page-2 pagination overflow (now 421/478 dpi); figs 0/4 re-rendered at 900 dpi round 2 (were 254/244 dpi, untouched since the 2026-08-16 build)"
+  },
+  "html_companion": {
+   "mathml": 198,
+   "rasterised_equations": 0,
+   "heading_levels": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "th": "7 real header cells; each data table still carries one empty <tr> left over from the \\noalign row used to park /Summary in the PDF -- disclosed cosmetic defect, not a td-instead-of-th failure",
+   "captions": 3,
+   "lists": 2,
+   "reflow_fixed": true
+  },
+  "known_extractor_quirk": "PyMuPDF's get_text() reads the 9 ActualText-bearing Formulas (boxed/oval/xcancel results) tripled/garbled; poppler's pdftotext extracts the same passages cleanly. Root cause: PyMuPDF applies the parent Formula's single /ActualText independently to each of that Formula's several underlying marked-content spans rather than de-duplicating by structure element. The struct tree itself carries exactly one /ActualText per Formula (verified directly) -- this is an extractor behavior, not a PDF-authoring defect, and does not affect a conformant screen reader walking the tag tree. Found by the Stage 4d Accessibility Auditor, 2026-08-20; reconfirmed unchanged in round 2."
+ },
+ "closed_from_round3": [
+  "notation lead sentence's 'two of these symbols' undercounted the table's own 'matches Goldstein directly' rows (three in Ch. 3.10: sigma(Om), sigma_T, s) -> reworded to state precisely which two the source itself compares",
+  "psi row's 'angle...to the point of closest approach' was geometrically imprecise and inconsistent with how psi is defined twice elsewhere (Figs. 2/3 captions: from the apsidal line, line-to-line) -> reworded to match",
+  "the notation table itself (grown to 8 rows) no longer fit on page 8 after its own heading, stranding the heading above a 23.6% blank gap (the identical [H]-overflow defect class, now hitting the table) -> \\clearpage inserted before \\subsection{Notation} so heading+table start together on page 9",
+  "Fig. 3 alt text: leftover 'the path crosses the baseline near the vertex' contradicted the same sentence's own '245px/14% to the right of the vertex' -> removed the contradictory clause",
+  "Fig. 4: source's 'range: 0<theta<=pi' (confirmed by direct inspection of the closed-vs-open inequality stroke) was mis-transcribed as '0<theta<pi' in body text, caption, and alt text, silently dropping the closed endpoint at exact backscattering -> corrected in all three (a transcription slip, not a source error, so no erratum flag)",
+  "Fig. 4 alt text called an arrowhead-less arc 'a curved arrow' -> corrected to 'a plain arc with a rounded terminus at each end, not an arrowhead'",
+  "reading_order_walk.txt / screen_reader_walk.txt were stale (predated the round-2 rebuild); Referee 5 and the Accessibility Auditor both independently found this -> regenerated against this exact rebuild"
+ ],
+ "closed_from_round2": [
+  "notation table sigma(Om)/sigma_T rows had Goldstein-vs-others backwards (source's own 'NOTATION: Goldstein / Others' box, verified by direct inspection, shows sigma(Om)/sigma_T ARE Goldstein's; d-sigma/d-Om and sigma alone are 'others') -> corrected; independently confirmed by two referees against Goldstein's own text",
+  "psi row claimed 'apsidal angle; matches Goldstein directly' -- Goldstein never uses the term 'apsidal angle' (it has an established, different meaning elsewhere) -> reworded to 'angle from the incoming asymptote to the point of closest approach; Goldstein introduces it unnamed and capitalized', matching the theta/Theta row's honest framing",
+  "lead sentence claimed to cover 'every symbol Ch. 3.10 and Ch. 8 fix' while H and L had no row -> reworded to a modest, accurate scope claim",
+  "Fig. 1 alt text said 'four lines of equations... at the upper left'; only 3 are, the 4th sits near the apsidal-point label -> corrected",
+  "Fig. 3 alt text said the outgoing asymptote 'leaves the center'; pixel-traced to cross the baseline ~245px (14% of image width) from the psi vertex, not at it -> corrected to state the actual offset",
+  "fixing page 1's blank-gap defect (round 1) pushed the identical defect to page 2 (Figs. 2/3 both deferred to page 3, subsection heading stranded above a 27% gap) -> Figs. 2/3 display width reduced further (0.80/0.72 -> 0.62/0.56 textwidth); both pages now render with no gap over ~5% of page height",
+  "Figs. 0/4 (charges, scattering-center) printed at 254/244 dpi, below the 300 dpi floor, never addressed in round 1 -> re-rendered source pages 2/3 at 900 dpi and re-cropped; now 381/731 dpi",
+  "Final_Product_Ready/accessibility/auditor_report.md still described the superseded 85b05d31... build with an APPROVE verdict two generations stale -> archived to auditor_report_85b05d31_2026-08-17.md with a SUPERSEDED_NOTICE.md"
+ ],
+ "closed_from_2026_08_16": [
+  "goldsteinnotes.sty \\tl_if_in_p:Nn expl3 bug (120 recovered TeX errors/compile) -> \\tl_if_in:NnTF, 0 recovered errors",
+  "8 equations exporting empty MathML -> tools/fix_pdf_mathml.py splices real MathML in from the HTML companion, identity-matched; mathml_empty 8 -> 0",
+  "notation table (Table 3) falsely claimed s/b as a Goldstein departure (Goldstein uses s; b is Taylor's symbol) -> corrected, and the false claim withdrawn",
+  "notation table claimed Ch. 3.10 AND Ch. 8 coverage with zero Ch. 8 rows -> added q_i, p_i row (Ch. 8, matches Goldstein directly)",
+  "notation table silently expanded from the source's 2 rows to 6 with no disclosure -> lead sentence now states which rows the source gives directly and which are supplied",
+  "apsidal angle psi used 6 times in the derivation but absent from the notation table -> added (see closed_from_round2 for a correction to this row's wording)",
+  "~40% blank page 1 (Fig. 1 deferred whole to page 2 under [H]) -> Fig. 1 width reduced 0.92->0.62\\textwidth so it fits under the intro text; page count back to 11",
+  "Section 4 heading read 'Chapter 8. The Hamiltonian...' with no matching 'Chapter 3.' on Section 1 -> dropped the inconsistent chapter-number prefix",
+  "Fig. 1 alt text claimed a double-headed arrow links two named blocks of text; only one of the two is actually inside the crop -> corrected to describe what the crop actually contains",
+  "Figs. 2 and 3 printed at ~163/186 dpi against the pipeline's own 300 dpi floor -> re-rendered source page 1 at 600 dpi and re-cropped both (see closed_from_round2 for the display-width follow-up)",
+  "Fig. 2's alt text omitted the 'REPULSIVE CASE:' heading baked into the crop (visually confirmed present) -> added; Fig. 3's matching 'ATTRACTIVE CASE:' heading was checked and confirmed NOT inside that crop (it sits just above the crop boundary), so no equivalent change was made there -- a referee claim rejected after direct verification, per Operating Principle 10, and re-confirmed independently in round 2",
+  "MANIFEST.json / auditor_report.md / review logs described the superseded 85b05d31... build and falsely stated mathml_empty: 8 for the artifact actually in Final_Product_Ready/ -- this file is regenerated against the current pdf_md5 each round"
+ ],
+ "known_gaps": [
+  "RESOLVED 2026-08-20 (was: PDF/UA-1 clause 7.7 fails on 189/198 formulas): the declared standard switched from UA-2 to UA-1, which makes the kernel auto-write /Alt on every Formula; veraPDF UA-1 now PASSES and all 198 Formulas carry alt text or ActualText. Still disclosed, not fully closed: 189 of those 198 get raw-LaTeX-source /Alt (e.g. 's = \\frac{\\ell}{\\sqrt{2mE}}'), not spoken math -- only the 9 hand-authored via \\formulaalt are true spoken renditions. Extending \\formulaalt to more/all formulas for quality (not just presence) is open future work.",
+  "PAC 2026 re-run against the fixed build (accessibility.pac_2026_review_run2) confirms 0 Failed everywhere but Structure-tree Warned rose 75->151. RESOLVED for Table/List 2026-08-20 (fifth addendum, accessibility.pac_2026_review_fifth_addendum): a deeper look past 'no /C class' found Table's /Summary was a spec-invalid bare StructElem key (not inside /A) -- fixed, plus List's ClassMap-only /ListNumbering given a direct /A like TH's /Scope. Not yet re-confirmed by a live PAC run. Formula (52/52) remains genuinely unfixed and reconsidered, not just left: /inline uses the identical ClassMap mechanism and is 0% flagged, directly contradicting the same theory that explained Table/List, so this one really does look like a blanket per-role advisory.",
+  "P warnings (94/172, was 2/115): fully accounted for, not fixed. 6 are the Whitespace group's own \\noalign artifact double-counted under a second PAC checkpoint (same 6 document locations, not 12 defects); >=58 are the Part-remap relocation (moved the warning, did not eliminate it); the remainder, sampled 7 times, are short lead-in/transition clauses immediately beside a display equation -- a real, consistent prose-style pattern (nearly every one of the 52 display equations gets a short introductory clause as its own paragraph), not a defect, not fixed because closing it means rewriting dozens of clauses in already-physics-approved content for a Warned-tier finding. Whitespace (6): root cause confirmed -- lands exactly on the 3 table pages, 2 each, matching the \\noalign/Summary mechanism now fixed for Table's OWN /Summary validity, but the whitespace-only span itself (the \\noalign row's empty tabular row) was not separately removed -- still present, still disclosed, its PDF-side twin to the already-disclosed HTML leftover-<tr> issue.",
+  "check_structure.py's own table_summary test had a real blind spot, closed 2026-08-20: it checked for the string '/Summary' anywhere on a Table object, not whether it sat in the ISO-32000-valid /A location, so it reported clean on a spec-invalid placement since this document's second accessibility round. New field tables_summary_not_in_A checks the /A location specifically, and was verified able to actually fail (run against the pre-fix build first) before being trusted to report the post-fix build clean.",
+  "Character encoding (Adobe's one remaining Failed item): re-tested against the CURRENT build 2026-08-20, not just re-cited from Run 1's frozen-build report. Two independent extractors (PyMuPDF, poppler) find zero U+FFFD/PUA codepoints across 14966 characters; every font carries /ToUnicode. Not proof Adobe would now pass (its method may differ), but real evidence against the finding still applying -- re-running Adobe against b92b19d2... specifically is the open recommendation, not assumed either way.",
+  "veraPDF is the checker of record for this pipeline's own acceptance gate; PAC 2026 was run interactively twice (Run 1 against the frozen 85b05d31 copy, Run 2 against the fixed b92b19d2 build) and Acrobat once (against 85b05d31), all by the operator/a colleague rather than an automated pipeline round -- see accessibility.pac_2026_review and pac_2026_review_run2 for what was verified applicable to each build and fixed",
+  "figures are source crops, so labels inside them are images of text",
+  "get_text() of the retraction and other ActualText-bearing Formulas reads tripled/garbled under PyMuPDF (poppler is clean) -- extractor behavior, not a structure-tree defect; see accessibility.known_extractor_quirk",
+  "HTML companion data tables carry one leftover empty <tr> above the real header row (from the \\noalign /Summary row) -- cosmetic, not a td-instead-of-th failure",
+  "check_coverage.py was NOT re-verified to be capable of failing this round -- it passed cleanly on unchanged Stage 1 output, consistent with the 2026-08-17 fix recorded in Multi_Agent_Outline.md (row-coverage rewrite, no longer the ink-mass version this file's prior draft described as broken)",
+  "5 Formulas (Eqs. 25, 36, 48, 50, 53) carry a stray U+FFFD on an already-cancelled \\cancel-stroke term inside an otherwise complete equation -- distinct from the earlier 8-Formula empty-shell issue (closed, mathml_empty: 0). Narrow: confined to the MathML semantic layer, 0 replacement chars in primary content-stream text via both PyMuPDF and pdftotext. Disclosed per the round-6 Accessibility Auditor, not treated as blocking.",
+  "Notation table psi row (Table 3) states '(Figs. 2, 3)' as a hardcoded cross-reference rather than \\ref{fig:repulsive}/\\ref{fig:attractive}; numerically correct as shipped but does not auto-update. Disclosed per round-6 Referee 3, judged non-blocking.",
+  "Multi_Agent_Outline.md Command Reference's --sections grep pattern (grep -cE ^\\(sub)*section\\{) undercounts on this document because one subsection uses the bracketed short-title form (\\subsection[short]{long}); the undercount happens to be offset by \\maketitle NOT being tagged as an H-element in this build (unlike the reference run the +1 convention describes), giving the right --sections 16 for compensating wrong reasons. Documentation nit for the outline itself, not a defect in this deliverable; a future run should not rely on the two errors continuing to cancel."
+ ],
+ "errata_policy": "transcribe as written and flag; see Final_Product_Ready/errata.json. E9 uses the star form of \\erratum (no 'Reproduced above as written.') because casing was deliberately not reproduced.",
+ "review": {
+  "stage2_reviewers": 3,
+  "stage2_rounds": 3,
+  "stage2_final": "APPROVE x3 (2026-08-16; not re-run, see segmentation.coverage_recheck)",
+  "stage4c_referees": 5,
+  "accessibility_auditors": 1,
+  "round1_on_this_rebuild": {
+   "md5_reviewed": "0fcf4dde02154ddedfaf377f12c8c710",
+   "verdict": "REVISE x5 physics referees; APPROVE accessibility auditor"
+  },
+  "round2_on_this_rebuild": {
+   "md5_reviewed": "432b169945c9192b6adf04edce5d41db",
+   "verdict": "REVISE x5 physics referees; APPROVE accessibility auditor (2nd consecutive)"
+  },
+  "round3_on_this_rebuild": {
+   "md5_reviewed": "ad53e3c54d270e984cc9de217a649fb1",
+   "verdict": "REVISE x5 physics referees; APPROVE accessibility auditor (3rd consecutive)"
+  },
+  "round4_on_this_rebuild": {
+   "md5_reviewed": "14f072032c293c89c773d8a49868ce5f",
+   "verdict": "APPROVE x2 physics referees (first clean approves this cycle); REVISE x2 physics referees (Fig 3/Fig1 defects, real); REVISE x1 physics referee (later independently disproven -- clearpage claim tested and found false); REVISE x1 accessibility auditor (process violation, not content -- round invalidated by Prime Agent mid-round rebuild)"
+  },
+  "round5_on_this_rebuild": {
+   "md5_reviewed": "70b1381f10a1ba5fd830c5a313d4c89a",
+   "verdict": "APPROVE x4 physics referees + APPROVE auditor; REVISE x1 physics referee (Fig 3/Fig 1 figure defects, real, required resolving a cross-round conflict)"
+  },
+  "round6_on_this_rebuild": {
+   "md5_reviewed": "f6e5c207ecb322c6c53eaca39ba6ee64",
+   "verdict": "APPROVE x5 physics referees + APPROVE auditor. CLOSED."
+  }
+ },
+ "closed_from_round4": [
+  "Fig. 3 alt text said the outgoing-asymptote line continues downward and to the right after crossing the baseline; independent pixel tracing (two separate traces) showed it goes down-and-to-the-left -> corrected",
+  "Fig. 1 caption claimed a colour distinction is stated in the surrounding text; a full-document grep found the caption itself is the only place this is stated -> reworded to a self-contained claim",
+  "MANIFEST.json stated UA-1 clause 7.7 fails 185 formulas, stale from before the notation table grew to 198 Formula elements; live re-measurement and the stored veraPDF report both show 189 -> corrected",
+  "ForDr.Castillo/ shipped the superseded 85b05d31... build with no staleness disclosure, and that build's notation table is now known-incorrect -> STALE_BUILD_NOTICE.md added as a cheap interim disclosure; full rebuild remains deferred to Stage 5",
+  "Prime Agent process violation: rebuilt the PDF mid-round to test a referee claim, reverted the source but not the build, leaving the live PDF mismatched from the frozen artifact under review for part of round 4 -- caught correctly by the Accessibility Auditor -> PDF rebuilt fresh and md5 verified stable across 5 consecutive checks before round 5 launch; going forward no file under Final_Product_Ready/ is touched between launching a round and collecting all six verdicts"
+ ],
+ "closed_from_round5": [
+  "Fig. 3 alt text direction claim was disputed between round 4 (down-left) and round 5 (down-right); resolved via independent Hough line-transform analysis (10+ concordant detections): the dominant, arrowhead-bearing line runs from the vertex itself, down-and-right -- alt text reworded to describe only this robustly-confirmed geometry, following Fig. 2's already-verified simpler pattern",
+  "Fig. 1 alt text called the beam-ring marker a narrow ellipse; direct zoomed inspection showed pointed cusps top and bottom, not a smooth ellipse curve -> corrected to a narrow, pointed lens shape"
+ ],
+ "closed_from_ua1_switch": [
+  "veraPDF UA-1 was FAIL (clauses 5, 6.1, 7.7) through round 6 and the tagging-defaults-only patch -> switched \\DocumentMetadata from pdfstandard=ua-2/pdfversion=2.0 to pdfstandard=ua-1/pdfversion=1.7 (a real, kernel-supported target, not a workaround: g__pdfmeta_standard_pdf/UA-1_prop in latex-lab's own pdfmanagement.ltx). veraPDF UA-1 now PASSES.",
+  "189/198 Formulas had no /Alt or /ActualText (clause 7.7) -> the UA-1 switch triggers a kernel behavior (latex-lab-math.ltx, verified by direct source reading, not assumed): on UA-1 detection it auto-writes /Alt on every Formula. All 198 now carry alt text; the 9 hand-authored \\formulaalt /ActualText entries are untouched and still take priority for assistive tech. Disclosed, not silently claimed as fully solved: the auto-generated /Alt for the other 189 is the raw LaTeX source string, not spoken math -- lower quality than the 9 hand-authored ones, tracked in known_gaps as future work.",
+  "A full source recompile (required for the pdfversion change) regenerates the PDF from scratch and drops any prior post-build patch not reapplied -- caught before shipping: the intermediate rebuild (md5 8cce35a0...) had mathml_empty regress from 0 back to 8 because tools/fix_pdf_mathml.py had not yet been re-run after the recompile. tools/fix_pdf_tagging_defaults.py WAS correctly reapplied first. Both are now reapplied in the final md5 (b92b19d2...); the lesson -- every post-build patch must be reapplied after every recompile, not assumed to persist -- is recorded here rather than left implicit.",
+  "tools/verify.sh's conformance section stated UA-2 as 'the standard this document declares' -> updated to state UA-1 as primary (and as the standard PAC 2026 checks), UA-2 as the contrast check; propagated to ForDr.Castillo/ and ForColleagues/tools/ (NOT to ForColleagues/verify.sh at the kit's top level, which deliberately still targets the frozen, still-UA-2 Worked_Example and was left unchanged)."
+ ],
+ "closed_from_fifth_addendum": [
+  "Table /Summary was a bare top-level StructElem key, not a valid PDF structure-element key under ISO 32000 -- the spec's table attributes live inside /A with /O /Table. Plausible root cause of 3/3 Tables flagged 'possibly inappropriate use' -> tools/fix_pdf_tagging_defaults.py's fix_table_summary_attr() promotes the existing text into a proper /A, additive alongside the legacy key.",
+  "List (enumerate) elements' /C /enumerate resolved only via /ClassMap to /ListNumbering /Ordered, the same ClassMap-only-attribute shape as TH's already-fixed /Scope -> fix_list_numbering() adds a literal /A the same way.",
+  "check_structure.py's table_summary test checked presence of '/Summary' anywhere on the element, not whether it was in the ISO-32000-valid /A location -- reported false-clean on the spec-invalid placement since this document's second accessibility round -> new tables_summary_not_in_A field checks the /A location specifically, verified able to fail against the known-bad pre-fix build before being trusted against the post-fix one.",
+  "Formula's /C /display//inline ClassMap-only-attribute pattern was reconsidered (same shape as the three defects above) and confirmed NOT the cause of its 52/52-flagged pattern: /inline uses the identical mechanism and is 0% flagged, contradicting the theory directly. Left unfixed on evidence, not by default."
+ ],
+ "closed_from_pac_2026_review": [
+  "All 7 TH cells failed PAC 2026's 'table header cell has no associated data cells' check because /Scope reached them only via /C /TH-col + /ClassMap indirection -> a literal /A duplicating that same resolved dict added directly to each TH via tools/fix_pdf_tagging_defaults.py",
+  "57 of 58 'Part' structure elements (every ordinary paragraph, via latex-lab's own text-unit->Part RoleMap default for pdf2/UA-2) and 8 of 8 'Note' elements (every figure/table float wrapper, via float->Note) flagged 'possibly inappropriate use' -> RoleMap remapped text-unit->/P and float->/Div; both traced to the LaTeX tagging kernel's own default table, not this document's authoring, via direct pikepdf inspection before any fix was made",
+  "PAC 2026's 189-failed 'Alternative Descriptions' count independently confirmed the already-disclosed clause-7.7 figure (198 Formulas - 9 with /Alt/ActualText) -- verified as a re-confirmation, not a new defect, before deciding not to act on it",
+  "Adobe Acrobat's 'Character encoding: Failed' (run by a colleague) confirmed the toolchain limitation Multi_Agent_Outline.md's Step 4d already names explicitly -- verified as already-known before deciding not to act on it"
+ ],
+ "closed_from_round6": [
+  "5 Formulas (Eqs. 25, 36, 48, 50, 53) carry a stray U+FFFD on an already-cancelled cancel-stroke term -- disclosed in known_gaps, not blocking (narrow, MathML-layer only, 0 replacement chars in primary text extraction)",
+  "HTML companion img src references were bare filenames (e.g. scat_fig1_beam_ring.png) but the PNGs lived only in Final_Product_Ready/figures/, not alongside notes.html -- images would not resolve in a browser. Found during Stage 5 packaging (no prior round checked asset resolution, only markup validity). Fixed: PNGs copied alongside notes.html in both Final_Product_Ready/html/ and ForDr.Castillo/01_Deliverable/html/.",
+  "ForDr.Castillo/ fully rebuilt against the closed pdf_md5: 01_Deliverable, 02_Accessibility_Evidence (fresh auditor_report.md replacing the archived stale one, fresh review_log_stage4c.md with all 6 rounds), 04_Reproduce (MANIFEST.json, PIPELINE_LOG.md, Multi_Agent_Outline.md, plus 3 tools that were missing: fix_pdf_mathml.py, render_pages.py, crop_figures.py). STALE_BUILD_NOTICE.md removed (no longer stale). verify.sh re-run against the rebuilt package: all checks PASS.",
+  "PIPELINE_LOG.md updated with the full 2026-08-20 six-round narrative (was last updated 2026-08-17, predating this entire rebuild cycle)."
+ ]
+}

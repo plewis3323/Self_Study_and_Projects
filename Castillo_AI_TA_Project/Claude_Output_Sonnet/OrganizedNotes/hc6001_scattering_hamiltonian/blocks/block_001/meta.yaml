@@ -1,0 +1,22 @@
+block_id: block_001
+section: central_scattering_setup
+reading_order: 1
+content_type: definition
+source_ref:
+  page: page_01.jpg
+  region: top of page through the scattering-trajectory diagram
+ai_summary: >
+  Lecture header (Oct 22 2024), "Scattering by a central potential." Defines incident
+  energy E = (m/2) v_0^2, incident velocity v_0 = sqrt(2E/m), angular momentum
+  l = m s v_0 = s sqrt(2mE), and impact parameter s = l/sqrt(2mE). Trajectory diagram
+  shows the apsidal point at r_c and scattering angle θ. Notes the volume element
+  d^3r = r^2 dr dΩ and the azimuthally-symmetric solid angle dΩ = 2π sin θ dθ.
+handwriting_preserved: true
+equations_detected:
+  - "E = (1/2) m v_0^2"
+  - "v_0 = sqrt(2E/m)"
+  - "l = m s v_0 = s sqrt(2 m E)"
+  - "s = l / sqrt(2 m E)"
+  - "d^3 r = r^2 dr dOmega"
+  - "dOmega = 2 pi sin theta d theta"
+confidence: high

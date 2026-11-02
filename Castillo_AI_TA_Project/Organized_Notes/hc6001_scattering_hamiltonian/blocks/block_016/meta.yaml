@@ -1,0 +1,19 @@
+block_id: block_016
+section: hamiltonian_derivation
+reading_order: 16
+content_type: derivation
+source_ref:
+  page: page_04.jpg
+  region: lower middle — Hamiltonian definition and differential derivation
+ai_summary: >
+  Applies Legendre transform to the Lagrangian: H = Σ p_i q̇_i − L. Derives dH by expanding
+  dL and d(p_i q̇_i), canceling terms, and obtains H = H(p, q, t) with dH = −(∂L/∂t)dt +
+  Σ(q̇_i dp_i − (∂L/∂q_i)dq_i).
+handwriting_preserved: true
+equations_detected:
+  - "H = sum_i p_i dot(q_i) - L"
+  - "dH = -(partial L / partial t) dt + sum_i (dot(q_i) dp_i - (partial L / partial q_i) dq_i)"
+depends_on:
+  - block_014
+  - block_015
+confidence: high

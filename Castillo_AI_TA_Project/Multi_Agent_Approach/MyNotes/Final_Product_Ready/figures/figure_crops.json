@@ -1,0 +1,142 @@
+{
+ "scat_fig1_beam_ring.png": {
+  "source_page": 1,
+  "box_300dpi": [
+   0,
+   150,
+   1428,
+   936
+  ],
+  "box_as_rendered": [
+   0,
+   150,
+   1428,
+   936
+  ],
+  "render_dpi": 300,
+  "upsampled": false,
+  "size": [
+   1428,
+   786
+  ],
+  "border_ink_px": {
+   "top": 27,
+   "bottom": 22,
+   "left": 0,
+   "right": 30
+  },
+  "border_ink_band_px": 3
+ },
+ "scat_fig2_repulsive.png": {
+  "source_page": 1,
+  "box_300dpi": [
+   22,
+   1508,
+   872,
+   1968
+  ],
+  "box_as_rendered": [
+   44,
+   3016,
+   1744,
+   3936
+  ],
+  "render_dpi": 600,
+  "upsampled": false,
+  "size": [
+   1700,
+   920
+  ],
+  "border_ink_px": {
+   "top": 0,
+   "bottom": 0,
+   "left": 0,
+   "right": 77
+  },
+  "border_ink_band_px": 3
+ },
+ "scat_fig3_attractive.png": {
+  "source_page": 1,
+  "box_300dpi": [
+   1470,
+   1585,
+   2340,
+   2040
+  ],
+  "box_as_rendered": [
+   2940,
+   3170,
+   4680,
+   4080
+  ],
+  "render_dpi": 600,
+  "upsampled": false,
+  "size": [
+   1740,
+   910
+  ],
+  "border_ink_px": {
+   "top": 22,
+   "bottom": 0,
+   "left": 36,
+   "right": 18
+  },
+  "border_ink_band_px": 3
+ },
+ "scat_fig0_charges.png": {
+  "source_page": 2,
+  "box_300dpi": [
+   1480,
+   20,
+   1860,
+   220
+  ],
+  "box_as_rendered": [
+   4440,
+   60,
+   5580,
+   660
+  ],
+  "render_dpi": 900,
+  "upsampled": false,
+  "size": [
+   1140,
+   600
+  ],
+  "border_ink_px": {
+   "top": 0,
+   "bottom": 0,
+   "left": 0,
+   "right": 0
+  },
+  "border_ink_band_px": 3
+ },
+ "scat_fig4_scattering_center.png": {
+  "source_page": 3,
+  "box_300dpi": [
+   60,
+   2030,
+   1010,
+   2386
+  ],
+  "box_as_rendered": [
+   180,
+   6090,
+   3030,
+   7158
+  ],
+  "render_dpi": 900,
+  "upsampled": false,
+  "size": [
+   2850,
+   1068
+  ],
+  "border_ink_px": {
+   "top": 15,
+   "bottom": 0,
+   "left": 0,
+   "right": 0
+  },
+  "border_ink_band_px": 3
+ }
+}
