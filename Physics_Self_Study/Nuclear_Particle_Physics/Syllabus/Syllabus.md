@@ -1,7 +1,7 @@
 # Nuclear & Particle Physics — Self-Paced Review Syllabus
 
-**Scope:** a combined review of graduate Nuclear Physics I (nuclear structure, decay, reactions) and Nuclear Physics II (particle physics and the Standard Model). It covers both the **theory** and the **experimental** side: detectors, accelerators, statistics and heavy-ion physics.
-**Length:** 13 weeks (about 3 months).
+**Scope:** a combined review of graduate Nuclear Physics I (nuclear structure, decay, reactions) and Nuclear Physics II (particle physics and the Standard Model). It covers both the **theory** and the **experimental** side: detectors, accelerators, statistics and heavy-ion physics. Part D adds astrophysics and nuclear astrophysics, starting from no prior astronomy, for the astro prelim. For the full heavy-ion and cold-QCD course, see `../../Relativistic_Heavy_Ion_and_Cold_QCD/`.
+**Length:** 13 weeks (about 3 months), plus an optional 4-week Part D (Weeks 14–17) on astrophysics and nuclear astrophysics for the astro prelim.
 **Pace:** 3–4 core chapters per week. From Week 8 on, each week also has a short L&B block (chapters are ~10 pages; the block counts as about one chapter).
 **Weekly rhythm:**
 1. Read the core chapters.
@@ -284,6 +284,109 @@
   - Higgs discovery.
   - QGP signatures: jet quenching, R_AA, elliptic flow, π⁰ / direct-photon measurements (the sPHENIX connection).
 
+## Part D — Astrophysics & Nuclear Astrophysics (Weeks 14–17, astro prelim prep)
+
+This part is written for the astrophysics portion of the prelim. **It assumes no prior astronomy course.** Week 14 builds the basic astronomy vocabulary and stellar physics from scratch. Weeks 15–17 then go into the nuclear physics of stars, stellar endpoints and cosmology. Check the department's prelim syllabus or past exams for the exact astro scope.
+
+My library has no general astronomy textbook. The core readings are the nuclear-astrophysics chapters of my nuclear books, plus stat-mech and GR chapters that treat stars and cosmology. A general textbook such as Carroll & Ostlie (listed below) would round this part out, especially Week 14.
+
+**Additional reading list for Part D:**
+
+| Code | Book | Role |
+|---|---|---|
+| **HNC** | Vértes et al., *Handbook of Nuclear Chemistry*, 2nd ed., Vol. 2 Ch. 12, Rauscher & Patkós, *Origin of the Chemical Elements* (`978-1-4419-0720-2.pdf`, PDF p. 649) | Core: early universe → BBN → stellar and explosive nucleosynthesis → abundances |
+| **Sargood** | Sargood, *Charged Particle Reaction Cross Sections and Nucleosynthesis*, Phys. Rep. 93 (1982) 61 (`Nuclear_1/Textbooks/1-s2.0-0370157382900795-main.pdf`) | Core: thermonuclear rates, Gamow peak, S-factors |
+| **Loveland** | Loveland, Morrissey & Seaborg, *Modern Nuclear Chemistry*, 2nd ed., Ch. 12 *Nuclear Astrophysics* | Core |
+| **Pathria** | Pathria & Beale, *Statistical Mechanics*, 3rd ed. (`Statistical_Mechanics/`) | Core: §7.3 (blackbody radiation), §8.5 (white dwarfs), Ch. 9 (thermodynamics of the early universe) |
+| **Schroeder** | Schroeder, *An Introduction to Thermal Physics* (`Statistical_Mechanics/`) | Core: §5.6 (chemical equilibrium → Saha equation), §7.3 (degenerate Fermi gases: white dwarfs, neutron stars), §7.4 (blackbody radiation, CMB) |
+| **Moore** | Moore, *A General Relativity Workbook* (`General_Relativity_Textbooks/`) | Core: Ch. 9–14 (Schwarzschild, orbits, horizons), Ch. 20–23 (Einstein equation), Ch. 24–29 (cosmology) |
+| **Taylor** | Taylor, *Classical Mechanics* (`Classical_Mechanics/Textbooks/Greiner_Classical_Mechanics/`) | Core: Ch. 8 (two-body central-force problems → Kepler, binary-star masses) |
+| **PRL-Acc** | *Particle Physics Reference Library Vol. 3: Accelerators and Colliders* (`P_physics_acc.pdf`) | Core: Ch. 13 (Cosmic Particle Accelerators) |
+| **Jackson** | Jackson, *Classical Electrodynamics*, 3rd ed. (`EMF_Textbooks/Textbooks/`) | Optional: Ch. 14 (radiation by moving charges → synchrotron emission) |
+
+**Worth acquiring (not in library):**
+- Carroll & Ostlie, *An Introduction to Modern Astrophysics*: the standard astro-prelim reference.
+- Ryden & Peterson, *Foundations of Astrophysics*.
+- Ryden, *Introduction to Cosmology*.
+- Iliadis, *Nuclear Physics of Stars*.
+- Rolfs & Rodney, *Cauldrons in the Cosmos*.
+
+### Week 14 — Astronomy & stellar physics from scratch
+- **Core:**
+  - Krane Ch. 19 (Nuclear Astrophysics: introduction and overview)
+  - HNC §12.4.1 (Stellar Evolution)
+  - Pathria §7.3 (blackbody radiation)
+  - Schroeder §7.4 (blackbody radiation), §5.6 (chemical equilibrium → Saha equation)
+  - Taylor Ch. 8 (Kepler problem)
+- **Cross-ref:**
+  - Povh §20.5 (Stellar Evolution and Element Synthesis)
+  - Loveland Ch. 12 (introductory sections)
+  - Carroll & Ostlie Ch. 3, 5, 7–10 if acquired
+- **Goals:**
+  - Flux, luminosity, the magnitude system, color and effective temperature (Stefan–Boltzmann, Wien).
+  - Distance ladder: parallax, Cepheids, Type Ia supernovae, Hubble's law.
+  - Binary stars and stellar masses (Kepler's third law); spectral classes; Saha ionization.
+  - The Hertzsprung–Russell diagram and the main sequence.
+  - Stellar structure equations: hydrostatic equilibrium, mass continuity, energy transport (radiative vs. convective), opacity.
+  - Virial theorem; Kelvin–Helmholtz and nuclear timescales; mass–luminosity relation; Eddington luminosity.
+
+### Week 15 — Thermonuclear reactions & stellar burning
+- **Core:**
+  - Krane §19.4 (Stellar Nucleosynthesis, A ≤ 60)
+  - Sargood (Gamow peak, S-factor, reaction-rate formalism)
+  - HNC §12.4.2–12.4.4 (hydrogen burning: pp chain and CNO cycle; helium burning; advanced burning stages)
+  - Loveland Ch. 12 (stellar-burning sections)
+- **Cross-ref:**
+  - Krane Ch. 14 (Fusion: review of Coulomb barriers)
+  - Povh §20.5
+  - Thomson Ch. 13 and Povh Ch. 11 (solar neutrinos, MSW)
+  - PRL-Det Ch. 8 (Neutrino Detectors)
+- **Goals:**
+  - Maxwell–Boltzmann-averaged ⟨σv⟩; Gamow peak energy and width; astrophysical S-factor.
+  - Non-resonant vs. resonant rates; electron screening.
+  - pp chains (I–III) and the CNO cycle; temperature sensitivity.
+  - The solar neutrino spectrum and the solar neutrino problem (Homestake → SNO).
+  - Triple-α and the Hoyle state; ¹²C(α,γ)¹⁶O.
+  - C, Ne, O, Si burning; nuclear statistical equilibrium and the iron peak.
+
+### Week 16 — Heavy elements, stellar death & compact objects
+- **Core:**
+  - Krane §19.5 (Stellar Nucleosynthesis, A > 60), §19.6 (Nuclear Cosmochronology)
+  - HNC §12.4.5–12.4.6 (beyond Fe; spallation), §12.5 (novae, Type Ia supernovae, X-ray bursts and the rp-process, neutron-star mergers), §12.6 (abundances)
+  - Pathria §8.5 (white dwarfs)
+  - Schroeder §7.3 (degenerate Fermi gases)
+- **Cross-ref:**
+  - Povh §20.3 (phases of nuclear matter), Ch. 21 (Many-Body Systems in the Strong Interaction)
+  - Moore Ch. 9–16 (Schwarzschild geometry, horizons, black-hole thermodynamics), Ch. 20–23 (Einstein equation: the starting point for TOV)
+  - Loveland Ch. 12 (heavy-element sections)
+- **Goals:**
+  - s-, r-, p-, rp- and ν-processes; the solar abundance curve and its peaks; neutron-capture paths.
+  - Cosmochronology.
+  - Degeneracy pressure; the Chandrasekhar mass.
+  - Neutron stars and the nuclear equation of state; the TOV equation (link to the QCD phase diagram).
+  - Core-collapse and thermonuclear supernovae; SN 1987A neutrinos.
+  - Kilonovae and GW170817; black holes and the Schwarzschild radius.
+
+### Week 17 — Cosmology, Big-Bang nucleosynthesis & high-energy astrophysics
+- **Core:**
+  - Krane §19.1 (Hot Big Bang Cosmology), §19.2 (Particle and Nuclear Interactions in the Early Universe), §19.3 (Primordial Nucleosynthesis)
+  - HNC §12.2 (early universe: CMB, inflation, dark matter, baryon asymmetry), §12.3 (primordial nucleosynthesis)
+  - Pathria Ch. 9 (Thermodynamics of the Early Universe)
+  - Moore Ch. 24, 26–28 (observed universe, Friedmann evolution, early universe)
+- **Cross-ref:**
+  - Povh §20.4 (Particle Physics and Thermodynamics in the Early Universe)
+  - Moore Ch. 29 (CMB fluctuations and inflation)
+  - PRL-Acc Ch. 13 (Cosmic Particle Accelerators)
+  - PRL-Det Ch. 17 (neutrino telescopes), Ch. 18 (spaceborne experiments)
+  - Jackson Ch. 14 (optional)
+- **Goals:**
+  - FRW metric and the Friedmann equations; redshift and the Hubble parameter.
+  - Matter, radiation and Λ eras; evidence for dark matter and dark energy.
+  - Thermal history: g*, neutrino decoupling, e⁺e⁻ annihilation, T_ν/T_γ.
+  - n/p freeze-out; the deuterium bottleneck; BBN yields vs. η; the lithium problem; the CMB.
+  - Cosmic-ray spectrum (knee, ankle, GZK); Fermi acceleration in supernova shocks.
+  - Multimessenger astronomy: γ-rays, neutrinos, gravitational waves.
+
 ---
 
 ## Progress tracker
@@ -303,3 +406,7 @@
 | 11 | QCD & quarkonia | ☐ | ☐ | ☐ |
 | 12 | Weak interactions & neutrinos | ☐ | ☐ | ☐ |
 | 13 | Electroweak, Higgs, heavy ions | ☐ | ☐ | ☐ |
+| 14 | Astro basics & stellar physics | ☐ | ☐ | ☐ |
+| 15 | Thermonuclear rates & stellar burning | ☐ | ☐ | ☐ |
+| 16 | Heavy elements & compact objects | ☐ | ☐ | ☐ |
+| 17 | Cosmology, BBN & cosmic rays | ☐ | ☐ | ☐ |
