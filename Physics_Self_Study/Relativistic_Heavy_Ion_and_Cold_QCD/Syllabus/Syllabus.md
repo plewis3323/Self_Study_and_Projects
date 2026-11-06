@@ -72,13 +72,8 @@ The library has no dedicated cold-QCD/EIC or QGP-theory textbook. These reviews 
 | **CGC** | Gelis, Iancu, Jalilian-Marian & Venugopalan, *The Color Glass Condensate*, arXiv:1002.0333 | Unit 16 |
 | **PDG** | Particle Data Group reviews (pdg.lbl.gov): *Quantum Chromodynamics*, *Structure Functions*, *Fragmentation Functions*, *Quark–Gluon Plasma* (heavy-ion review) | Throughout |
 
-### Worth acquiring (not in library)
-- Yagi, Hatsuda & Miake, *Quark–Gluon Plasma*.
-- Vogt, *Ultrarelativistic Heavy-Ion Collisions*.
-- Sarkar, Satz & Sinha (eds.), *The Physics of the Quark–Gluon Plasma* (Lecture Notes in Physics).
-- Kovchegov & Levin, *Quantum Chromodynamics at High Energy*.
-- Ellis, Stirling & Webber, *QCD and Collider Physics*.
-- Collins, *Foundations of Perturbative QCD*.
+### Sources not in my library
+See **[Recommended_Sources.md](Recommended_Sources.md)**. It lists, unit by unit, the books to buy or borrow and free lecture notes and textbooks (e.g. Laine & Vuorinen, *Basics of Thermal Field Theory*; the *TMD Handbook*), with a ⭐ top pick for every unit.
 
 ---
 

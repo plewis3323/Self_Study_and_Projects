@@ -304,12 +304,7 @@ My library has no general astronomy textbook. The core readings are the nuclear-
 | **PRL-Acc** | *Particle Physics Reference Library Vol. 3: Accelerators and Colliders* (`P_physics_acc.pdf`) | Core: Ch. 13 (Cosmic Particle Accelerators) |
 | **Jackson** | Jackson, *Classical Electrodynamics*, 3rd ed. (`EMF_Textbooks/Textbooks/`) | Optional: Ch. 14 (radiation by moving charges → synchrotron emission) |
 
-**Worth acquiring (not in library):**
-- Carroll & Ostlie, *An Introduction to Modern Astrophysics*: the standard astro-prelim reference.
-- Ryden & Peterson, *Foundations of Astrophysics*.
-- Ryden, *Introduction to Cosmology*.
-- Iliadis, *Nuclear Physics of Stars*.
-- Rolfs & Rodney, *Cauldrons in the Cosmos*.
+**Sources not in my library:** see **[Recommended_Sources.md](Recommended_Sources.md)**. It lists a main astro textbook to get (⭐ Carroll & Ostlie, or free OpenStax *Astronomy*), free MIT OCW courses and lecture notes, and week-by-week books and reviews.
 
 ### Week 14 — Astronomy & stellar physics from scratch
 - **Core:**

@@ -15,6 +15,6 @@ Prerequisites: `../Nuclear_Particle_Physics/` (Weeks 8–13) and `../Statistical
 
 | Folder | Contents |
 |---|---|
-| `Syllabus/` | [Syllabus.md](Syllabus/Syllabus.md): unit-by-unit core readings, cross-references, open-access supplements, goals and a progress tracker |
+| `Syllabus/` | [Syllabus.md](Syllabus/Syllabus.md): unit-by-unit core readings, cross-references, open-access supplements, goals and a progress tracker. [Recommended_Sources.md](Syllabus/Recommended_Sources.md): books and free sources, by unit, for the gaps in my library |
 | `Notes/` | Unit reading notes (`Unit_01.md` … `Unit_16.md`) |
 | `Exercises/` | AI-generated practice sets and my worked solutions, one per unit (`Unit_01/` … `Unit_16/`) |
