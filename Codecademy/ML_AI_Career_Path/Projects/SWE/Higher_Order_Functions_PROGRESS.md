@@ -6,9 +6,10 @@
 
 ---
 
-## Status: PAUSED (9/24/26) — no code written yet; resume at Step 1/2
+## Status: COMPLETE (11/9/26) — Steps 1–10 done, all checks pass; Step 11 (optional) not started
 
-**Where you left off:** understood what Steps 1–2 ask; next is writing `count()` in the notebook.
+**History:** first attempt (9/24/26) reached ~Step 5, but that code was never saved to the notebook, so the project is starting over.
+`solution.py` from Codecademy was pasted 11/9/26 and is NOT copied into the notebook; it's only for a comparison after you finish.
 
 **Concepts covered so far (Q&A 9/24/26):**
 - **Iterator** = an *object* that remembers its position in a collection (a bookmark). `next()` moves it
@@ -24,23 +25,23 @@
 ## Checklist
 
 ### Part 1 — `count(predicate, itr)`
-- [ ] Step 1 — `count_filter = filter(...)`
-- [ ] Step 2 — `count_reduce = reduce(...)` incrementing by 1 per element, returned
-- [ ] `check_part1()` passes
+- [x] Step 1 — `count_filter = filter(...)`
+- [x] Step 2 — `count_reduce = reduce(...)` incrementing by 1 per element, returned
+- [x] `check_part1()` passes
 
 ### Part 2 — `average(itr)` (recursive)
-- [ ] Step 3 — `avg_helper(curr_count, itr, curr_sum)` defined inside `average`
-- [ ] Step 4 — `next_num = next(itr, "null")`, add to sum, bump count
-- [ ] Step 5 — base case: `"null"` → return the average
-- [ ] Step 6 — recursive call with updated values, returned
-- [ ] Step 7 — ordered base case → computation → recursive call
-- [ ] Step 8 — initial call from `average()` returned
-- [ ] `check_part2()` passes
+- [x] Step 3 — `avg_helper(curr_count, itr, curr_sum)` defined inside `average`
+- [x] Step 4 — `next_num = next(itr, "null")`, add to sum, bump count
+- [x] Step 5 — base case: `"null"` → return the average
+- [x] Step 6 — recursive call with updated values, returned
+- [x] Step 7 — ordered base case → computation → recursive call
+- [x] Step 8 — initial call from `average()` returned
+- [x] `check_part2()` passes
 
 ### Part 3 — Sales data
-- [ ] Step 9 — `count_belgiums` via `count()` + `lambda x: x[1] == "Belgium"`
-- [ ] Step 10 — `avg_portugal` via `average()` + `filter` + `map` + `float()`
-- [ ] `check_part3()` passes
+- [x] Step 9 — `count_belgiums` via `count()` + `lambda x: x[1] == "Belgium"`
+- [x] Step 10 — `avg_portugal` via `average()` + `filter` + `map` + `float()`
+- [x] `check_part3()` passes
 
 ### Step 11 — Extensions (optional)
 - [ ] Other analyses / `median` / `standard_deviation`
@@ -55,5 +56,20 @@ revenue/cost/profit arithmetic consistent on every row). Some country names have
 2. Checks are asserts — read the message, it names what's off.
 3. On **"done"** → code review, TL;DR, tick this list, commit if asked.
 
+## Results
+- Belgium orders: **7**
+- Portugal average Total Profit: **632,281.405**
+
+## Bugs hit along the way (11/9/26) — worth remembering
+1. Parameter named `iterable` but body used `itr` → `NameError`. Names inside a function must match its parameters.
+2. `count` computed `count_reduce` but never returned it → would print `None`.
+3. `curr_sum += next_num` placed **before** the base case → would do `float + "null"` → `TypeError`.
+   This is why Step 7's order is base case → computation → recursive call.
+4. `curr_sum == next_num` (comparison, result thrown away) instead of `curr_sum += next_num`.
+
+## Known limitations (fine for this project)
+- `average([])` → `ZeroDivisionError` (count is 0).
+- Recursion depth ≈ 1000, so `average()` on all ~1000 rows can hit `RecursionError`.
+
 ## Open questions / to verify
-- None yet.
+- None.
