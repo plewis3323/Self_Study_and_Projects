@@ -39,6 +39,13 @@ About 96 hours in total over 12 weeks (8–10 h per week).
 - Software class and macro names were checked against `coresoftware` at the time of writing. Where a name was
   not checked, the text says so; check the current source before relying on it.
 
+### My reading notes
+Q&A notes taken while reading the modules are in [`Notes/`](Notes/):
+- Module 6: [Module06_Notes.md](Notes/Module06_Notes.md) ([PDF](Notes/Module06_Notes.pdf))
+
+The PDFs are built with pandoc:
+`pandoc Module06_Notes.md -o Module06_Notes.pdf --pdf-engine=xelatex -V geometry:margin=2cm -V mainfont="DejaVu Sans" -V monofont="DejaVu Sans Mono"`
+
 ### Rebuilding the PDFs
 The LaTeX sources are in [`tex/`](tex/). Each file builds on its own with `pdflatex` (run it twice for the
 table of contents). It uses only packages available in TeX Live 2020 on SDCC:
